@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * Created by feliperojas on 2/11/14.
  */
-public class FuntionLearn {
+public class FunctionLearn {
 
     @Test
     public void learn_to_pass_function_to_method() {
         List<Integer> ages = getFixedAges();
-        ages.sort(FuntionLearn::sortAscendant);
+        ages.sort(FunctionLearn::sortAscendant);
 
         Assert.assertArrayEquals(new Integer[]{1, 5, 23, 67}, ages.toArray());
     }
