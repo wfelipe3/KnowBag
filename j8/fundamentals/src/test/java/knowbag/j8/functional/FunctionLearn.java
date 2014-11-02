@@ -26,11 +26,49 @@ public class FunctionLearn {
         Assert.assertArrayEquals(new Integer[]{1, 5, 23, 67}, ages.toArray());
     }
 
+    @Test
+    public void learn_to_parametrize_behavior() {
+        List<Apple> apples = Arrays.asList(new Apple("green", 12), new Apple("red", 34));
+        Assert.assertEquals("green red", printApples(apples, new ColorAppleFormatter()));
+        Assert.assertEquals("green red", printApples(apples, (apple) -> apple.color));
+    }
+
     public static Integer sortAscendant(Integer age1, Integer age2) {
         return age1.compareTo(age2);
     }
 
     private List<Integer> getFixedAges() {
         return Arrays.asList(23, 5, 67, 1);
+    }
+
+    private String printApples(List<Apple> apples, AppleFormatter formatter) {
+        StringBuilder builder = new StringBuilder();
+        for (Apple apple : apples) {
+            builder.append(formatter.format(apple));
+            builder.append(" ");
+        }
+        return builder.toString().trim();
+    }
+
+    private class Apple {
+        String color;
+        int weight;
+
+        Apple(String color, int weight) {
+            this.color = color;
+            this.weight = weight;
+        }
+    }
+
+    private interface AppleFormatter {
+        public String format(Apple apple);
+    }
+
+    private class ColorAppleFormatter implements AppleFormatter {
+
+        @Override
+        public String format(Apple apple) {
+            return apple.color;
+        }
     }
 }
