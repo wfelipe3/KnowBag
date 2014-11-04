@@ -30,7 +30,7 @@ public class FunctionLearn {
     }
 
     @Test
-    public void learn_to_parametrize_behavior() {
+    public void learn_to_behavior_parameterization() {
         List<Apple> apples = Arrays.asList(new Apple("green", 12), new Apple("red", 34));
         Assert.assertEquals("green red", printApples(apples, new ColorAppleFormatter()));
         Assert.assertEquals("green red", printApples(apples, (apple) -> apple.color));
