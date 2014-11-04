@@ -3,8 +3,11 @@ package knowbag.j8.functional;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by feliperojas on 2/11/14.
@@ -31,6 +34,19 @@ public class FunctionLearn {
         List<Apple> apples = Arrays.asList(new Apple("green", 12), new Apple("red", 34));
         Assert.assertEquals("green red", printApples(apples, new ColorAppleFormatter()));
         Assert.assertEquals("green red", printApples(apples, (apple) -> apple.color));
+    }
+
+    @Test
+    public void learn_to_create_lambdas_with_functional_interfaces() {
+        List<Apple> apples = Arrays.asList(new Apple("green", 12), new Apple("red", 34));
+        Comparator<Apple> comparator = (Apple a1, Apple a2) -> a2.color.compareToIgnoreCase(a1.color);
+        sort(() -> apples.sort(comparator));
+        List<String> appleColors = apples.stream().map(a -> a.color).collect(Collectors.toList());
+        Assert.assertArrayEquals(new String[]{"red", "green"}, appleColors.toArray());
+    }
+
+    private void sort(Runnable r) {
+        r.run();
     }
 
     public static Integer sortAscendant(Integer age1, Integer age2) {
