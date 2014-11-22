@@ -53,10 +53,6 @@ class UserManagerTest {
         assertEquals(3, users.size())
     }
 
-    private List<User> findAll() {
-        UserManager.findAll(spyStore)
-    }
-
     private void addFindAllToSpy() {
         spyStore.getMetaClass().findAll = {
             [new User.Builder(FELIPE).build(), new User.Builder("juan").build(), new User.Builder("jose").build()]
@@ -71,12 +67,16 @@ class UserManagerTest {
         assertEquals(expectedName, actualName)
     }
 
+    private List<User> findAll() {
+        new UserManager(spyStore).findAll()
+    }
+
     private User find(String name) {
-        UserManager.findByName(name, spyStore)
+        new UserManager(spyStore).findByName(name)
     }
 
     private save(name) {
-        UserManager.save(name, spyStore)
+        new UserManager(spyStore).save(name)
     }
 
 }

@@ -2,6 +2,8 @@ package knowbag.grails.pomodoro
 
 import grails.converters.JSON
 import knowbag.grails.pomodoro.user.UserManager
+import knowbag.grails.pomodoro.user.client.UserFind
+import knowbag.grails.pomodoro.user.client.UserSave
 import knowbag.grails.pomodoro.user.exception.UserAlreadyExistsException
 import knowbag.grails.pomodoro.user.exception.UserNotFoundException
 import knowbag.grails.pomodoro.user.vo.User
@@ -13,7 +15,8 @@ class UserController {
     def createUser() {
         def user = buildUser(request.JSON)
         try {
-            UserManager.save(user, userService)
+            UserSave userSave = new UserManager()
+            userSave.save(user)
             render(contentType: "application/json") {
                 saved = true
             }
@@ -26,7 +29,8 @@ class UserController {
 
     def getUserByName() {
         try {
-            render UserManager.findByName(params.name, userService) as JSON
+            UserFind userFind = new UserManager(userService)
+            render userFind.findByName(params.name) as JSON
         } catch (UserNotFoundException ex) {
             render(contentType: "application/json") {
                 errorMessage = "User ${params.name} not found"

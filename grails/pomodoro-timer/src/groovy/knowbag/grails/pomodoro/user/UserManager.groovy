@@ -1,28 +1,52 @@
 package knowbag.grails.pomodoro.user
 
-import knowbag.grails.pomodoro.user.crud.UserFind
-import knowbag.grails.pomodoro.user.crud.UserSave
+import knowbag.grails.pomodoro.user.client.UserFind
+import knowbag.grails.pomodoro.user.client.UserSave
+import knowbag.grails.pomodoro.user.exception.UserAlreadyExistsException
+import knowbag.grails.pomodoro.user.exception.UserNotFoundException
 import knowbag.grails.pomodoro.user.vo.User
 
 /**
  * Created by feliperojas on 5/11/14.
  */
-final class UserManager {
+class UserManager implements UserSave, UserFind {
 
-    private UserManager() {}
+    private def storer;
 
-    static void save(user, storer) {
-        UserSave saver = new UserSave(user, storer)
-        saver.save()
+    UserManager(storer) {
+        this.storer = storer
     }
 
-    static User findByName(String name, def storer) {
-        UserFind finder = new UserFind(storer)
-        finder.findByName(name)
+    @Override
+    void save(User user) {
+        throwExceptionIfUserAlreadyExists(user)
+        saveUser(user)
     }
 
-    static List<User> findAll(storer) {
-        UserFind finder = new UserFind(storer)
-        finder.findAll()
+    @Override
+    User findByName(String name) {
+        Optional.ofNullable(findUser(name)).orElseThrow({
+            new UserNotFoundException(name)
+        })
+    }
+
+    @Override
+    List<User> findAll() {
+        storer.findAll()
+    }
+
+    private void throwExceptionIfUserAlreadyExists(user) {
+        Optional.ofNullable(findUser(user.name)).ifPresent({
+            throw new UserAlreadyExistsException(user.name)
+        })
+    }
+
+    private User findUser(name) {
+        storer.findByName(name)
+    }
+
+
+    private void saveUser(user) {
+        storer.save(user)
     }
 }
