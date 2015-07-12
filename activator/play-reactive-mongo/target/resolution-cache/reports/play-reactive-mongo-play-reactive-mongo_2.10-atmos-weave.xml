@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="play-reactive-mongo"
+		module="play-reactive-mongo_2.10"
+		revision="0.0.6"
+		conf="atmos-weave"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool, atmos-trace-compile, atmos-trace-test, atmos-dev, atmos-console, atmos-weave, atmos-sigar, echo-trace-compile, echo-trace-test, echo-weave, echo-sigar"
+		date="20150430002213"/>
+	<dependencies>
+		<module organisation="org.aspectj" name="aspectjweaver">
+			<revision name="1.7.3" status="release" pubdate="20130621191636" resolver="public" artresolver="public" homepage="http://www.aspectj.org" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="0">
+				<license name="Eclipse Public License - v 1.0" url="http://www.eclipse.org/legal/epl-v10.html"/>
+				<metadata-artifact status="successful" details="" size="1045" time="356" location="/Users/feliperojas/.ivy2/cache/org.aspectj/aspectjweaver/ivy-1.7.3.xml" searched="true" original-local-location="/Users/feliperojas/.ivy2/cache/org.aspectj/aspectjweaver/ivy-1.7.3.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/aspectj/aspectjweaver/1.7.3/aspectjweaver-1.7.3.pom"/>
+				<caller organisation="play-reactive-mongo" name="play-reactive-mongo_2.10" conf="atmos-weave" rev="1.7.3" rev-constraint-default="1.7.3" rev-constraint-dynamic="1.7.3" callerrev="0.0.6"/>
+				<artifacts>
+					<artifact name="aspectjweaver" type="jar" ext="jar" status="successful" details="" size="1829108" time="2440" location="/Users/feliperojas/.ivy2/cache/org.aspectj/aspectjweaver/jars/aspectjweaver-1.7.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/aspectj/aspectjweaver/1.7.3/aspectjweaver-1.7.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="image-resizer$sources_javadoc_2.11"
+		revision="1.0"
+		conf="runtime-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20150610214740"/>
+	<dependencies>
+		<module organisation="org.mockito" name="mockito-core">
+			<revision name="1.10.19" status="release" pubdate="20141231114335" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mockito.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+				<license name="The MIT License" url="http://github.com/mockito/mockito/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2648" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/ivy-1.10.19.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.pom"/>
+				<caller organisation="default" name="image-resizer$sources_javadoc_2.11" conf="compile, runtime-internal, runtime, optional" rev="1.10.19" rev-constraint-default="1.10.19" rev-constraint-dynamic="1.10.19" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mockito-core" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="2551572" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/docs/mockito-core-1.10.19-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19-javadoc.jar"/>
+					</artifact>
+					<artifact name="mockito-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="763809" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/srcs/mockito-core-1.10.19-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19-sources.jar"/>
+					</artifact>
+					<artifact name="mockito-core" type="jar" ext="jar" status="no" details="" size="1172979" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/jars/mockito-core-1.10.19.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.10.19/mockito-core-1.10.19.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.objenesis" name="objenesis">
+			<revision name="2.1" status="release" pubdate="20131010162537" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://objenesis.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<metadata-artifact status="no" details="" size="3127" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/ivy-2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.pom"/>
+				<caller organisation="default" name="image-resizer$sources_javadoc_2.11" conf="compile, runtime-internal, runtime, optional" rev="2.1" rev-constraint-default="2.1" rev-constraint-dynamic="2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="objenesis" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="44014" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/srcs/objenesis-2.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1-sources.jar"/>
+					</artifact>
+					<artifact name="objenesis" type="jar" ext="jar" status="no" details="" size="41755" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1.jar"/>
+					</artifact>
+					<artifact name="objenesis" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="241742" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/docs/objenesis-2.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/2.1/objenesis-2.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hamcrest" name="hamcrest-core">
+			<revision name="1.1" status="release" pubdate="20070718141143" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
+				<metadata-artifact status="no" details="" size="4321" time="0" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.pom"/>
+				<caller organisation="default" name="image-resizer$sources_javadoc_2.11" conf="compile, runtime-internal, runtime, optional" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="hamcrest-core" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="327" time="0" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/srcs/hamcrest-core-1.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1-sources.jar"/>
+					</artifact>
+					<artifact name="hamcrest-core" type="jar" ext="jar" status="no" details="" size="76643" time="0" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.6" status="release" pubdate="20150225200105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.pom"/>
+				<caller organisation="default" name="image-resizer$sources_javadoc_2.11" conf="compile, runtime-internal, runtime, optional" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="906435" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="22813840" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.11.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5564007" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

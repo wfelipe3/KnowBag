@@ -1,0 +1,269 @@
+html {
+	font-size: 16px;
+	font-family: Arial, sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	background: #FBE25E;
+	background: -moz-linear-gradient(top, #FBE25E 0%, #FBE888 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FBE25E),
+		color-stop(100%, #FBE888));
+	background: -webkit-linear-gradient(top, #FBE25E 0%, #FBE888 100%);
+	background: -o-linear-gradient(top, #FBE25E 0%, #FBE888 100%);
+	background: -ms-linear-gradient(top, #FBE25E 0%, #FBE888 100%);
+	background: linear-gradient(to bottom, #FBE25E 0%, #FBE888 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(        
+		                     startColorstr='#FBE25E', endColorstr='#FBE888',
+		GradientType=0);
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+	color: #373737;
+	text-shadow: 2px 2px 2x #C9C9C9;
+}
+
+ul {
+	display: block;
+	margin: 0;
+	-webkit-padding-start: 0;
+	-moz-padding-start: 0;
+}
+
+ul.menu {
+	width: 100%;
+	height: 8%;
+	margin: 0;
+	display: inline-block;
+	/* 	background: #F5F5F5; */
+	background: transparent;
+	position: relative;
+	display: inline-flex;
+	margin-bottom: 2%;
+	position: relative;
+}
+
+ul.menu>a {
+	width: 100%;
+	align-self: stretch;
+	display: inline-block;
+}
+
+ul.menu>a>img {
+	width: 20%;
+}
+
+ul.menu li:last {
+	margin-right: 2.5%;
+}
+
+li,a.main {
+	padding: 4%;
+	text-align: center;
+	margin-top: 2%;
+	display: block;
+	/* 	background: whitesmoke; */
+	/* 	background: #FFC0A5; */
+	background: #fff;
+	box-shadow: 1px 01px 2px grey;
+	position: relative;
+}
+
+a.main>img {
+	width: 10%;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+ul.menu li {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	width: 30%;
+	margin-left: 2.5%;
+	padding-top: 2%;
+}
+
+a {
+	color: #281E16;
+	text-shadow: 0px 0px 1px #FFF;
+	font-weight: bold;
+	text-decoration: initial;
+	font-size: 1.2em;
+}
+
+td>a,td>a:hover {
+	/* 	color: #F35252; */
+	color: #0E276C;
+	font-weight: normal;
+	font-size: 1em;
+	background: transparent;
+}
+
+td>a:hover {
+	text-shadow: 1px 1px 0px #fff;
+	font-weight: bold;
+}
+
+li:hover a,a:hover {
+	color: #FFCD8E;
+	background: #2B4CA6;
+	text-shadow: 1px 1px 0px #000;
+	color: #F7D629;
+	box-shadow: -1px -1px 2px inset black;
+	text-shadow: 1px 1px 0px #000;
+	color: #F7D629;
+}
+
+label {
+	font-family: Arial, sans-serif;
+}
+
+div.form li {
+	padding: 4%;
+	text-align: left;
+	display: block;
+	background: whitesmoke;
+}
+
+dd,dt {
+	display: inline-block;
+}
+
+dd {
+	width: 50%;
+}
+
+dl#sons_field>dd {
+	width: 70%;
+}
+
+input {
+	width: 100%;
+}
+
+dt {
+	min-width: 20%;
+}
+
+.centered {
+	margin: auto;
+	height: 90%;
+	width: 76%;
+	position: relative;
+}
+
+.centered.main {
+	padding-top: 6%;
+	width: 70%;
+}
+
+.info {
+	font-size: 0.8em;
+	color: #BE0000;
+	font-style: italic;
+	width: auto;
+	text-align: right;
+	float: right;
+}
+
+input[type="submit"] {
+	width: 100%;
+	height: 10%;
+	margin-top: 4%;
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.granpa_table_wrapper {
+	margin-top: 4%;
+}
+
+table.dataTable tr.even td.sorting_1 {
+	background-color: #E8E9D7;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+	background-color: #D8E9D7;
+}
+
+tr:hover>td>a {
+	font-weight: bold;
+}
+
+.dataTables_wrapper {
+	position: relative;
+	margin-top: 4%;
+	clear: both;
+}
+
+li.remove {
+	padding: 0 !important;
+}
+
+#remove {
+	display: none;
+}
+
+#remove+label[for="remove"] {
+	width: 100%;
+	background: #5AD52F;
+	height: 2.4em;
+	display: block;
+	box-shadow: 0px 0px 2px #000;
+	color: #000;
+	padding-top: 2%;
+	text-align: center;
+}
+
+#remove+label[for="remove"]:before {
+	content: "Click here to remove element	";
+}
+
+#remove:checked+label[for="remove"] {
+	width: 100%;
+	background: #F42A2A;
+	height: 2.4em;
+	display: block;
+	box-shadow: 0px 0px 8px #5D0000 inset;
+	color: #FFF;
+	padding-top: 2%;
+}
+
+#remove:checked+label[for="remove"]:before {
+	content: "Element will be REMOVED!";
+}
+
+.centered.form>img {
+	width: 20%;
+	position: absolute;
+	right: -20%;
+	top: 0;
+/* 	margin-top */
+}
+
+form {
+	padding-top: 2%;
+}
+
+label.little {
+	font-style: italic;
+	font-size: 80%;
+}
+
+table.dataTable tr.odd td.sorting_1 {
+	background-color: #D8E3FF;
+}
+
+table.dataTable tr.even td.sorting_1 {
+	background-color: #EAF4FF;
+}

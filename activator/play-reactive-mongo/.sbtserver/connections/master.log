@@ -1,0 +1,7 @@
+New log file opened at Thu Apr 30 00:25:01 COT 2015 by 1942@iMac-de-Felipe.local
+Taking next connection to: 53166
+New client attempting to connect on port: 53167-53166
+  Address = /192.168.0.22:53166
+This client on port 53167 has uuid bea11d52-e84c-458b-9057-365831525bdd configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-bea11d52-e84c-458b-9057-365831525bdd
+Taking next connection to: 53166

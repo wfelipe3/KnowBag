@@ -1,0 +1,146 @@
+format version: 5
+output mode:
+1 items
+0 -> single
+output directories:
+1 items
+output dir -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes
+compile options:
+0 items
+javac options:
+0 items
+compiler version:
+1 items
+0 -> 2.10.4
+compile order:
+1 items
+0 -> Mixed
+name hashing:
+1 items
+0 -> true
+products:
+7 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$1.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$2.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$3.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$4.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$5.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$.class
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild.class
+binary dependencies:
+8 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/org.scala-sbt/collections/jars/collections-0.13.8-M5.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/org.scala-sbt/ivy/jars/ivy-0.13.8-M5.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/org.scala-sbt/main-settings/jars/main-settings-0.13.8-M5.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/org.scala-sbt/main/jars/main-0.13.8-M5.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-0.13.8-M5.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.ivy2/cache/scala_2.10/sbt_0.13/com.typesafe.play/sbt-plugin/jars/sbt-plugin-2.2.2.jar
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> /Users/feliperojas/.sbt/boot/scala-2.10.4/lib/scala-library.jar
+direct source dependencies:
+0 items
+direct external dependencies:
+0 items
+public inherited source dependencies:
+0 items
+public inherited external dependencies:
+0 items
+member reference internal dependencies:
+0 items
+member reference external dependencies:
+0 items
+inheritance internal dependencies:
+0 items
+inheritance external dependencies:
+0 items
+class names:
+7 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$$anonfun$1
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$$anonfun$2
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$$anonfun$3
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$$anonfun$4
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild$$anonfun$5
+used names:
+35 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> %
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> %%
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> +=
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> <init>
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Append
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ApplicationBuild
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Build
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> InitializeInstance
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Keys
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Opts
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Project
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Resolver
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> Seq
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> appDependencies
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> appName
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> appVersion
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> append1
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> appendSeq
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> apply
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> at
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> collection
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> ivyStylePatterns
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> main
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> package
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> play
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> pure
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> resolver
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> resolvers
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> sbt
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> settings
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> sonatypeReleases
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> sonatypeRepo
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> toGroupID
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> toRepositoryName
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> url
+product stamps:
+7 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$1.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$2.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$3.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$4.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$$anonfun$5.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild$.class -> lastModified(1430371330000)
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/target/scala-2.10/sbt-0.13/classes/ApplicationBuild.class -> lastModified(1430371329000)
+source stamps:
+1 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> hash(753b1c8c3c8567698dcb4297b658b2ac3b7bbe34)
+binary stamps:
+8 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar -> lastModified(1410998958000)
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/collections/jars/collections-0.13.8-M5.jar -> lastModified(1425056384000)
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/ivy/jars/ivy-0.13.8-M5.jar -> lastModified(1425056384000)
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/main-settings/jars/main-settings-0.13.8-M5.jar -> lastModified(1425056384000)
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/main/jars/main-0.13.8-M5.jar -> lastModified(1425056384000)
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-0.13.8-M5.jar -> lastModified(1425056384000)
+/Users/feliperojas/.ivy2/cache/scala_2.10/sbt_0.13/com.typesafe.play/sbt-plugin/jars/sbt-plugin-2.2.2.jar -> lastModified(1393561103000)
+/Users/feliperojas/.sbt/boot/scala-2.10.4/lib/scala-library.jar -> lastModified(1395179187000)
+class names:
+8 items
+/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar -> java.lang.Object
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/collections/jars/collections-0.13.8-M5.jar -> sbt.Init
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/ivy/jars/ivy-0.13.8-M5.jar -> sbt.Resolver
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/main-settings/jars/main-settings-0.13.8-M5.jar -> sbt.Append$
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/main/jars/main-0.13.8-M5.jar -> sbt.Build
+/Users/feliperojas/.ivy2/cache/org.scala-sbt/sbt/jars/sbt-0.13.8-M5.jar -> sbt.package$
+/Users/feliperojas/.ivy2/cache/scala_2.10/sbt_0.13/com.typesafe.play/sbt-plugin/jars/sbt-plugin-2.2.2.jar -> play.Project$
+/Users/feliperojas/.sbt/boot/scala-2.10.4/lib/scala-library.jar -> scala.package$
+internal apis:
+1 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> 
+rO0ABXNyABB4c2J0aS5hcGkuU291cmNlFlpwRASfbtoCAAZJAAdhcGlIYXNoWgAIaGFzTWFjcm9MABhfaW50ZXJuYWxPbmx5X25hbWVIYXNoZXN0ACRMeHNidGkvYXBpL19pbnRlcm5hbE9ubHlfTmFtZUhhc2hlcztMAANhcGl0ABVMeHNidGkvYXBpL1NvdXJjZUFQSTtMAAtjb21waWxhdGlvbnQAF0x4c2J0aS9hcGkvQ29tcGlsYXRpb247WwAEaGFzaHQAAltCeHBHtE+SAHNyACJ4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaGVzVNq+mfrU7EwCAAJbAA9pbXBsaWNpdE1lbWJlcnN0ACNbTHhzYnRpL2FwaS9faW50ZXJuYWxPbmx5X05hbWVIYXNoO1sADnJlZ3VsYXJNZW1iZXJzcQB+AAd4cHVyACNbTHhzYnRpLmFwaS5faW50ZXJuYWxPbmx5X05hbWVIYXNoO0lagLbdlov0AgAAeHAAAAAAdXEAfgAJAAAAHXNyACB4c2J0aS5hcGkuX2ludGVybmFsT25seV9OYW1lSGFzaFsO9SJ2OFfPAgACSQAEaGFzaEwABG5hbWV0ABJMamF2YS9sYW5nL1N0cmluZzt4cMTj55R0AAZub3RpZnlzcQB+AAzueuS8dAAEd2FpdHNxAH4ADCGg+FR0AA0kYXNJbnN0YW5jZU9mc3EAfgAM/xcO2HQADGJ1aWxkTG9hZGVyc3NxAH4ADK5TODV0AAZlcXVhbHNzcQB+AAyRCYeDdAAHYXBwTmFtZXNxAH4ADHyD/DB0AAxhc0luc3RhbmNlT2ZzcQB+AAwEIcu8dAAScHJvamVjdERlZmluaXRpb25zc3EAfgAMnPVSfHQADHN5bmNocm9uaXplZHNxAH4ADHDawZ50AAphcHBWZXJzaW9uc3EAfgAMmAZwH3QADSRpc0luc3RhbmNlT2ZzcQB+AAxKwUIIdAAQQXBwbGljYXRpb25CdWlsZHNxAH4ADFNp2Pt0AARtYWluc3EAfgAMxr21RnQACW5vdGlmeUFsbHNxAH4ADA66zeN0AAtyb290UHJvamVjdHNxAH4ADIgeITp0AAxpc0luc3RhbmNlT2ZzcQB+AAxIO7H2dAAPYXBwRGVwZW5kZW5jaWVzc3EAfgAM68tTcHQAAj09c3EAfgAM1Btbs3QABWNsb25lc3EAfgAMj3E5gnQACHRvU3RyaW5nc3EAfgAMTYexaHQAAiE9c3EAfgAMfvNrLnQACHByb2plY3Rzc3EAfgAMFuCWH3QACGdldENsYXNzc3EAfgAMr0UwqnQAAm5lc3EAfgAMXfz/SnQAAmVxc3EAfgAMO+H64HQACHNldHRpbmdzc3EAfgAMojHLjXQAAiMjc3EAfgAMGiXAwXQACGZpbmFsaXplc3EAfgAMx7H55nQACGhhc2hDb2Rlc3IAE3hzYnRpLmFwaS5Tb3VyY2VBUEm5Xqf5KSM4pAIAAlsAC2RlZmluaXRpb25zdAAXW0x4c2J0aS9hcGkvRGVmaW5pdGlvbjtbAAhwYWNrYWdlc3QAFFtMeHNidGkvYXBpL1BhY2thZ2U7eHB1cgAXW0x4c2J0aS5hcGkuRGVmaW5pdGlvbjuIyVzntONeDgIAAHhwAAAAAXNyABN4c2J0aS5hcGkuQ2xhc3NMaWtlgzQcod+wl2wCAARMAA5kZWZpbml0aW9uVHlwZXQAGkx4c2J0aS9hcGkvRGVmaW5pdGlvblR5cGU7WwAQc2F2ZWRBbm5vdGF0aW9uc3QAE1tMamF2YS9sYW5nL1N0cmluZztMAAhzZWxmVHlwZXQAEEx4c2J0aS9hcGkvTGF6eTtMAAlzdHJ1Y3R1cmVxAH4AUXhyACF4c2J0aS5hcGkuUGFyYW1ldGVyaXplZERlZmluaXRpb275EW6x1VA84gIAAVsADnR5cGVQYXJhbWV0ZXJzdAAaW0x4c2J0aS9hcGkvVHlwZVBhcmFtZXRlcjt4cgAUeHNidGkuYXBpLkRlZmluaXRpb26HKhvocULjRgIABEwABmFjY2Vzc3QAEkx4c2J0aS9hcGkvQWNjZXNzO1sAC2Fubm90YXRpb25zdAAXW0x4c2J0aS9hcGkvQW5ub3RhdGlvbjtMAAltb2RpZmllcnN0ABVMeHNidGkvYXBpL01vZGlmaWVycztMAARuYW1lcQB+AA14cHNyABB4c2J0aS5hcGkuUHVibGljulg9rmwtYEICAAB4cgAQeHNidGkuYXBpLkFjY2Vzc91imvgdYzFIAgAAeHB1cgAXW0x4c2J0aS5hcGkuQW5ub3RhdGlvbjvrl+sZEPaNSAIAAHhwAAAAAHNyABN4c2J0aS5hcGkuTW9kaWZpZXJzxxETIWmc3CQCAAFCAAVmbGFnc3hwAHEAfgAldXIAGltMeHNidGkuYXBpLlR5cGVQYXJhbWV0ZXI72W0mDyid8rYCAAB4cAAAAAB+cgAYeHNidGkuYXBpLkRlZmluaXRpb25UeXBlAAAAAAAAAAASAAB4cgAOamF2YS5sYW5nLkVudW0AAAAAAAAAABIAAHhwdAAGTW9kdWxldXIAE1tMamF2YS5sYW5nLlN0cmluZzut0lbn6R17RwIAAHhwAAAAAHNyABN4c2J0aS5TYWZlTGF6eSRJbXBsUAIuk5eXQD8CAANaAAhiaXRtYXAkMEwAAl90dAASTGphdmEvbGFuZy9PYmplY3Q7TAAEZXZhbHQAEUxzY2FsYS9GdW5jdGlvbjA7eHIAFnhzYnRpLmFwaS5BYnN0cmFjdExhennTd7UBX7vnoAIAAHhwAHBzcgAgeHNidGkuU2FmZUxhenkkJGFub25mdW4kc3RyaWN0JDEAAAAAAAAAAAIAAUwAB3ZhbHVlJDFxAH4AaXhwc3IAE3hzYnRpLmFwaS5FbXB0eVR5cGW8/Z5GSTuJJAIAAHhyABR4c2J0aS5hcGkuU2ltcGxlVHlwZXJ4YoghI79AAgAAeHIADnhzYnRpLmFwaS5UeXBlP2rZIRZJqsoCAAB4cHNxAH4AaABwc3EAfgBtc3IAE3hzYnRpLmFwaS5TdHJ1Y3R1cmWpqvmAk2/YAAIAA0wACGRlY2xhcmVkcQB+AFFMAAlpbmhlcml0ZWRxAH4AUUwAB3BhcmVudHNxAH4AUXhxAH4AcXNxAH4AaABwc3EAfgBtdXEAfgBMAAAAAHNxAH4AaABwc3EAfgBtdXEAfgBMAAAAAHNxAH4AaABwc3EAfgBtdXIAEVtMeHNidGkuYXBpLlR5cGU7dP+lWnv56UECAAB4cAAAAANzcgAUeHNidGkuYXBpLlByb2plY3Rpb27z0o1U6UWkLQIAAkwAAmlkcQB+AA1MAAZwcmVmaXh0ABZMeHNidGkvYXBpL1NpbXBsZVR5cGU7eHEAfgBwdAAFQnVpbGRzcgATeHNidGkuYXBpLlNpbmdsZXRvbvynX/jPVuRGAgABTAAEcGF0aHQAEEx4c2J0aS9hcGkvUGF0aDt4cQB+AHBzcgAOeHNidGkuYXBpLlBhdGibPVwIzqUnhAIAAVsACmNvbXBvbmVudHN0ABpbTHhzYnRpL2FwaS9QYXRoQ29tcG9uZW50O3hwdXIAGltMeHNidGkuYXBpLlBhdGhDb21wb25lbnQ7Q9oJdC1nFnQCAAB4cAAAAAJzcgAMeHNidGkuYXBpLklkmDJsizdTxEACAAFMAAJpZHEAfgANeHIAF3hzYnRpLmFwaS5QYXRoQ29tcG9uZW50X5oiWy6Gn7wCAAB4cHQAA3NidHNyAA54c2J0aS5hcGkuVGhpc9sJ7abMWkBcAgAAeHEAfgCOc3EAfgCBdAAGT2JqZWN0c3EAfgCFc3EAfgCIdXEAfgCLAAAAA3NxAH4AjXQABGphdmFzcQB+AI10AARsYW5ncQB+AJJzcQB+AIF0AANBbnlzcQB+AIVzcQB+AIh1cQB+AIsAAAACc3EAfgCNdAAFc2NhbGFxAH4AknVyABRbTHhzYnRpLmFwaS5QYWNrYWdlO1sTGTdwpyehAgAAeHAAAAAAc3IAFXhzYnRpLmFwaS5Db21waWxhdGlvbu364MNq6KBCAgACSgAJc3RhcnRUaW1lWwAHb3V0cHV0c3QAGltMeHNidGkvYXBpL091dHB1dFNldHRpbmc7eHAAAAFNCMZaVXVyABpbTHhzYnRpLmFwaS5PdXRwdXRTZXR0aW5nO39qwvOnh6VCAgAAeHAAAAABc3IAF3hzYnRpLmFwaS5PdXRwdXRTZXR0aW5netmaR3T7HXsCAAJMAA9vdXRwdXREaXJlY3RvcnlxAH4ADUwAD3NvdXJjZURpcmVjdG9yeXEAfgANeHB0AGMvVXNlcnMvZmVsaXBlcm9qYXMvS25vd0JhZy9hY3RpdmF0b3IvcGxheS1yZWFjdGl2ZS1tb25nby9wcm9qZWN0L3RhcmdldC9zY2FsYS0yLjEwL3NidC0wLjEzL2NsYXNzZXN0AAEvdXIAAltCrPMX+AYIVOACAAB4cAAAABR1OxyMPIVnaY3LQpe2WLKsO3u+NA==
+external apis:
+0 items
+source infos:
+1 items
+/Users/feliperojas/KnowBag/activator/play-reactive-mongo/project/Build.scala -> 
+AAAAAAAAAAA=
+compilations:
+1 items
+0 -> rO0ABXNyABV4c2J0aS5hcGkuQ29tcGlsYXRpb27t+uDDauigQgIAAkoACXN0YXJ0VGltZVsAB291dHB1dHN0ABpbTHhzYnRpL2FwaS9PdXRwdXRTZXR0aW5nO3hwAAABTQjGWlV1cgAaW0x4c2J0aS5hcGkuT3V0cHV0U2V0dGluZzt/asLzp4elQgIAAHhwAAAAAXNyABd4c2J0aS5hcGkuT3V0cHV0U2V0dGluZ3rZmkd0+x17AgACTAAPb3V0cHV0RGlyZWN0b3J5dAASTGphdmEvbGFuZy9TdHJpbmc7TAAPc291cmNlRGlyZWN0b3J5cQB+AAZ4cHQAYy9Vc2Vycy9mZWxpcGVyb2phcy9Lbm93QmFnL2FjdGl2YXRvci9wbGF5LXJlYWN0aXZlLW1vbmdvL3Byb2plY3QvdGFyZ2V0L3NjYWxhLTIuMTAvc2J0LTAuMTMvY2xhc3Nlc3QAAS8=

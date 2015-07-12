@@ -1,0 +1,12 @@
+rootProject.name = 'threads-chat'
+
+include 'server'
+
+include 'test-client'
+
+include 'chat-injector'
+
+include 'tcp-server'
+
+include 'nio-server'
+

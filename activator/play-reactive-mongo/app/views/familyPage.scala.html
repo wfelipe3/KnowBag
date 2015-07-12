@@ -1,0 +1,60 @@
+@* familyTable Template File *@
+@(name: String, table: play.mvc.Call, elemsToDisplay: Seq[String])(implicit paths: controllers.helper.CRUDerPaths)
+
+@main(s"${name} - Page") {
+	<div class="centered">
+		@navigator()
+	
+	<div>
+			 <ul>
+					<a href="@paths.create" class="main">
+						<h3>Create New @name</h3>
+					</a>
+			</ul>					
+		</div>
+	
+	<table id="@name">
+	<thead>
+		<tr>
+			@elemsToDisplay.map(h => <th>{h}</th> )
+		</tr>
+	</thead>
+	<tbody></tbody>
+	</table>
+	
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+
+			//Using dataTable (jQuery plugin: http://datatables.net/)
+
+			oTable = $("#@name").dataTable({
+
+				"iDisplayLength" : 20,
+				"bProcessing" : true,
+				"bAutoWidth" : false,
+				"aaSorting" : [ [ 1, "asc" ] ],
+				"fnRowCallback" : function(nRow, aData, iDisplayIndex) {
+					$('td:eq(0)', nRow).html('<a href="@paths.edit/' + aData[0] + '">' + aData[0] + '</a>');
+					return nRow;
+				},
+				"bServerSide" : true,
+				"bJQueryUI" : true,
+				"bRetrieve" : true,
+				"sAjaxSource" : "@table",
+				"aoColumnDefs" : [ {
+					"bSearchable" : false,
+					//"bVisible" : false,
+					"aTargets" : [ 0 ]
+				}, {
+					"sWidth" : "20%",
+					"aTargets" : [ 1 ]
+				} ]
+
+			});
+
+		})
+	</script>
+	
+}

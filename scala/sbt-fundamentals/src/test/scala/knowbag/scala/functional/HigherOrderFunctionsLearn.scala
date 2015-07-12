@@ -27,4 +27,9 @@ class HigherOrderFunctionsLearn extends FunSuite {
     assert(tailSum((x: Int) => x * x, 3, 9) === 3*3 + 4*4 + 5*5 + 6*6 + 7*7 + 8*8 + 9*9)
   }
 
+  test("loop sum") {
+    assert(Sum.sum
+      (value => value * value, 1, 4) === 1*1 + 2*2 + 3*3 + 4*4)
+  }
+
 }

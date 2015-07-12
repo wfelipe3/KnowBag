@@ -1,0 +1,28 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET   /                        controllers.Application.index
+
+#GranPa
+GET   /granpa                  controllers.GrandpaController.index
+->    /granpa                  controllers.GrandpaController
+GET   /granpa/table            controllers.GrandpaController.table
+
+#Father
+GET   /father                  controllers.FatherController.index
+->    /father                  controllers.FatherController
+GET   /father/table            controllers.FatherController.table
+#bug here
+GET   /fatherNoStrings         controllers.FatherNoStringsController.index
+->    /fatherNoStrings         controllers.FatherNoStringsController
+GET   /fatherNoStrings/table   controllers.FatherNoStringsController.table
+
+#Son
+GET   /son                     controllers.SonController.index
+->    /son                     controllers.SonController
+GET   /son/table               controllers.SonController.table
+
+# Map static resources from the /public folder to the /assets URL path
+GET   /assets/*file            controllers.Assets.at(path="/public", file)

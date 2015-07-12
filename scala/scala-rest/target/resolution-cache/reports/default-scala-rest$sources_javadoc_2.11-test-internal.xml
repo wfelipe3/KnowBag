@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="default"
+		module="scala-rest$sources_javadoc_2.11"
+		revision="1.0"
+		conf="test-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20150401225501"/>
+	<dependencies>
+		<module organisation="org.specs2" name="specs2-core_2.11">
+			<revision name="2.3.11" status="release" pubdate="20140417183226" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://specs2.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="37">
+				<license name="MIT-style" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="3106" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-core_2.11/ivy-2.3.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/specs2/specs2-core_2.11/2.3.11/specs2-core_2.11-2.3.11.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.11" rev-constraint-default="2.3.11" rev-constraint-dynamic="2.3.11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="specs2-core_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="2231086" time="3800" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-core_2.11/docs/specs2-core_2.11-2.3.11-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-core_2.11/2.3.11/specs2-core_2.11-2.3.11-javadoc.jar"/>
+					</artifact>
+					<artifact name="specs2-core_2.11" type="jar" ext="jar" status="no" details="" size="2060786" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-core_2.11/jars/specs2-core_2.11-2.3.11.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-core_2.11/2.3.11/specs2-core_2.11-2.3.11.jar"/>
+					</artifact>
+					<artifact name="specs2-core_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="105861" time="1016" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-core_2.11/srcs/specs2-core_2.11-2.3.11-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-core_2.11/2.3.11/specs2-core_2.11-2.3.11-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.specs2" name="specs2-matcher_2.11">
+			<revision name="2.3.11" status="release" pubdate="20140417182532" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://specs2.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="38">
+				<license name="MIT-style" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="2664" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-matcher_2.11/ivy-2.3.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/specs2/specs2-matcher_2.11/2.3.11/specs2-matcher_2.11-2.3.11.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.11" rev-constraint-default="2.3.11" rev-constraint-dynamic="2.3.11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="specs2-matcher_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1558489" time="3284" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-matcher_2.11/docs/specs2-matcher_2.11-2.3.11-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-matcher_2.11/2.3.11/specs2-matcher_2.11-2.3.11-javadoc.jar"/>
+					</artifact>
+					<artifact name="specs2-matcher_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="51212" time="1560" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-matcher_2.11/srcs/specs2-matcher_2.11-2.3.11-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-matcher_2.11/2.3.11/specs2-matcher_2.11-2.3.11-sources.jar"/>
+					</artifact>
+					<artifact name="specs2-matcher_2.11" type="jar" ext="jar" status="no" details="" size="2478714" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-matcher_2.11/jars/specs2-matcher_2.11-2.3.11.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-matcher_2.11/2.3.11/specs2-matcher_2.11-2.3.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.specs2" name="specs2-common_2.11">
+			<revision name="2.3.11" status="release" pubdate="20140417182503" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://specs2.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="39">
+				<license name="MIT-style" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="3064" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-common_2.11/ivy-2.3.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/specs2/specs2-common_2.11/2.3.11/specs2-common_2.11-2.3.11.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.11" rev-constraint-default="2.3.11" rev-constraint-dynamic="2.3.11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="specs2-common_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="98343" time="1809" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-common_2.11/srcs/specs2-common_2.11-2.3.11-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-common_2.11/2.3.11/specs2-common_2.11-2.3.11-sources.jar"/>
+					</artifact>
+					<artifact name="specs2-common_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1039373" time="2136" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-common_2.11/docs/specs2-common_2.11-2.3.11-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-common_2.11/2.3.11/specs2-common_2.11-2.3.11-javadoc.jar"/>
+					</artifact>
+					<artifact name="specs2-common_2.11" type="jar" ext="jar" status="no" details="" size="1486636" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2-common_2.11/jars/specs2-common_2.11-2.3.11.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2-common_2.11/2.3.11/specs2-common_2.11-2.3.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-testkit_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085319" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="17">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3868" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-testkit_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-testkit_2.11/1.3.2/spray-testkit_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-testkit_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="9239" time="813" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-testkit_2.11/srcs/spray-testkit_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-testkit_2.11/1.3.2/spray-testkit_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-testkit_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="476007" time="1729" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-testkit_2.11/docs/spray-testkit_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-testkit_2.11/1.3.2/spray-testkit_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-testkit_2.11" type="jar" ext="jar" status="no" details="" size="74270" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-testkit_2.11/jars/spray-testkit_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-testkit_2.11/1.3.2/spray-testkit_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalaz" name="scalaz-core_2.11">
+			<revision name="7.1.0" status="release" pubdate="20140801111551" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="15">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="2827" time="0" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-core_2.11/ivy-7.1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.11/7.1.0/scalaz-core_2.11-7.1.0.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="7.1.0" rev-constraint-default="7.1.0" rev-constraint-dynamic="7.1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalaz-core_2.11" type="jar" ext="jar" status="successful" details="" size="9124238" time="14161" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-core_2.11/jars/scalaz-core_2.11-7.1.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.11/7.1.0/scalaz-core_2.11-7.1.0.jar"/>
+					</artifact>
+					<artifact name="scalaz-core_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="334686" time="1584" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-core_2.11/srcs/scalaz-core_2.11-7.1.0-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.11/7.1.0/scalaz-core_2.11-7.1.0-sources.jar"/>
+					</artifact>
+					<artifact name="scalaz-core_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="6001834" time="8940" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-core_2.11/docs/scalaz-core_2.11-7.1.0-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-core_2.11/7.1.0/scalaz-core_2.11-7.1.0-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-parser-combinators_2.11">
+			<revision name="1.0.2" status="release" pubdate="20140723014535" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="16">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2803" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="42219" time="1337" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/srcs/scala-parser-combinators_2.11-1.0.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2-sources.jar"/>
+					</artifact>
+					<artifact name="scala-parser-combinators_2.11" type="jar" ext="jar" status="successful" details="" size="416065" time="1600" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/jars/scala-parser-combinators_2.11-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2.jar"/>
+					</artifact>
+					<artifact name="scala-parser-combinators_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="694259" time="2767" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-parser-combinators_2.11/docs/scala-parser-combinators_2.11-1.0.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.11/1.0.2/scala-parser-combinators_2.11-1.0.2-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-json_2.11">
+			<revision name="1.3.1" status="release" pubdate="20141028074337" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/spray/spray-json" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="12">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2931" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-json_2.11/ivy-1.3.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.1/spray-json_2.11-1.3.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.1" rev-constraint-default="1.3.1" rev-constraint-dynamic="1.3.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-json_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="22000" time="2194" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-json_2.11/srcs/spray-json_2.11-1.3.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.1/spray-json_2.11-1.3.1-sources.jar"/>
+					</artifact>
+					<artifact name="spray-json_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="646715" time="6027" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-json_2.11/docs/spray-json_2.11-1.3.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.1/spray-json_2.11-1.3.1-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-json_2.11" type="jar" ext="jar" status="successful" details="" size="280819" time="2032" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-json_2.11/jars/spray-json_2.11-1.3.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-json_2.11/1.3.1/spray-json_2.11-1.3.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-routing_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085229" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="7">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3576" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-routing_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-routing_2.11/1.3.2/spray-routing_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-routing_2.11" type="jar" ext="jar" status="no" details="" size="1054286" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-routing_2.11/jars/spray-routing_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-routing_2.11/1.3.2/spray-routing_2.11-1.3.2.jar"/>
+					</artifact>
+					<artifact name="spray-routing_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="80369" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-routing_2.11/srcs/spray-routing_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-routing_2.11/1.3.2/spray-routing_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-routing_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="1287125" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-routing_2.11/docs/spray-routing_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-routing_2.11/1.3.2/spray-routing_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.chuusai" name="shapeless_2.11">
+			<revision name="1.2.4" status="release" pubdate="20140417053056" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/milessabin/shapeless" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="11">
+				<license name="Apache License" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="no" details="" size="2634" time="0" location="/Users/feliperojas/.ivy2/cache/com.chuusai/shapeless_2.11/ivy-1.2.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.11/1.2.4/shapeless_2.11-1.2.4.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.2.4" rev-constraint-default="1.2.4" rev-constraint-dynamic="1.2.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="shapeless_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="74351" time="1777" location="/Users/feliperojas/.ivy2/cache/com.chuusai/shapeless_2.11/srcs/shapeless_2.11-1.2.4-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.11/1.2.4/shapeless_2.11-1.2.4-sources.jar"/>
+					</artifact>
+					<artifact name="shapeless_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1545182" time="5039" location="/Users/feliperojas/.ivy2/cache/com.chuusai/shapeless_2.11/docs/shapeless_2.11-1.2.4-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.11/1.2.4/shapeless_2.11-1.2.4-javadoc.jar"/>
+					</artifact>
+					<artifact name="shapeless_2.11" type="jar" ext="jar" status="no" details="" size="1259355" time="0" location="/Users/feliperojas/.ivy2/cache/com.chuusai/shapeless_2.11/jars/shapeless_2.11-1.2.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/chuusai/shapeless_2.11/1.2.4/shapeless_2.11-1.2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-httpx_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085409" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="8">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="4427" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-httpx_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-httpx_2.11/1.3.2/spray-httpx_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-httpx_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="45139" time="1531" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-httpx_2.11/srcs/spray-httpx_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-httpx_2.11/1.3.2/spray-httpx_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-httpx_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="725174" time="3691" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-httpx_2.11/docs/spray-httpx_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-httpx_2.11/1.3.2/spray-httpx_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-httpx_2.11" type="jar" ext="jar" status="successful" details="" size="434142" time="3055" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-httpx_2.11/jars/spray-httpx_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-httpx_2.11/1.3.2/spray-httpx_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jvnet.mimepull" name="mimepull">
+			<revision name="1.9.4" status="release" pubdate="20131112054917" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://mimepull.java.net" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="10">
+				<license name="CDDL 1.1" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<license name="GPL2 w/ CPE" url="https://glassfish.java.net/public/CDDL+GPL_1_1.html"/>
+				<metadata-artifact status="no" details="" size="3821" time="0" location="/Users/feliperojas/.ivy2/cache/org.jvnet.mimepull/mimepull/ivy-1.9.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.4/mimepull-1.9.4.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.9.4" rev-constraint-default="1.9.4" rev-constraint-dynamic="1.9.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mimepull" type="jar" ext="jar" status="no" details="" size="63134" time="0" location="/Users/feliperojas/.ivy2/cache/org.jvnet.mimepull/mimepull/jars/mimepull-1.9.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.4/mimepull-1.9.4.jar"/>
+					</artifact>
+					<artifact name="mimepull" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="67771" time="1391" location="/Users/feliperojas/.ivy2/cache/org.jvnet.mimepull/mimepull/srcs/mimepull-1.9.4-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.4/mimepull-1.9.4-sources.jar"/>
+					</artifact>
+					<artifact name="mimepull" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="53524" time="1739" location="/Users/feliperojas/.ivy2/cache/org.jvnet.mimepull/mimepull/docs/mimepull-1.9.4-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/jvnet/mimepull/mimepull/1.9.4/mimepull-1.9.4-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-can_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3381" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-can_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-can_2.11/1.3.2/spray-can_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-can_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="512442" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-can_2.11/docs/spray-can_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-can_2.11/1.3.2/spray-can_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-can_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="84245" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-can_2.11/srcs/spray-can_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-can_2.11/1.3.2/spray-can_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-can_2.11" type="jar" ext="jar" status="no" details="" size="718337" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-can_2.11/jars/spray-can_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-can_2.11/1.3.2/spray-can_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-io_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085508" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="2">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3154" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-io_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-io_2.11/1.3.2/spray-io_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-io_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="20488" time="1748" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-io_2.11/srcs/spray-io_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-io_2.11/1.3.2/spray-io_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-io_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="490120" time="2666" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-io_2.11/docs/spray-io_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-io_2.11/1.3.2/spray-io_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-io_2.11" type="jar" ext="jar" status="successful" details="" size="186190" time="1107" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-io_2.11/jars/spray-io_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-io_2.11/1.3.2/spray-io_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-http_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085345" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="4">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3135" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-http_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-http_2.11/1.3.2/spray-http_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-http_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1661239" time="4103" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-http_2.11/docs/spray-http_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-http_2.11/1.3.2/spray-http_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-http_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="98841" time="1520" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-http_2.11/srcs/spray-http_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-http_2.11/1.3.2/spray-http_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-http_2.11" type="jar" ext="jar" status="successful" details="" size="1488411" time="3773" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-http_2.11/jars/spray-http_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-http_2.11/1.3.2/spray-http_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-scala_2.11">
+			<revision name="1.1.6" status="release" pubdate="20140422064212" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="5">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2946" time="0" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-scala_2.11/ivy-1.1.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.11/1.1.6/parboiled-scala_2.11-1.1.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.1.6" rev-constraint-default="1.1.6" rev-constraint-dynamic="1.1.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-scala_2.11" type="jar" ext="jar" status="successful" details="" size="234239" time="1021" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-scala_2.11/jars/parboiled-scala_2.11-1.1.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.11/1.1.6/parboiled-scala_2.11-1.1.6.jar"/>
+					</artifact>
+					<artifact name="parboiled-scala_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="579399" time="2041" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-scala_2.11/docs/parboiled-scala_2.11-1.1.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.11/1.1.6/parboiled-scala_2.11-1.1.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="parboiled-scala_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="28671" time="1331" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-scala_2.11/srcs/parboiled-scala_2.11-1.1.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-scala_2.11/1.1.6/parboiled-scala_2.11-1.1.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-core">
+			<revision name="1.1.6" status="release" pubdate="20130822173221" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="6">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2643" time="0" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-core/ivy-1.1.6.xml" searched="false" origin-is-local="false" origin-location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.parboiled/parboiled-core/1.1.6/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.1.6" rev-constraint-default="1.1.6" rev-constraint-dynamic="1.1.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-core" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="457802" time="3177" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-core/docs/parboiled-core-1.1.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.6/parboiled-core-1.1.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="parboiled-core" type="jar" ext="jar" status="successful" details="" size="187091" time="1417" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-core/jars/parboiled-core-1.1.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.6/parboiled-core-1.1.6.jar"/>
+					</artifact>
+					<artifact name="parboiled-core" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="166648" time="1753" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-core/srcs/parboiled-core-1.1.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-core/1.1.6/parboiled-core-1.1.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="io.spray" name="spray-util_2.11">
+			<revision name="1.3.2" status="release" pubdate="20141008085206" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://spray.io" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="3">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3122" time="0" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-util_2.11/ivy-1.3.2.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/io/spray/spray-util_2.11/1.3.2/spray-util_2.11-1.3.2.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3.2" rev-constraint-default="1.3.2" rev-constraint-dynamic="1.3.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="spray-util_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="481928" time="1537" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-util_2.11/docs/spray-util_2.11-1.3.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-util_2.11/1.3.2/spray-util_2.11-1.3.2-javadoc.jar"/>
+					</artifact>
+					<artifact name="spray-util_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="29874" time="1348" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-util_2.11/srcs/spray-util_2.11-1.3.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-util_2.11/1.3.2/spray-util_2.11-1.3.2-sources.jar"/>
+					</artifact>
+					<artifact name="spray-util_2.11" type="jar" ext="jar" status="successful" details="" size="128191" time="2132" location="/Users/feliperojas/.ivy2/cache/io.spray/spray-util_2.11/jars/spray-util_2.11-1.3.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/io/spray/spray-util_2.11/1.3.2/spray-util_2.11-1.3.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.specs2" name="specs2_2.11">
+			<revision name="2.3.13" status="release" pubdate="20140710181142" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://specs2.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="19">
+				<license name="MIT-style" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="no" details="" size="4134" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2_2.11/ivy-2.3.13.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/specs2/specs2_2.11/2.3.13/specs2_2.11-2.3.13.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.13" rev-constraint-default="2.3.13" rev-constraint-dynamic="2.3.13" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="specs2_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="592962" time="3006" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2_2.11/srcs/specs2_2.11-2.3.13-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2_2.11/2.3.13/specs2_2.11-2.3.13-sources.jar"/>
+					</artifact>
+					<artifact name="specs2_2.11" type="jar" ext="jar" status="no" details="" size="8720349" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2_2.11/jars/specs2_2.11-2.3.13.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2_2.11/2.3.13/specs2_2.11-2.3.13.jar"/>
+					</artifact>
+					<artifact name="specs2_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="6171037" time="8686" location="/Users/feliperojas/.ivy2/cache/org.specs2/specs2_2.11/docs/specs2_2.11-2.3.13-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/specs2_2.11/2.3.13/specs2_2.11-2.3.13-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalaz" name="scalaz-concurrent_2.11">
+			<revision name="7.0.6" status="release" pubdate="20140417101228" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="35">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="2812" time="0" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-concurrent_2.11/ivy-7.0.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.11/7.0.6/scalaz-concurrent_2.11-7.0.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="7.0.6" rev-constraint-default="7.0.6" rev-constraint-dynamic="7.0.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalaz-concurrent_2.11" type="jar" ext="jar" status="successful" details="" size="308386" time="1337" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-concurrent_2.11/jars/scalaz-concurrent_2.11-7.0.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.11/7.0.6/scalaz-concurrent_2.11-7.0.6.jar"/>
+					</artifact>
+					<artifact name="scalaz-concurrent_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="17782" time="1123" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-concurrent_2.11/srcs/scalaz-concurrent_2.11-7.0.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.11/7.0.6/scalaz-concurrent_2.11-7.0.6-sources.jar"/>
+					</artifact>
+					<artifact name="scalaz-concurrent_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="518462" time="1847" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-concurrent_2.11/docs/scalaz-concurrent_2.11-7.0.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-concurrent_2.11/7.0.6/scalaz-concurrent_2.11-7.0.6-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalaz" name="scalaz-effect_2.11">
+			<revision name="7.0.6" status="release" pubdate="20140417101204" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://scalaz.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="36">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="2659" time="0" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-effect_2.11/ivy-7.0.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.11/7.0.6/scalaz-effect_2.11-7.0.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="7.0.6" rev-constraint-default="7.0.6" rev-constraint-dynamic="7.0.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalaz-effect_2.11" type="jar" ext="jar" status="successful" details="" size="418683" time="1227" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-effect_2.11/jars/scalaz-effect_2.11-7.0.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.11/7.0.6/scalaz-effect_2.11-7.0.6.jar"/>
+					</artifact>
+					<artifact name="scalaz-effect_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="808857" time="2850" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-effect_2.11/docs/scalaz-effect_2.11-7.0.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.11/7.0.6/scalaz-effect_2.11-7.0.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="scalaz-effect_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="21799" time="918" location="/Users/feliperojas/.ivy2/cache/org.scalaz/scalaz-effect_2.11/srcs/scalaz-effect_2.11-7.0.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalaz/scalaz-effect_2.11/7.0.6/scalaz-effect_2.11-7.0.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.specs2" name="classycle">
+			<revision name="1.4.3" status="release" pubdate="20140209070639" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://classycle.sourceforge.net/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="34">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2779" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/classycle/ivy-1.4.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/specs2/classycle/1.4.3/classycle-1.4.3.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.4.3" rev-constraint-default="1.4.3" rev-constraint-dynamic="1.4.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="classycle" type="jar" ext="jar" status="no" details="" size="111466" time="0" location="/Users/feliperojas/.ivy2/cache/org.specs2/classycle/jars/classycle-1.4.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/classycle/1.4.3/classycle-1.4.3.jar"/>
+					</artifact>
+					<artifact name="classycle" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="133487" time="1024" location="/Users/feliperojas/.ivy2/cache/org.specs2/classycle/srcs/classycle-1.4.3-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/classycle/1.4.3/classycle-1.4.3-sources.jar"/>
+					</artifact>
+					<artifact name="classycle" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="419623" time="1531" location="/Users/feliperojas/.ivy2/cache/org.specs2/classycle/docs/classycle-1.4.3-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/specs2/classycle/1.4.3/classycle-1.4.3-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.mockito" name="mockito-core">
+			<revision name="1.9.5" status="release" pubdate="20121014050649" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.mockito.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="32">
+				<license name="The MIT License" url="http://code.google.com/p/mockito/wiki/License"/>
+				<metadata-artifact status="no" details="" size="2656" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/ivy-1.9.5.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.9.5" rev-constraint-default="1.9.5" rev-constraint-dynamic="1.9.5" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="mockito-core" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="2285314" time="4663" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/docs/mockito-core-1.9.5-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5-javadoc.jar"/>
+					</artifact>
+					<artifact name="mockito-core" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="723074" time="2355" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/srcs/mockito-core-1.9.5-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5-sources.jar"/>
+					</artifact>
+					<artifact name="mockito-core" type="jar" ext="jar" status="no" details="" size="1500011" time="0" location="/Users/feliperojas/.ivy2/cache/org.mockito/mockito-core/jars/mockito-core-1.9.5.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.objenesis" name="objenesis">
+			<revision name="1.0" status="release" pubdate="20070516173006" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://objenesis.googlecode.com/svn/docs/index.html" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="33">
+				<license name="MIT License" url="http://objenesis.googlecode.com/svn/docs/license.html"/>
+				<metadata-artifact status="no" details="" size="2392" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="objenesis" type="jar" ext="jar" status="no" details="" size="28569" time="0" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-1.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0.jar"/>
+					</artifact>
+					<artifact name="objenesis" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="21547" time="814" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/srcs/objenesis-1.0-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0-sources.jar"/>
+					</artifact>
+					<artifact name="objenesis" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="178384" time="1229" location="/Users/feliperojas/.ivy2/cache/org.objenesis/objenesis/docs/objenesis-1.0-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/objenesis/objenesis/1.0/objenesis-1.0-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scalacheck" name="scalacheck_2.11">
+			<revision name="1.11.3" status="release" pubdate="20140416161713" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scalacheck.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="30">
+				<license name="BSD-style" url="http://www.opensource.org/licenses/bsd-license.php"/>
+				<metadata-artifact status="no" details="" size="2823" time="0" location="/Users/feliperojas/.ivy2/cache/org.scalacheck/scalacheck_2.11/ivy-1.11.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.11.3/scalacheck_2.11-1.11.3.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.11.3" rev-constraint-default="1.11.3" rev-constraint-dynamic="1.11.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scalacheck_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="551488" time="1530" location="/Users/feliperojas/.ivy2/cache/org.scalacheck/scalacheck_2.11/docs/scalacheck_2.11-1.11.3-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.11.3/scalacheck_2.11-1.11.3-javadoc.jar"/>
+					</artifact>
+					<artifact name="scalacheck_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="36227" time="1111" location="/Users/feliperojas/.ivy2/cache/org.scalacheck/scalacheck_2.11/srcs/scalacheck_2.11-1.11.3-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.11.3/scalacheck_2.11-1.11.3-sources.jar"/>
+					</artifact>
+					<artifact name="scalacheck_2.11" type="jar" ext="jar" status="no" details="" size="864403" time="0" location="/Users/feliperojas/.ivy2/cache/org.scalacheck/scalacheck_2.11/jars/scalacheck_2.11-1.11.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalacheck/scalacheck_2.11/1.11.3/scalacheck_2.11-1.11.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-sbt" name="test-interface">
+			<revision name="1.0" status="release" pubdate="20130628174435" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-sbt.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="31">
+				<license name="BSD" url="https://github.com/sbt/test-interface/blob/master/LICENSE"/>
+				<metadata-artifact status="no" details="" size="2589" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-sbt/test-interface/ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="test-interface" type="jar" ext="jar" status="no" details="" size="14755" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-sbt/test-interface/jars/test-interface-1.0.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar"/>
+					</artifact>
+					<artifact name="test-interface" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="18792" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-sbt/test-interface/srcs/test-interface-1.0-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0-sources.jar"/>
+					</artifact>
+					<artifact name="test-interface" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="98193" time="1483" location="/Users/feliperojas/.ivy2/cache/org.scala-sbt/test-interface/docs/test-interface-1.0-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.pegdown" name="pegdown">
+			<revision name="1.2.1" status="release" pubdate="20121127115205" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://pegdown.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="24">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2769" time="0" location="/Users/feliperojas/.ivy2/cache/org.pegdown/pegdown/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="pegdown" type="jar" ext="jar" status="no" details="" size="58609" time="0" location="/Users/feliperojas/.ivy2/cache/org.pegdown/pegdown/jars/pegdown-1.2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1.jar"/>
+					</artifact>
+					<artifact name="pegdown" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="47838" time="1021" location="/Users/feliperojas/.ivy2/cache/org.pegdown/pegdown/srcs/pegdown-1.2.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1-sources.jar"/>
+					</artifact>
+					<artifact name="pegdown" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="179450" time="1126" location="/Users/feliperojas/.ivy2/cache/org.pegdown/pegdown/docs/pegdown-1.2.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/pegdown/pegdown/1.2.1/pegdown-1.2.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.parboiled" name="parboiled-java">
+			<revision name="1.1.4" status="release" pubdate="20121127112702" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://parboiled.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="25">
+				<license name="Apache 2" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="3316" time="0" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-java/ivy-1.1.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.1.4" rev-constraint-default="1.1.4" rev-constraint-dynamic="1.1.4" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="parboiled-java" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="110275" time="1227" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-java/docs/parboiled-java-1.1.4-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4-javadoc.jar"/>
+					</artifact>
+					<artifact name="parboiled-java" type="jar" ext="jar" status="no" details="" size="73180" time="0" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-java/jars/parboiled-java-1.1.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4.jar"/>
+					</artifact>
+					<artifact name="parboiled-java" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="72597" time="1314" location="/Users/feliperojas/.ivy2/cache/org.parboiled/parboiled-java/srcs/parboiled-java-1.1.4-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/parboiled/parboiled-java/1.1.4/parboiled-java-1.1.4-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.ow2.asm" name="asm-util">
+			<revision name="4.1" status="release" pubdate="20121014103900" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="29">
+				<metadata-artifact status="no" details="" size="4374" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-util/ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="asm-util" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1518830" time="3071" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-util/docs/asm-util-4.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1-javadoc.jar"/>
+					</artifact>
+					<artifact name="asm-util" type="jar" ext="jar" status="no" details="" size="37599" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-util/jars/asm-util-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1.jar"/>
+					</artifact>
+					<artifact name="asm-util" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="983980" time="2665" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-util/srcs/asm-util-4.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-util/4.1/asm-util-4.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.ow2.asm" name="asm-analysis">
+			<revision name="4.1" status="release" pubdate="20121014103804" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="28">
+				<metadata-artifact status="no" details="" size="4382" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-analysis/ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="asm-analysis" type="jar" ext="jar" status="no" details="" size="19812" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-analysis/jars/asm-analysis-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1.jar"/>
+					</artifact>
+					<artifact name="asm-analysis" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="983980" time="3171" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-analysis/srcs/asm-analysis-4.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1-sources.jar"/>
+					</artifact>
+					<artifact name="asm-analysis" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1518830" time="3074" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-analysis/docs/asm-analysis-4.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-analysis/4.1/asm-analysis-4.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.ow2.asm" name="asm-tree">
+			<revision name="4.1" status="release" pubdate="20121014103839" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="27">
+				<metadata-artifact status="no" details="" size="4369" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-tree/ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="asm-tree" type="jar" ext="jar" status="no" details="" size="22162" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-tree/jars/asm-tree-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1.jar"/>
+					</artifact>
+					<artifact name="asm-tree" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="983980" time="2252" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-tree/srcs/asm-tree-4.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1-sources.jar"/>
+					</artifact>
+					<artifact name="asm-tree" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1518830" time="3370" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm-tree/docs/asm-tree-4.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm-tree/4.1/asm-tree-4.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.ow2.asm" name="asm">
+			<revision name="4.1" status="release" pubdate="20121014103745" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="26">
+				<metadata-artifact status="no" details="" size="3744" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm/ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="asm" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="1518830" time="3490" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm/docs/asm-4.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm/4.1/asm-4.1-javadoc.jar"/>
+					</artifact>
+					<artifact name="asm" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="983980" time="2864" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm/srcs/asm-4.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm/4.1/asm-4.1-sources.jar"/>
+					</artifact>
+					<artifact name="asm" type="jar" ext="jar" status="no" details="" size="47359" time="0" location="/Users/feliperojas/.ivy2/cache/org.ow2.asm/asm/jars/asm-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/ow2/asm/asm/4.1/asm-4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-compiler">
+			<revision name="2.11.1" status="release" pubdate="20140520040308" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="20">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="3090" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-compiler/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.scala-lang/scala-compiler/2.11.1/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-compiler" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="2083103" time="4294" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-compiler/srcs/scala-compiler-2.11.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1-sources.jar"/>
+					</artifact>
+					<artifact name="scala-compiler" type="jar" ext="jar" status="no" details="" size="13449765" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-compiler/jars/scala-compiler-2.11.1.jar">
+						<origin-location is-local="false" location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.scala-lang/scala-compiler/2.11.1/jars/scala-compiler.jar"/>
+					</artifact>
+					<artifact name="scala-compiler" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="9473506" time="19795" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-compiler/docs/scala-compiler-2.11.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang.modules" name="scala-xml_2.11">
+			<revision name="1.0.2" status="release" pubdate="20140520041040" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="9">
+				<license name="BSD 3-clause" url="http://opensource.org/licenses/BSD-3-Clause"/>
+				<metadata-artifact status="no" details="" size="2976" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/ivy-1.0.2.xml" searched="false" origin-is-local="false" origin-location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.scala-lang.modules/scala-xml_2.11/1.0.2/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.0.2" rev-constraint-default="1.0.2" rev-constraint-dynamic="1.0.2" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-xml_2.11" type="jar" ext="jar" status="no" details="" size="648678" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/jars/scala-xml_2.11-1.0.2.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.jar"/>
+					</artifact>
+					<artifact name="scala-xml_2.11" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="109171" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/srcs/scala-xml_2.11-1.0.2-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2-sources.jar"/>
+					</artifact>
+					<artifact name="scala-xml_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="1225359" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang.modules/scala-xml_2.11/docs/scala-xml_2.11-1.0.2-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-reflect">
+			<revision name="2.11.1" status="release" pubdate="20140520040246" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="21">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2627" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-reflect/ivy-2.11.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.scala-lang/scala-reflect/2.11.1/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.11.1" rev-constraint-default="2.11.1" rev-constraint-dynamic="2.11.1" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.11.1/"/>
+				<artifacts>
+					<artifact name="scala-reflect" type="jar" ext="jar" status="no" details="" size="4372892" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-reflect/jars/scala-reflect-2.11.1.jar">
+						<origin-location is-local="false" location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/org.scala-lang/scala-reflect/2.11.1/jars/scala-reflect.jar"/>
+					</artifact>
+					<artifact name="scala-reflect" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="3616593" time="5278" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-reflect/docs/scala-reflect-2.11.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1-javadoc.jar"/>
+					</artifact>
+					<artifact name="scala-reflect" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="555369" time="10029" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.11.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.11.1/scala-reflect-2.11.1-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-testkit_2.11">
+			<revision name="2.3.6" status="release" pubdate="20140905020020" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="18">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2890" time="0" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/ivy-2.3.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.6/akka-testkit_2.11-2.3.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.6" rev-constraint-default="2.3.6" rev-constraint-dynamic="2.3.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-testkit_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="30664" time="1838" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/srcs/akka-testkit_2.11-2.3.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.6/akka-testkit_2.11-2.3.6-sources.jar"/>
+					</artifact>
+					<artifact name="akka-testkit_2.11" type="jar" ext="jar" status="no" details="" size="243900" time="0" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/jars/akka-testkit_2.11-2.3.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.6/akka-testkit_2.11-2.3.6.jar"/>
+					</artifact>
+					<artifact name="akka-testkit_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="237991" time="3155" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-testkit_2.11/docs/akka-testkit_2.11-2.3.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-testkit_2.11/2.3.6/akka-testkit_2.11-2.3.6-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="junit" name="junit">
+			<revision name="4.11" status="release" pubdate="20121114142147" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://junit.org" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="22">
+				<license name="Common Public License Version 1.0" url="http://www.opensource.org/licenses/cpl1.0.txt"/>
+				<metadata-artifact status="no" details="" size="2765" time="0" location="/Users/feliperojas/.ivy2/cache/junit/junit/ivy-4.11.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="4.11" rev-constraint-default="4.11" rev-constraint-dynamic="4.11" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="junit" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="151329" time="1227" location="/Users/feliperojas/.ivy2/cache/junit/junit/srcs/junit-4.11-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11-sources.jar"/>
+					</artifact>
+					<artifact name="junit" type="jar" ext="jar" status="no" details="" size="245039" time="0" location="/Users/feliperojas/.ivy2/cache/junit/junit/jars/junit-4.11.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11.jar"/>
+					</artifact>
+					<artifact name="junit" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="379344" time="2356" location="/Users/feliperojas/.ivy2/cache/junit/junit/docs/junit-4.11-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/junit/junit/4.11/junit-4.11-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.hamcrest" name="hamcrest-core">
+			<revision name="1.3" status="release" pubdate="20120709160802" resolver="sbt-chain" artresolver="sbt-chain" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="23">
+				<metadata-artifact status="no" details="" size="2397" time="0" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/ivy-1.3.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.3" rev-constraint-default="1.3" rev-constraint-dynamic="1.3" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="hamcrest-core" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="32624" time="2312" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/srcs/hamcrest-core-1.3-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-sources.jar"/>
+					</artifact>
+					<artifact name="hamcrest-core" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="242519" time="1562" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/docs/hamcrest-core-1.3-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3-javadoc.jar"/>
+					</artifact>
+					<artifact name="hamcrest-core" type="jar" ext="jar" status="no" details="" size="45024" time="0" location="/Users/feliperojas/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe.akka" name="akka-actor_2.11">
+			<revision name="2.3.6" status="release" pubdate="20140905015904" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://akka.io/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="13">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2654" time="0" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/ivy-2.3.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.6/akka-actor_2.11-2.3.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.3.6" rev-constraint-default="2.3.6" rev-constraint-dynamic="2.3.6" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="akka-actor_2.11" type="jar" ext="jar" status="no" details="" size="2545886" time="0" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/jars/akka-actor_2.11-2.3.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.6/akka-actor_2.11-2.3.6.jar"/>
+					</artifact>
+					<artifact name="akka-actor_2.11" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="2921597" time="4928" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/docs/akka-actor_2.11-2.3.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.6/akka-actor_2.11-2.3.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="akka-actor_2.11" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="330314" time="1626" location="/Users/feliperojas/.ivy2/cache/com.typesafe.akka/akka-actor_2.11/srcs/akka-actor_2.11-2.3.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/akka/akka-actor_2.11/2.3.6/akka-actor_2.11-2.3.6-sources.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.typesafe" name="config">
+			<revision name="1.2.1" status="release" pubdate="20140502105416" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/typesafehub/config" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="14">
+				<license name="Apache License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="no" details="" size="2723" time="0" location="/Users/feliperojas/.ivy2/cache/com.typesafe/config/ivy-1.2.1.xml" searched="false" origin-is-local="false" origin-location="file:/Users/feliperojas/Downloads/activator-1.2.1/repository/com.typesafe/config/1.2.1/ivys/ivy.xml"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.2.1" rev-constraint-default="1.2.1" rev-constraint-dynamic="1.2.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="config" type="jar" ext="jar" status="successful" details="" size="219554" time="1840" location="/Users/feliperojas/.ivy2/cache/com.typesafe/config/jars/config-1.2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1.jar"/>
+					</artifact>
+					<artifact name="config" type="src" ext="jar" extra-classifier="sources" status="successful" details="" size="132611" time="2149" location="/Users/feliperojas/.ivy2/cache/com.typesafe/config/srcs/config-1.2.1-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1-sources.jar"/>
+					</artifact>
+					<artifact name="config" type="doc" ext="jar" extra-classifier="javadoc" status="successful" details="" size="147508" time="2177" location="/Users/feliperojas/.ivy2/cache/com.typesafe/config/docs/config-1.2.1-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/com/typesafe/config/1.2.1/config-1.2.1-javadoc.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.6" status="release" pubdate="20150225200105" resolver="sbt-chain" artresolver="sbt-chain" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="no" details="" size="2653" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.6.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.pom"/>
+				<caller organisation="default" name="scala-rest$sources_javadoc_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.11.6" rev-constraint-default="2.11.6" rev-constraint-dynamic="2.11.6" callerrev="1.0" extra-info.apiURL="http://www.scala-lang.org/api/2.11.6/"/>
+				<artifacts>
+					<artifact name="scala-library" type="src" ext="jar" extra-classifier="sources" status="no" details="" size="906435" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.11.6-sources.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-sources.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="doc" ext="jar" extra-classifier="javadoc" status="no" details="" size="22813840" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/docs/scala-library-2.11.6-javadoc.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6-javadoc.jar"/>
+					</artifact>
+					<artifact name="scala-library" type="jar" ext="jar" status="no" details="" size="5564007" time="0" location="/Users/feliperojas/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.6.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.6/scala-library-2.11.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

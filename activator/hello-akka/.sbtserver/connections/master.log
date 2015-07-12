@@ -1,0 +1,13 @@
+New log file opened at Thu Apr 30 00:08:56 COT 2015 by 1806@iMac-de-Felipe.local
+Taking next connection to: 52768
+New client attempting to connect on port: 52769-52768
+  Address = /192.168.0.22:52768
+This client on port 52769 has uuid 481879ec-d1c5-4561-9767-5c59f16503ef configName activator humanReadableName Activator protocolVersion 1 featureTags Vector()
+Connected Clients: activator-481879ec-d1c5-4561-9767-5c59f16503ef
+Taking next connection to: 52768
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 1806@iMac-de-Felipe.local logs at Thu Apr 30 00:11:56 COT 2015, goodbye.
