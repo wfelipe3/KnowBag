@@ -34,7 +34,24 @@ class SJServiceActor extends Actor with HttpService {
             case ContentType(MediaType("application/vnd.type.a"), _) => {
               respondWithMediaType(`application/json`) {
                 complete {
-                  Person("felipe", "typea", System.curr
+                  Person("felipe", "typea", System.currentTimeMillis())
+                }
+              }
+            }
+
+            // if we have another content-type we return a different type.
+            case ContentType(MediaType("application/vnd.type.b"), _) => {
+              respondWithMediaType(`application/json`) {
+                complete {
+                  Person("felipe", "typeB", System.currentTimeMillis())
+                }
+              }
+            }
+
+            // if content-types do not match, return an error code
+            case default => {
+              complete {
+                HttpResponse(406);
               }
             }
           }
