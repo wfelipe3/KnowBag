@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.commons:commons-math3:3.2:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib_managed/jars/org.apache.commons/commons-math3/commons-math3-3.2.jar!/" />
+      <root url="jar://$USER_HOME$/.ivy2/cache/org.apache.commons/commons-math3/jars/commons-math3-3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
