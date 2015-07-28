@@ -15,18 +15,18 @@ case class Anagramator(dictionary: Set[String]) {
   def searchAnagramsFor(word: String): List[String] = {
     dictionary
       .filter(_.length == word.length)
-      .filter(isAnagramFor(word, _))
+      .filter(isAnagramFor(word))
       .filterNot(_ == word)
       .toList
   }
 
-  def isAnagramFor(word: String, anagram: String): Boolean = {
+  def isAnagramFor(word: String)(anagram: String): Boolean = {
     if (word.isEmpty)
       true
     else if (anagramDoesNotHaveLetter(anagram, word.head))
       false
     else
-      isAnagramFor(word.tail, removeLetter(word.head.toString, anagram))
+      isAnagramFor(word.tail)(removeLetter(word.head.toString, anagram))
   }
 
   def removeLetter(letter: String, anagram: String): String = {
