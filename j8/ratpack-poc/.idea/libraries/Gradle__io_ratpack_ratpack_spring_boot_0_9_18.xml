@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.ratpack:ratpack-spring-boot:0.9.18">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-spring-boot/0.9.18/8428c74c3a391ffafd9635c5cf871e8e558f9af9/ratpack-spring-boot-0.9.18.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ratpack/ratpack-spring-boot/0.9.18/8653a93511b25d0dc2a311eca447d047d8815823/ratpack-spring-boot-0.9.18-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

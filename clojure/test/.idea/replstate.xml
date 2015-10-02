@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ReplState" timestamp="1443676245376">{:repl-history {:ide [], :local [&quot;(defn f-recur [n]\n  (cond (&lt; n 3) n\n        :else (+ (f-recur (- n 1))\n                 (* 2 (f-recur (- n 2)))\n                 (* 3 (f-recur (- n 3))))))&quot; &quot;(ns exercises.exercises-test\n  (:use (exercises.exercise-1-11))\n  (:require [clojure.test :refer :all]\n            [test.core :refer :all]))\n\n(deftest test-f-recur\n         (testing \&quot;recursive function\&quot;\n                  (is (= 25\n                         (f-recur 5)))))\n\n(run-tests)\n&quot; &quot;(f-recur 5)&quot;], :remote []}}</component>
+</project>

@@ -29,7 +29,11 @@ class FunctionalLearning extends FlatSpec with Matchers {
     // curriedCat = (String) => (String => String)
     def curriedCat = (cat _).curried
 
+    def otherCat(s: String, i: Int) = s"$s $i"
+    def curriedOtherCat: String => Int => String = (otherCat _).curried
+
     curriedCat("hello ")("world") should be("hello world")
+    curriedOtherCat("hello")(5) should be("hello 5")
   }
 
   it should "create curried values with val too" in {
