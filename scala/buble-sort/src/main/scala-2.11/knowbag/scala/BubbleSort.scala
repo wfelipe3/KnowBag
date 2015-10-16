@@ -24,7 +24,6 @@ object BubbleSort {
     sort(list, pivot, index)
   }
 
-
   private def swap(list: Seq[Int], rightIndex: Int, leftIndex: Int) =
     list.updated(rightIndex, list(leftIndex)).updated(leftIndex, list(rightIndex))
 }
