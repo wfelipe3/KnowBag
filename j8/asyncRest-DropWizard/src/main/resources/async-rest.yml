@@ -1,0 +1,18 @@
+database:
+  # the name of your JDBC driver
+  driverClass: com.mysql.jdbc.Driver
+
+ # the JDBC URL
+  url: jdbc:mysql://192.168.99.100:3306/mysql
+
+  # the username
+  user: root
+
+  # the password
+  password: root
+
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.MySQLDialect  #org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate.hbm2ddl.auto: create

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.javaslang:javaslang:2.0.0-RC4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.javaslang/javaslang/2.0.0-RC4/e36d29540f89e6cd8043daefde9e1be98c4db530/javaslang-2.0.0-RC4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.javaslang/javaslang/2.0.0-RC4/59e5b5e5750447cc17443fb964ba25e1af0247d9/javaslang-2.0.0-RC4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

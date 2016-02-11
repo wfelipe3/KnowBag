@@ -1,0 +1,65 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Built-By: joakim
+Build-Jdk: 1.8.0_31
+Implementation-Vendor: Eclipse.org - Jetty
+Implementation-Version: 9.3.2.v20150730
+url: http://www.eclipse.org/jetty
+Bnd-LastModified: 1438281079693
+Bundle-Classpath: .
+Bundle-Copyright: Copyright (c) 2008-2015 Mort Bay Consulting Pty. Ltd.
+Bundle-Description: Jetty module for Jetty :: Server Core
+Bundle-DocURL: http://www.eclipse.org/jetty
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty :: Server Core
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: org.eclipse.jetty.server
+Bundle-Vendor: Eclipse Jetty Project
+Bundle-Version: 9.3.2.v20150730
+Export-Package: org.eclipse.jetty.server;version="9.3.2";uses:="javax.
+ net.ssl,javax.security.auth,javax.servlet,javax.servlet.http,org.ecli
+ pse.jetty.http,org.eclipse.jetty.io,org.eclipse.jetty.io.ssl,org.ecli
+ pse.jetty.server.handler,org.eclipse.jetty.server.session,org.eclipse
+ .jetty.util,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.
+ component,org.eclipse.jetty.util.log,org.eclipse.jetty.util.resource,
+ org.eclipse.jetty.util.ssl,org.eclipse.jetty.util.thread",org.eclipse
+ .jetty.server.handler;version="9.3.2";uses:="javax.servlet,javax.serv
+ let.descriptor,javax.servlet.http,org.eclipse.jetty.http,org.eclipse.
+ jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util,org.eclipse.
+ jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.je
+ tty.util.log,org.eclipse.jetty.util.resource",org.eclipse.jetty.serve
+ r.handler.gzip;version="9.3.2";uses:="javax.servlet,javax.servlet.htt
+ p,org.eclipse.jetty.http,org.eclipse.jetty.server,org.eclipse.jetty.s
+ erver.handler,org.eclipse.jetty.util,org.eclipse.jetty.util.log",org.
+ eclipse.jetty.server.handler.jmx;version="9.3.2";uses:="org.eclipse.j
+ etty.jmx,org.eclipse.jetty.server.handler,org.eclipse.jetty.util.anno
+ tation",org.eclipse.jetty.server.jmx;version="9.3.2";uses:="org.eclip
+ se.jetty.jmx,org.eclipse.jetty.server,org.eclipse.jetty.util.annotati
+ on",org.eclipse.jetty.server.nio;version="9.3.2";uses:="org.eclipse.j
+ etty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.ssl,org.eclip
+ se.jetty.util.thread",org.eclipse.jetty.server.session;version="9.3.2
+ ";uses:="javax.servlet,javax.servlet.http,javax.sql,org.eclipse.jetty
+ .http,org.eclipse.jetty.server,org.eclipse.jetty.server.handler,org.e
+ clipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.ecl
+ ipse.jetty.util.statistic,org.eclipse.jetty.util.thread",org.eclipse.
+ jetty.server.session.jmx;version="9.3.2";uses:="org.eclipse.jetty.ser
+ ver.handler.jmx"
+Import-Package: javax.naming,javax.net.ssl,javax.security.auth,javax.s
+ ervlet;version="[3.1,4)",javax.servlet.descriptor;version="[3.1,4)",j
+ avax.servlet.http;version="[3.1,4)",javax.sql,org.eclipse.jetty.http;
+ version="[9.3,10)",org.eclipse.jetty.io;version="[9.3,10)",org.eclips
+ e.jetty.io.ssl;version="[9.3,10)",org.eclipse.jetty.jmx;version="[9.3
+ ,10)";resolution:=optional,org.eclipse.jetty.util;version="[9.3,10)",
+ org.eclipse.jetty.util.annotation;version="[9.3,10)",org.eclipse.jett
+ y.util.component;version="[9.3,10)",org.eclipse.jetty.util.log;versio
+ n="[9.3,10)",org.eclipse.jetty.util.resource;version="[9.3,10)",org.e
+ clipse.jetty.util.ssl;version="[9.3,10)",org.eclipse.jetty.util.stati
+ stic;version="[9.3,10)",org.eclipse.jetty.util.thread;version="[9.3,1
+ 0)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
+

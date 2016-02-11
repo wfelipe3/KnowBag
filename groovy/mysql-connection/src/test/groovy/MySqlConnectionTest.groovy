@@ -13,6 +13,10 @@ class MySqlConnectionTest {
         sql.eachRow('show tables') { row ->
             println row[0]
         }
+        sql.execute("insert into Person (id) values (1)")
+        sql.eachRow('select * from Person') {
+            println it
+        }
 
         System.setProperty("docker.host", "192.168.99.100")
         System.setProperty("docker.cert.path", "/Users/${System.getProperty('user.name')}/.docker/machine/machines/default")

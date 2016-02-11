@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.4
+Created-By: 1.6.0_35-b35 (Sun Microsystems Inc.)
+Export-Package: com.rabbitmq.client;version="3.5.7";uses:="com.rabbitm
+ q.client.impl,com.rabbitmq.utility,javax.net,javax.net.ssl,javax.secu
+ rity.auth.callback,javax.security.sasl",com.rabbitmq.client.impl;vers
+ ion="3.5.7";uses:="com.rabbitmq.client,com.rabbitmq.utility,javax.net
+ ",com.rabbitmq.client.impl.recovery;version="3.5.7";uses:="com.rabbit
+ mq.client,com.rabbitmq.client.impl",com.rabbitmq.tools;version="3.5.7
+ ";uses:="com.rabbitmq.utility",com.rabbitmq.tools.json;version="3.5.7
+ ",com.rabbitmq.tools.jsonrpc;version="3.5.7";uses:="com.rabbitmq.clie
+ nt",com.rabbitmq.utility;version="3.5.7"
+Bundle-Vendor: SpringSource
+Bundle-Version: 3.5.7
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: RabbitMQ Java AMQP client library
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.rabbitmq.client
+Import-Package: javax.net;version="0",javax.net.ssl;version="0",javax.
+ security.auth.callback;version="0",javax.security.sasl;version="0"
+
+Name: rabbitmq-client
+Specification-Title: AMQP
+Specification-Version: 0.9.1
+Specification-Vendor: AMQP Working Group (www.amqp.org)
+Implementation-Title: RabbitMQ
+Implementation-Version: 3.5.7
+Implementation-Vendor: Rabbit Technologies Ltd. (www.rabbitmq.com)
+

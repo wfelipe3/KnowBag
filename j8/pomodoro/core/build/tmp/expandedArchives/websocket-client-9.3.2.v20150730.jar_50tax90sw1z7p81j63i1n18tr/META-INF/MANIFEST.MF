@@ -1,0 +1,41 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Built-By: joakim
+Build-Jdk: 1.8.0_31
+Implementation-Vendor: Eclipse.org - Jetty
+Implementation-Version: 9.3.2.v20150730
+url: http://www.eclipse.org/jetty
+Bnd-LastModified: 1438281578425
+Bundle-Classpath: .
+Bundle-Copyright: Copyright (c) 2008-2015 Mort Bay Consulting Pty. Ltd.
+Bundle-Description: Jetty module for Jetty :: Websocket :: Client
+Bundle-DocURL: http://www.eclipse.org/jetty
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty :: Websocket :: Client
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: org.eclipse.jetty.websocket.client
+Bundle-Vendor: Eclipse Jetty Project
+Bundle-Version: 9.3.2.v20150730
+Export-Package: org.eclipse.jetty.websocket.client;version="9.3.2",org
+ .eclipse.jetty.websocket.client.io;version="9.3.2",org.eclipse.jetty.
+ websocket.client.masks;version="9.3.2"
+Import-Package: org.eclipse.jetty.io;version="[9.0,10.0)",org.eclipse.
+ jetty.io.ssl;version="[9.0,10.0)",org.eclipse.jetty.util;version="[9.
+ 0,10.0)",org.eclipse.jetty.util.component;version="[9.0,10.0)",org.ec
+ lipse.jetty.util.log;version="[9.0,10.0)",org.eclipse.jetty.util.ssl;
+ version="[9.0,10.0)",org.eclipse.jetty.util.thread;version="[9.0,10.0
+ )",org.eclipse.jetty.websocket.api;version="[9.0,10.0)",org.eclipse.j
+ etty.websocket.api.extensions;version="[9.0,10.0)",org.eclipse.jetty.
+ websocket.common;version="[9.0,10.0)",org.eclipse.jetty.websocket.com
+ mon.events;version="[9.0,10.0)",org.eclipse.jetty.websocket.common.ex
+ tensions;version="[9.0,10.0)",org.eclipse.jetty.websocket.common.io;v
+ ersion="[9.0,10.0)",org.eclipse.jetty.websocket.common.io.http;versio
+ n="[9.0,10.0)",org.eclipse.jetty.websocket.common.scopes;version="[9.
+ 0,10.0)",javax.net.ssl
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
+

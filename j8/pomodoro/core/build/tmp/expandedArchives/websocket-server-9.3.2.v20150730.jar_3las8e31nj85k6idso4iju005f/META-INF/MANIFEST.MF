@@ -1,0 +1,47 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Built-By: joakim
+Build-Jdk: 1.8.0_31
+Implementation-Vendor: Eclipse.org - Jetty
+Implementation-Version: 9.3.2.v20150730
+url: http://www.eclipse.org/jetty
+Bnd-LastModified: 1438281615627
+Bundle-Classpath: .
+Bundle-Copyright: Copyright (c) 2008-2015 Mort Bay Consulting Pty. Ltd.
+Bundle-Description: Jetty module for Jetty :: Websocket :: Server
+Bundle-DocURL: http://www.eclipse.org/jetty
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty :: Websocket :: Server
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-SymbolicName: org.eclipse.jetty.websocket.server
+Bundle-Vendor: Eclipse Jetty Project
+Bundle-Version: 9.3.2.v20150730
+Export-Package: org.eclipse.jetty.websocket.server;version="9.3.2",org
+ .eclipse.jetty.websocket.server.pathmap;version="9.3.2"
+Import-Package: javax.servlet;version="[3.1,4.0)",javax.servlet.http;v
+ ersion="[3.1,4.0)",org.eclipse.jetty.io;version="[9.0,10.0)",org.ecli
+ pse.jetty.server;version="[9.0,10.0)",org.eclipse.jetty.server.handle
+ r;version="[9.0,10.0)",org.eclipse.jetty.servlet;version="[9.0,10.0)"
+ ,org.eclipse.jetty.util;version="[9.0,10.0)",org.eclipse.jetty.util.a
+ nnotation;version="[9.0,10.0)",org.eclipse.jetty.util.component;versi
+ on="[9.0,10.0)",org.eclipse.jetty.util.log;version="[9.0,10.0)",org.e
+ clipse.jetty.util.ssl;version="[9.0,10.0)",org.eclipse.jetty.util.thr
+ ead;version="[9.0,10.0)",org.eclipse.jetty.websocket.api;version="[9.
+ 0,10.0)",org.eclipse.jetty.websocket.api.extensions;version="[9.0,10.
+ 0)",org.eclipse.jetty.websocket.api.util;version="[9.0,10.0)",org.ecl
+ ipse.jetty.websocket.common;version="[9.0,10.0)",org.eclipse.jetty.we
+ bsocket.common.events;version="[9.0,10.0)",org.eclipse.jetty.websocke
+ t.common.extensions;version="[9.0,10.0)",org.eclipse.jetty.websocket.
+ common.io;version="[9.0,10.0)",org.eclipse.jetty.websocket.common.sco
+ pes;version="[9.0,10.0)",org.eclipse.jetty.websocket.servlet;version=
+ "[9.0,10.0)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Provide-Capability: osgi.serviceloader;osgi.serviceloader="org.eclipse
+ .jetty.websocket.servlet.WebSocketServletFactory"
+Require-Capability: osgi.extender;filter:="(osgi.extender=osgi.service
+ loader.registrar)",osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-2.4.1.201501161923
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/devops/devops.iml" filepath="$PROJECT_DIR$/devops/devops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/poc/poc.iml" filepath="$PROJECT_DIR$/poc/poc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pomodoro.iml" filepath="$PROJECT_DIR$/pomodoro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pomodoro-functional-test/pomodoro-functional-test.iml" filepath="$PROJECT_DIR$/pomodoro-functional-test/pomodoro-functional-test.iml" />
+    </modules>
+  </component>
+</project>

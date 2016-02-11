@@ -1,0 +1,13 @@
+pomodoro:
+  build: .
+  ports:
+   - "4567:4567"
+   - "6789:6789"
+  volumes:
+   - .:/code
+  links:
+   - rabbitmq
+rabbitmq:
+  image: rabbitmq
+  ports:
+   - "5672:5672"
