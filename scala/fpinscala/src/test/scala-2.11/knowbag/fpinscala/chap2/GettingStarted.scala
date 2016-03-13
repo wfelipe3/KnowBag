@@ -3,18 +3,18 @@ package knowbag.fpinscala.chap2
 import org.scalatest.{Matchers, FlatSpec}
 
 /**
- * Created by feliperojas on 10/24/15.
- */
+  * Created by feliperojas on 10/24/15.
+  */
 class GettingStarted extends FlatSpec with Matchers {
 
   "exercise 2.1" should "implement fibonacci" in {
     def fib(n: Int): Int = {
       if (n == 0) 0
       else if (n == 1) 1
-      else fib(n - 2) + fib(n - 1)
+      else fib(n - 1) + fib(n - 2)
     }
 
-    def fibIter(n: Int): Int = {
+    def fibI(n: Int): Int = {
       def loop(n: Int, prev: Int, actual: Int): Int = {
         if (n == 0) prev
         else loop(n - 1, actual, prev + actual)
@@ -30,12 +30,12 @@ class GettingStarted extends FlatSpec with Matchers {
     fib(4) should be(3)
     fib(5) should be(5)
 
-    fibIter(0) should be(0)
-    fibIter(1) should be(1)
-    fibIter(2) should be(1)
-    fibIter(3) should be(2)
-    fibIter(4) should be(3)
-    fibIter(5) should be(5)
+    fibI(0) should be(0)
+    fibI(1) should be(1)
+    fibI(2) should be(1)
+    fibI(3) should be(2)
+    fibI(4) should be(3)
+    fibI(5) should be(5)
   }
 
   "exercise 2.2" should "implement is sorted function" in {
@@ -65,11 +65,11 @@ class GettingStarted extends FlatSpec with Matchers {
   }
 
   "exercise 2.3" should "Implement curry" in {
-    def partial[A, B, C](a: A, f:(A, B) => C) =
+    def partial[A, B, C](a: A, f: (A, B) => C) =
       (b: B) => f(a, b)
 
     def curry[A, B, C](f: (A, B) => C): A => B => C =
-      (a:A) => (b: B) => f(a ,b)
+      (a: A) => (b: B) => f(a, b)
 
     val sum: (Int, Int) => Int = (a, b) => a + b
     val curriedSum: Int => Int => Int = curry(sum)
@@ -82,7 +82,7 @@ class GettingStarted extends FlatSpec with Matchers {
     def uncurry[A, B, C](f: A => B => C): (A, B) => C =
       (a: A, b: B) => f(a)(b)
 
-    val sum = (a:Int) => (b: Int) => a + b
+    val sum = (a: Int) => (b: Int) => a + b
     val uncurriedSum = uncurry(sum)
     uncurriedSum(3, 4) should be(7)
   }

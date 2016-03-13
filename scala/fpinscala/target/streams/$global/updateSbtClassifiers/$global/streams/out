@@ -317,17 +317,17 @@
 [debug] 	found org.scala-lang.modules#scala-pickling_2.10;0.10.0 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang.modules#scala-pickling_2.10;0.10.0 [compile->runtime]
 [debug] == resolving dependencies org.scala-sbt#serialization_2.10;0.1.1->org.scala-lang.modules#scala-pickling_2.10;0.10.0 [compile->compile]
-[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-compiler;2.10.4 [compile->master(compile)]
+[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-compiler;2.10.4 [compile->master(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-compiler;2.10.4 [compile->compile(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-compiler;2.10.4 [compile->runtime(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-compiler;2.10.4 [compile->compile]
-[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-library;2.10.4 [compile->master(compile)]
+[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-library;2.10.4 [compile->master(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-library;2.10.4 [compile->compile(*)]
-[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-reflect;2.10.4 [compile->master(compile)]
+[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-reflect;2.10.4 [compile->master(*)]
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scala-lang#scala-reflect;2.10.4 [compile->compile(*)]
-[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scalamacros#quasiquotes_2.10;2.0.1 [compile->master(compile)]
+[debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scalamacros#quasiquotes_2.10;2.0.1 [compile->master(*)]
 [info] Resolving org.scalamacros#quasiquotes_2.10;2.0.1 ...
-[debug] sbt-chain: Checking cache for: dependency: org.scalamacros#quasiquotes_2.10;2.0.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+[debug] sbt-chain: Checking cache for: dependency: org.scalamacros#quasiquotes_2.10;2.0.1 {compile=[compile(*), master(*)], runtime=[runtime(*)]}
 [debug] sbt-chain: module revision found in cache: org.scalamacros#quasiquotes_2.10;2.0.1
 [debug] 	found org.scalamacros#quasiquotes_2.10;2.0.1 in sbt-chain
 [debug] == resolving dependencies org.scala-lang.modules#scala-pickling_2.10;0.10.0->org.scalamacros#quasiquotes_2.10;2.0.1 [compile->compile(*)]
@@ -703,9 +703,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.8!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
-[debug] :: resolution report :: resolve 2506ms :: artifacts dl 25ms
-[debug] 	report for default#fpinscala$sbt_2.11;1.0 default produced in /Users/feliperojas/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sbt_2.11-default.xml
-[debug] 	resolve done (2506ms resolve - 25ms download)
+[debug] :: resolution report :: resolve 875ms :: artifacts dl 30ms
+[debug] 	report for default#fpinscala$sbt_2.11;1.0 default produced in /Users/feliperojas/projects/git/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sbt_2.11-default.xml
+[debug] 	resolve done (875ms resolve - 30ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#fpinscala$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1069,6 +1069,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 140ms :: artifacts dl 21ms
-[debug] 	report for default#fpinscala$sources_2.11;1.0 default produced in /Users/feliperojas/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sources_2.11-default.xml
-[debug] 	resolve done (140ms resolve - 21ms download)
+[debug] :: resolution report :: resolve 133ms :: artifacts dl 23ms
+[debug] 	report for default#fpinscala$sources_2.11;1.0 default produced in /Users/feliperojas/projects/git/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sources_2.11-default.xml
+[debug] 	resolve done (133ms resolve - 23ms download)

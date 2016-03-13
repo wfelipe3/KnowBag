@@ -1,0 +1,10 @@
+[0m[[0mdebug[0m] [0mRunning TaskDef(knowbag.fpinscala.chap3.FunctionalDataStructure, org.scalatest.tools.Framework$$anon$1@57836e3c, false, [SuiteSelector])[0m
+[0m[[0mdebug[0m] [0mRunning TaskDef(knowbag.fpinscala.chap2.GettingStarted, org.scalatest.tools.Framework$$anon$1@57836e3c, false, [SuiteSelector])[0m
+[0m[[0minfo[0m] [0m[36mRun completed in 294 milliseconds.[0m[0m
+[0m[[0minfo[0m] [0m[36mTotal number of tests run: 18[0m[0m
+[0m[[0minfo[0m] [0m[36mSuites: completed 2, aborted 0[0m[0m
+[0m[[0minfo[0m] [0m[36mTests: succeeded 18, failed 0, canceled 0, ignored 1, pending 0[0m[0m
+[0m[[0minfo[0m] [0m[32mAll tests passed.[0m[0m
+[0m[[0mdebug[0m] [0mPassed tests:[0m
+[0m[[0mdebug[0m] [0m	knowbag.fpinscala.chap2.GettingStarted[0m
+[0m[[0mdebug[0m] [0m	knowbag.fpinscala.chap3.FunctionalDataStructure[0m

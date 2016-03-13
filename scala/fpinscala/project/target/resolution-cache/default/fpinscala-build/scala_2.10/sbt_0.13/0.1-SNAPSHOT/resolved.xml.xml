@@ -4,7 +4,7 @@
 		module="fpinscala-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20151024083233"
+		publication="20160312100457"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

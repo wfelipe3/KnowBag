@@ -97,7 +97,9 @@ class FunctionalDataStructure extends FlatSpec with Matchers {
     List.reverse(List(1, 5)) should be(List(5, 1))
   }
 
-  "exercise 3.13" should "implement fold left in terms of fold right" in {
+  behavior of "exercise 3.13"
+
+  ignore should "implement fold left in terms of fold right" in {
     List.foldLeftR(Nil: List[Int], 0)(_ + _) should be(0)
     List.foldLeftR(List(1), 0)(_ + _) should be(1)
   }

@@ -1,0 +1,10 @@
+apply plugin: "clojure"
+
+repositories {
+    mavenCentral()
+    clojarsRepo()
+}
+
+dependencies {
+    compile 'org.clojure:clojure:1.2.0'
+}
