@@ -1,2 +1,3 @@
 rootProject.name = 'code-compiler'
+include 'acceptance-test'
 
