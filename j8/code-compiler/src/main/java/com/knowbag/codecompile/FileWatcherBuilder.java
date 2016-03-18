@@ -1,8 +1,10 @@
 package com.knowbag.codecompile;
 
 import java.io.IOException;
-import java.nio.file.*;
-import java.util.function.BiConsumer;
+import java.nio.file.DirectoryStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -11,10 +13,6 @@ import java.util.stream.StreamSupport;
  * Created by feliperojas on 3/17/16.
  */
 public class FileWatcherBuilder {
-
-    private BiConsumer<Path, WatchEvent.Kind> fileSubscriber = (p, w) -> {
-        throw new RuntimeException("fileSubscriver not defined");
-    };
 
     private Consumer<Path> traverser = p -> {
         throw new RuntimeException("traverser not defined");

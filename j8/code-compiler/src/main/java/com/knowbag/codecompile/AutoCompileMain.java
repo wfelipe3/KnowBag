@@ -5,12 +5,12 @@ import org.apache.commons.cli.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 import static java.nio.file.StandardOpenOption.APPEND;
 import static java.nio.file.StandardOpenOption.CREATE;
@@ -29,37 +29,66 @@ public class AutoCompileMain {
         System.out.println("param p " + projectFile);
         System.out.println("param c " + compile);
 
-        getFileWatcherBuilder(projectFile, compile).create();
+        ProjectParams params = new ProjectParams(projectFile, compile);
+
+        getFileWatcherBuilder(params).create();
 
         new CountDownLatch(1).await();
     }
 
-    private static FileWatcherBuilder getFileWatcherBuilder(String projectFile, Path compile) {
+    private static FileWatcherBuilder getFileWatcherBuilder(ProjectParams params) {
         return FileWatcherBuilder
-                .newFileWatcherForProject(projectFile)
-                .withFolderTraverser(getObservableFolderTraverser(projectFile, compile));
+                .newFileWatcherForProject(params.getProjectFile())
+                .withFolderTraverser(getObservableFolderTraverser(params));
     }
 
-    private static Consumer<Path> getObservableFolderTraverser(String projectFile, Path compile) {
-        return p -> CompletableFuture.runAsync(() -> getFileObserver(projectFile, compile, p));
+    private static Consumer<Path> getObservableFolderTraverser(ProjectParams params) {
+        return p -> CompletableFuture.runAsync(() -> getFileObserver(params, p));
     }
 
-    private static void getFileObserver(String projectFile, Path compile, Path p) {
+    private static void getFileObserver(ProjectParams params, Path p) {
         System.out.println("Adding watcher to " + p.toString());
         FileObservable.
-                from(new File(projectFile), ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY).
+                from(new File(params.getProjectFile()), ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY).
                 subscribe(w -> {
-                    try {
-                        Path path = (Path) w.context();
-                        if (Files.isDirectory(path) && w.kind() == ENTRY_CREATE) {
-                            getFileWatcherBuilder(Paths.get(p.toString() + "/" + path.toString()).toString(), compile);
-                        }
-                        System.out.println("the file " + path + " has event " + w.kind());
-                        Files.write(compile, Paths.get(p.toString() + "/" + path.toString()).getParent().getFileName().toString().getBytes(), APPEND, CREATE);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    processFileEvent(params, p, w);
                 });
+    }
+
+    private static void processFileEvent(ProjectParams params, Path p, WatchEvent<?> w) {
+        try {
+            Path path = (Path) w.context();
+            Path completePath = Paths.get(p.toString() + "/" + path.toString());
+            if (Files.isDirectory(path) && w.kind() == ENTRY_CREATE) {
+                getFileWatcherBuilder(new ProjectParams(completePath.toString(), params.getCompile()));
+            }
+            System.out.println("the file " + path + " has event " + w.kind());
+            Path projectPath = findProjectPath(completePath.getParent());
+            Files.write(params.getCompile(), (projectPath.getFileName().toString() + "\n").getBytes(), APPEND, CREATE);
+            System.out.println(projectPath);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static Path findProjectPath(Path path) {
+        try (DirectoryStream<Path> ds = Files.newDirectoryStream(path)) {
+            if (hasPomFile(toStream(ds)))
+                return path;
+            else
+                return findProjectPath(path.getParent());
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static Stream<Path> toStream(DirectoryStream<Path> ds) {
+        return StreamSupport.stream(ds.spliterator(), false);
+    }
+
+    private static boolean hasPomFile(Stream<Path> stream) {
+        return stream.anyMatch(p -> p.getFileName().toString().equals("pom.xml"));
     }
 
     private static CommandLine parseCommands(String[] args) throws ParseException {
