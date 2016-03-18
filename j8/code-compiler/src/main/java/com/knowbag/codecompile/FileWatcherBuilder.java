@@ -37,6 +37,7 @@ public class FileWatcherBuilder {
         traverser.accept(Paths.get(projectFolder));
         try (DirectoryStream<Path> ds = Files.newDirectoryStream(Paths.get(projectFolder))) {
             toStream(ds)
+                    .filter(p -> !p.toString().contains(".git"))
                     .filter(p -> p.toFile().isDirectory())
                     .forEach(this::watch);
         } catch (IOException e) {

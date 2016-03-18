@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -43,14 +45,16 @@ public class AutoCompileMain {
     }
 
     private static Consumer<Path> getObservableFolderTraverser(ProjectParams params) {
-        return p -> CompletableFuture.runAsync(() -> getFileObserver(params, p));
+        ExecutorService executorService = Executors.newFixedThreadPool(10000000);
+        return p -> CompletableFuture.runAsync(() -> getFileObserver(params, p), executorService);
     }
 
     private static void getFileObserver(ProjectParams params, Path p) {
         System.out.println("Adding watcher to " + p.toString());
-        FileObservable.
-                from(new File(params.getProjectFile()), ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY).
-                subscribe(w -> {
+        FileObservable
+                .from(new File(p.toString()), ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY)
+                .filter(w -> !w.context().toString().contains(".git"))
+                .subscribe(w -> {
                     processFileEvent(params, p, w);
                 });
     }
@@ -73,8 +77,11 @@ public class AutoCompileMain {
 
     private static Path findProjectPath(Path path) {
         try (DirectoryStream<Path> ds = Files.newDirectoryStream(path)) {
-            if (hasPomFile(toStream(ds)))
+            System.out.println("searching pom in " + path);
+            if (hasPomFile(toStream(ds))) {
+                System.out.println("found pom  in " + path);
                 return path;
+            }
             else
                 return findProjectPath(path.getParent());
         } catch (IOException e) {
