@@ -26,9 +26,19 @@ task fatJar(type: Jar) {
     with jar
 }
 
-task copy << {
-    copy {
-        from 'C:\\dev\\git\\KnowBag\\j8\\code-compiler\\build\\libs\\code-compiler-all-1.0-SNAPSHOT.jar'
-        into 'C:\\dev\\git\\KnowBag\\j8\\code-compiler\\acceptance-test\\src\\test\\resources'
+task copyCodeCompilerToAcceptanceTest {
+    dependsOn fatJar
+    doLast {
+        copy {
+            from '/Users/feliperojas/git/KnowBag/j8/code-compiler/build/libs/code-compiler-all-1.0-SNAPSHOT.jar'
+            into '/Users/feliperojas/git/KnowBag/j8/code-compiler/acceptance-test/src/test/resources'
+        }
     }
+}
+
+task testAll {
+    dependsOn test
+    dependsOn ":acceptance-test:removeJar"
+    dependsOn copyCodeCompilerToAcceptanceTest
+    dependsOn ":acceptance-test:test"
 }

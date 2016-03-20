@@ -9,10 +9,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
@@ -29,43 +26,48 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class AutoCodeCompileAcceptanceTest {
 
-    private static final String JAR_DIRECTORY = "C:\\dev\\git\\KnowBag\\j8\\code-compiler\\acceptance-test\\src\\test\\resources";
-    private static final String TEST_PROJECT_FOLDER = "c:/dev/git";
-    public static final String COMP_FOLDER = String.format("%s/projects.comp", TEST_PROJECT_FOLDER);
-    public static final String PROJECT_FOLDER = String.format("%s/testProject", TEST_PROJECT_FOLDER);
+    private static final String JAR_DIRECTORY = "/Users/feliperojas/git/KnowBag/j8/code-compiler/acceptance-test/src/test/resources";
 
     private CompletableFuture<JarExecutorFactory.JarExecutor> future;
+    private Path projectFolder;
+    private Path compFile;
 
     @Before
     public void init() throws IOException {
-        deleteAll(Paths.get(PROJECT_FOLDER));
-        Files.deleteIfExists(Paths.get(COMP_FOLDER));
-        Files.createDirectory(Paths.get(PROJECT_FOLDER));
-        Files.write(Paths.get(String.format("%s/pom.xml", PROJECT_FOLDER)), "test project".getBytes(), CREATE_NEW);
+        projectFolder = Files.createTempDirectory("testProject");
+        compFile = Files.createTempFile("projects", "comp");
+        System.out.println(projectFolder);
+        System.out.println(compFile);
+        Files.write(Paths.get(projectFolder.toString(), "pom.xml"), "test".getBytes(), StandardOpenOption.CREATE_NEW);
         future = CompletableFuture.supplyAsync(this::startAutoCompiler);
     }
 
     @Test
     public void givenProjectFolderWithCodeWhenANewFileIsCreatedMarkTheProjectForCompilation() throws Exception {
         TimeUnit.SECONDS.sleep(1);
-        Files.write(Paths.get(String.format("%s/HelloWorld.java", PROJECT_FOLDER)), "public class HelloWorld{}".getBytes(), CREATE_NEW);
+        Path hwPath = Paths.get(projectFolder.toString(), "HelloWorld.java");
+        Files.write(hwPath, "public class HelloWorld{}".getBytes(), CREATE_NEW);
         TimeUnit.SECONDS.sleep(10);
-        List<String> lines = Files.readAllLines(Paths.get(COMP_FOLDER)).stream().distinct().collect(Collectors.toList());
-        assertThat(lines).containsExactly("testProject");
+        List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
+        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
     }
 
     private JarExecutorFactory.JarExecutor startAutoCompiler() {
         JarExecutorFactory.JarExecutor jarExecutor = JarExecutorFactory.getJarExecutorForOs();
-        jarExecutor.execute(JAR_DIRECTORY, String.format("java -jar code-compiler-all-1.0-SNAPSHOT.jar -p %s -c %s", PROJECT_FOLDER, COMP_FOLDER));
+        jarExecutor.execute(JAR_DIRECTORY, String.format("java -jar code-compiler-all-1.0-SNAPSHOT.jar -p %s -c %s", projectFolder.toString(), compFile.toString()));
         return jarExecutor;
     }
 
     @After
     public void destroy() throws IOException, ExecutionException, InterruptedException {
-        JarExecutorFactory.JarExecutor jarExecutor = future.get();
+        stopJar(future);
+        deleteAll(projectFolder);
+        Files.deleteIfExists(compFile);
+    }
+
+    private void stopJar(CompletableFuture<JarExecutorFactory.JarExecutor> jar) throws InterruptedException, ExecutionException {
+        JarExecutorFactory.JarExecutor jarExecutor = jar.get();
         jarExecutor.stop();
-        deleteAll(Paths.get(PROJECT_FOLDER));
-        Files.deleteIfExists(Paths.get(COMP_FOLDER));
     }
 
     private void deleteAll(Path projectFolder) {
@@ -98,10 +100,11 @@ public class AutoCodeCompileAcceptanceTest {
 
         public static JarExecutor getJarExecutorForOs() {
             String os = System.getProperty("os.name");
+            System.out.println(os);
             switch (os) {
                 case "Windows 8.1":
                     return new JarExecutor("cmd", "/c");
-                case "os":
+                case "Mac OS X":
                     return new JarExecutor("/bin/bash", "-c");
                 default:
                     throw new AssertionError("os not found");

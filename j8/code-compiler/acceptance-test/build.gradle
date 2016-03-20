@@ -12,3 +12,7 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.3.0'
     testCompile "com.javaslang:javaslang:2.0.0-RC4"
 }
+
+task removeJar(type: Delete) {
+    delete "/Users/feliperojas/git/KnowBag/j8/code-compiler/acceptance-test/src/test/resources/code-compiler-all-1.0-SNAPSHOT.jar"
+}
