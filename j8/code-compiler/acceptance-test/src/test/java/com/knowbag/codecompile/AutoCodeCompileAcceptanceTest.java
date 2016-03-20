@@ -66,8 +66,7 @@ public class AutoCodeCompileAcceptanceTest {
     }
 
     private void stopJar(CompletableFuture<JarExecutorFactory.JarExecutor> jar) throws InterruptedException, ExecutionException {
-        JarExecutorFactory.JarExecutor jarExecutor = jar.get();
-        jarExecutor.stop();
+        jar.get().stop();
     }
 
     private void deleteAll(Path projectFolder) {
