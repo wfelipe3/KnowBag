@@ -44,12 +44,16 @@ public class AutoCodeCompileAcceptanceTest {
 
     @Test
     public void givenProjectFolderWithCodeWhenANewFileIsCreatedMarkTheProjectForCompilation() throws Exception {
-        TimeUnit.SECONDS.sleep(1);
+        waitFor(1);
         Path hwPath = Paths.get(projectFolder.toString(), "HelloWorld.java");
         Files.write(hwPath, "public class HelloWorld{}".getBytes(), CREATE_NEW);
-        TimeUnit.SECONDS.sleep(10);
+        waitFor(10);
         List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
         assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+    }
+
+    private void waitFor(int timeout) throws InterruptedException {
+        TimeUnit.SECONDS.sleep(timeout);
     }
 
     private JarExecutorFactory.JarExecutor startAutoCompiler() {
