@@ -34,7 +34,7 @@ public class FileObserverTest {
     }
 
     @Test
-    public void whenFileWathcerIsInvokedOnProjectWitnOneFolderAndFilesTheWatchProjectAndFolder() throws Exception {
+    public void whenFileWatcherIsInvokedOnProjectWithOneFolderAndFilesTheWatchProjectAndFolder() throws Exception {
         Path project = createProjectDirectory("ProjectWithOneFolderAndFiles");
         Path folder1 = createSubDirectory(project, "folder1");
         createFile(project, "file.txt");

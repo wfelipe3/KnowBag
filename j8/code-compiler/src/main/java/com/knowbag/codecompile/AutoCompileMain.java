@@ -69,7 +69,6 @@ public class AutoCompileMain {
             System.out.println("the file " + path + " has event " + w.kind());
             Path projectPath = findProjectPath(completePath.getParent());
             Files.write(params.getCompile(), (projectPath.getFileName().toString() + "\n").getBytes(), APPEND, CREATE);
-            System.out.println(projectPath);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -81,8 +80,7 @@ public class AutoCompileMain {
             if (hasPomFile(toStream(ds))) {
                 System.out.println("found pom  in " + path);
                 return path;
-            }
-            else
+            } else
                 return findProjectPath(path.getParent());
         } catch (IOException e) {
             e.printStackTrace();

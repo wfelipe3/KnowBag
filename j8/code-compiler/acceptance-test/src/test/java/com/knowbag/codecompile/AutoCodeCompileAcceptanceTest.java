@@ -26,7 +26,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 public class AutoCodeCompileAcceptanceTest {
 
-    private static final String JAR_DIRECTORY = "/Users/feliperojas/git/KnowBag/j8/code-compiler/acceptance-test/src/test/resources";
+    private static final String JAR_DIRECTORY;
+
+    static {
+        String file = AutoCodeCompileAcceptanceTest.class.getClassLoader().getResource("code-compiler-all-1.0-SNAPSHOT.jar").getFile().substring(1);
+        JAR_DIRECTORY = Paths.get(file).getParent().toString();
+    }
 
     private CompletableFuture<JarExecutorFactory.JarExecutor> future;
     private Path projectFolder;
@@ -103,7 +108,6 @@ public class AutoCodeCompileAcceptanceTest {
 
         public static JarExecutor getJarExecutorForOs() {
             String os = System.getProperty("os.name");
-            System.out.println(os);
             switch (os) {
                 case "Windows 8.1":
                     return new JarExecutor("cmd", "/c");
