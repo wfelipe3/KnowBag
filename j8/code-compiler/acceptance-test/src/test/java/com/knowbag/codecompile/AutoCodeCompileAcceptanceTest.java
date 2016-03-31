@@ -29,8 +29,19 @@ public class AutoCodeCompileAcceptanceTest {
     private static final String JAR_DIRECTORY;
 
     static {
-        String file = AutoCodeCompileAcceptanceTest.class.getClassLoader().getResource("code-compiler-all-1.0-SNAPSHOT.jar").getFile().substring(1);
-        JAR_DIRECTORY = Paths.get(file).getParent().toString();
+        String file = AutoCodeCompileAcceptanceTest.class.getClassLoader().getResource("code-compiler-all-1.0-SNAPSHOT.jar").getFile();
+        String os = System.getProperty("os.name");
+        System.out.println(os);
+        switch (os) {
+            case "Windows 8.1":
+                JAR_DIRECTORY = Paths.get(file.substring(1)).getParent().toString();
+                break;
+            case "Mac OS X":
+                JAR_DIRECTORY = Paths.get(file).getParent().toString();
+                break;
+            default:
+                throw new AssertionError("");
+        }
     }
 
     private CompletableFuture<JarExecutorFactory.JarExecutor> future;
@@ -41,17 +52,40 @@ public class AutoCodeCompileAcceptanceTest {
     public void init() throws IOException {
         projectFolder = Files.createTempDirectory("testProject");
         compFile = Files.createTempFile("projects", "comp");
-        System.out.println(projectFolder);
-        System.out.println(compFile);
         Files.write(Paths.get(projectFolder.toString(), "pom.xml"), "test".getBytes(), StandardOpenOption.CREATE_NEW);
-        future = CompletableFuture.supplyAsync(this::startAutoCompiler);
     }
 
     @Test
     public void givenProjectFolderWithCodeWhenANewFileIsCreatedMarkTheProjectForCompilation() throws Exception {
+        future = CompletableFuture.supplyAsync(this::startAutoCompiler);
         waitFor(1);
         Path hwPath = Paths.get(projectFolder.toString(), "HelloWorld.java");
         Files.write(hwPath, "public class HelloWorld{}".getBytes(), CREATE_NEW);
+        waitFor(10);
+        List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
+        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+    }
+
+    @Test
+    public void givenProjectWithPackagesWhenClassIsModifiedThenMarkTheProjectForCompilation() throws Exception {
+        Path com = Files.createDirectory(Paths.get(projectFolder.toString(), "com"));
+        Files.write(Paths.get(com.toString(), "HelloWorld.java"), "public class HellWorld {".getBytes(), StandardOpenOption.CREATE_NEW);
+        future = CompletableFuture.supplyAsync(this::startAutoCompiler);
+        waitFor(1);
+        Files.write(Paths.get(com.toString(), "HelloWorld.java"), "public static void main(String args[]){}}".getBytes(), StandardOpenOption.APPEND);
+        waitFor(10);
+        List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
+        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+    }
+
+    @Test
+    public void whenANewFolderIsCreatedInsideAProjectThenTheNewFolderShouldBeWatched() throws Exception {
+        Path com = Files.createDirectory(Paths.get(projectFolder.toString(), "com"));
+        future = CompletableFuture.supplyAsync(this::startAutoCompiler);
+        waitFor(1);
+        Path foo = Files.createDirectories(Paths.get(com.toString(), "foo"));
+        waitFor(1);
+        Files.write(Paths.get(foo.toString(), "HelloWorld.java"), "public class HellWorld {".getBytes(), StandardOpenOption.CREATE_NEW);
         waitFor(10);
         List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
         assertThat(lines).containsExactly(projectFolder.getFileName().toString());

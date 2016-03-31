@@ -42,3 +42,4 @@ task testAll {
     dependsOn copyCodeCompilerToAcceptanceTest
     dependsOn ":acceptance-test:test"
 }
+

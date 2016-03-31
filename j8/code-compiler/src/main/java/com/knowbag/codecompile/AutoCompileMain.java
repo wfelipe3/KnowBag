@@ -63,7 +63,8 @@ public class AutoCompileMain {
         try {
             Path path = (Path) w.context();
             Path completePath = Paths.get(p.toString() + "/" + path.toString());
-            if (Files.isDirectory(path) && w.kind() == ENTRY_CREATE) {
+            if (Files.isDirectory(completePath) && w.kind() == ENTRY_CREATE) {
+                System.out.println("adding watcher to "+ path.toString());
                 getFileWatcherBuilder(new ProjectParams(completePath.toString(), params.getCompile()));
             }
             System.out.println("the file " + path + " has event " + w.kind());
