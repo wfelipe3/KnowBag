@@ -1,13 +1,8 @@
 package com.knowbag.codecompile;
 
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.function.Consumer;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 /**
  * Created by feliperojas on 3/17/16.
@@ -35,14 +30,9 @@ public class FileWatcherBuilder {
 
     public void create() {
         traverser.accept(Paths.get(projectFolder));
-        try (DirectoryStream<Path> ds = Files.newDirectoryStream(Paths.get(projectFolder))) {
-            toStream(ds)
-                    .filter(p -> !p.toString().contains(".git"))
-                    .filter(p -> p.toFile().isDirectory())
-                    .forEach(this::watch);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        DirectoryStreamUtils.traverse(Paths.get(projectFolder), paths -> {
+            paths.filter(p -> p.toFile().isDirectory()).forEach(this::watch);
+        });
     }
 
     private void watch(Path p) {
@@ -52,7 +42,4 @@ public class FileWatcherBuilder {
                 .create();
     }
 
-    private Stream<Path> toStream(DirectoryStream<Path> ds) {
-        return StreamSupport.stream(ds.spliterator(), true);
-    }
 }

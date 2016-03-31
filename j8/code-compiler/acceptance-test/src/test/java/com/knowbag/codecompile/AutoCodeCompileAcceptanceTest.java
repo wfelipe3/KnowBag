@@ -31,7 +31,6 @@ public class AutoCodeCompileAcceptanceTest {
     static {
         String file = AutoCodeCompileAcceptanceTest.class.getClassLoader().getResource("code-compiler-all-1.0-SNAPSHOT.jar").getFile();
         String os = System.getProperty("os.name");
-        System.out.println(os);
         switch (os) {
             case "Windows 8.1":
                 JAR_DIRECTORY = Paths.get(file.substring(1)).getParent().toString();
