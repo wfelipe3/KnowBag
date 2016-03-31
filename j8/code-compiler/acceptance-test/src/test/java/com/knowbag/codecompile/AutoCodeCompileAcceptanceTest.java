@@ -62,8 +62,9 @@ public class AutoCodeCompileAcceptanceTest {
         Files.write(hwPath, "public class HelloWorld{}".getBytes(), CREATE_NEW);
         waitFor(10);
         List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
-        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+        assertThat(getProjects(lines)).containsExactly(projectFolder.getFileName().toString());
     }
+
 
     @Test
     public void givenProjectWithPackagesWhenClassIsModifiedThenMarkTheProjectForCompilation() throws Exception {
@@ -73,8 +74,8 @@ public class AutoCodeCompileAcceptanceTest {
         waitFor(1);
         Files.write(Paths.get(com.toString(), "HelloWorld.java"), "public static void main(String args[]){}}".getBytes(), StandardOpenOption.APPEND);
         waitFor(10);
-        List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
-        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+        List<String> lines = Files.readAllLines(compFile).stream().collect(Collectors.toList());
+        assertThat(getProjects(lines)).containsExactly(projectFolder.getFileName().toString());
     }
 
     @Test
@@ -87,7 +88,14 @@ public class AutoCodeCompileAcceptanceTest {
         Files.write(Paths.get(foo.toString(), "HelloWorld.java"), "public class HellWorld {".getBytes(), StandardOpenOption.CREATE_NEW);
         waitFor(10);
         List<String> lines = Files.readAllLines(compFile).stream().distinct().collect(Collectors.toList());
-        assertThat(lines).containsExactly(projectFolder.getFileName().toString());
+        assertThat(getProjects(lines)).containsExactly(projectFolder.getFileName().toString());
+    }
+
+    @After
+    public void destroy() throws IOException, ExecutionException, InterruptedException {
+        stopJar(future);
+        deleteAll(projectFolder);
+        Files.deleteIfExists(compFile);
     }
 
     private void waitFor(int timeout) throws InterruptedException {
@@ -100,11 +108,8 @@ public class AutoCodeCompileAcceptanceTest {
         return jarExecutor;
     }
 
-    @After
-    public void destroy() throws IOException, ExecutionException, InterruptedException {
-        stopJar(future);
-        deleteAll(projectFolder);
-        Files.deleteIfExists(compFile);
+    private Stream<String> getProjects(List<String> lines) {
+        return lines.stream().map(l -> l.split(":")[1].replaceAll("\\[", "").replaceAll("\\]", "")).distinct();
     }
 
     private void stopJar(CompletableFuture<JarExecutorFactory.JarExecutor> jar) throws InterruptedException, ExecutionException {

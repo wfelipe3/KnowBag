@@ -30,7 +30,7 @@ public class FileEventProcessor implements EventProcessor {
             watchNewFolder(completePath);
         }
         Path projectPath = findProjectPath(completePath.getParent());
-        compileRepository.add(projectPath);
+        compileRepository.add(projectPath.getFileName().toString());
     }
 
     private Path getCompileEventPath(Path root, WatchEvent<?> event) {
