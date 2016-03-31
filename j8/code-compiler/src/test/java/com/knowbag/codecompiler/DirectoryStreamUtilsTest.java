@@ -1,6 +1,6 @@
 package com.knowbag.codecompiler;
 
-import com.knowbag.codecompile.DirectoryStreamUtils;
+import com.knowbag.codecompile.util.DirectoryStreamUtils;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 

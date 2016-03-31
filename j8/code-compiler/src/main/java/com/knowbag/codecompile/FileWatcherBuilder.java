@@ -1,5 +1,7 @@
 package com.knowbag.codecompile;
 
+import com.knowbag.codecompile.util.DirectoryStreamUtils;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.function.Consumer;

@@ -1,9 +1,13 @@
 package com.knowbag.codecompile;
 
+import com.knowbag.codecompile.event.FileEventProcessor;
 import org.apache.commons.cli.*;
 
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -16,8 +20,14 @@ public class AutoCompileMain {
         String projectFile = cmd.getOptionValue("p");
         Path compile = Paths.get(cmd.getOptionValue("c"));
 
-        ProjectParams params = new ProjectParams(projectFile, compile);
-        FileWatcher.getFileWatcherBuilder(params).create();
+        ProjectParams params = new ProjectParams(projectFile);
+        FileWatcher.getFileWatcherBuilder(new FileEventProcessor(p -> {
+            try {
+                Files.write(compile, (p.getFileName().toString() + "\n").getBytes(), StandardOpenOption.APPEND);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }), params).create();
 
         new CountDownLatch(1).await();
     }

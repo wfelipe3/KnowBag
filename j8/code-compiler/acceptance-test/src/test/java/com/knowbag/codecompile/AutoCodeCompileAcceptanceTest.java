@@ -181,7 +181,7 @@ public class AutoCodeCompileAcceptanceTest {
             }
 
             public void stop() {
-                process.destroyForcibly();
+                process.destroy();
             }
         }
     }
