@@ -4,7 +4,7 @@
 		module="fpinscala$sources_2.11"
 		revision="1.0"
 		status="integration"
-		publication="20160312094347"
+		publication="20160408080755"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>

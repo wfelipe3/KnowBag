@@ -20,7 +20,7 @@ class FunctionalDataStructure extends FlatSpec with Matchers {
   }
 
   "exercise 3.2" should "implement tail function" in {
-    an[NilListException] shouldBe thrownBy(List.tail(Nil))
+    a[NilListException] shouldBe thrownBy(List.tail(Nil))
     List.tail(List(1)) should be(Nil)
     List.tail(List(3, 4)) should be(List(4))
     List.tail(List(1, 2, 6, 34, 5)) should be(List(2, 6, 34, 5))
@@ -60,6 +60,7 @@ class FunctionalDataStructure extends FlatSpec with Matchers {
     List.foldRight(List(1, 2), 1)(_ + _) should be(4)
     List.foldRight(List(1, 2), 1)(_ * _) should be(2)
     List.foldRight(List(1, 2), 0)(_ * _) should be(0)
+
   }
 
   it should "throw stackOverFlowException when the list is too big" in {

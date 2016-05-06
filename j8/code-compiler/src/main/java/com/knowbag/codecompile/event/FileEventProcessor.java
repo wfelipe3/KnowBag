@@ -26,11 +26,26 @@ public class FileEventProcessor implements EventProcessor {
     @Override
     public void processFileEvent(Path root, WatchEvent<?> event) {
         Path completePath = getCompileEventPath(root, event);
-        if (isNewFolder(event, completePath)) {
+
+        if (completePath.getFileName().toString().endsWith("BizAgi-ear") ||
+                completePath.getFileName().toString().endsWith("BizAgi-ejb") ||
+                completePath.getFileName().toString().endsWith("BizAgi.WebApp") ||
+                completePath.toString().contains("target") ||
+                completePath.toString().contains(".git") ||
+                completePath.toString().contains(".idea") ||
+                completePath.toString().contains("___jb_bak") ||
+                completePath.toString().contains("___jb_old"))
+            return;
+
+        if (isNewFolder(event, completePath))
             watchNewFolder(completePath);
-        }
         Path projectPath = findProjectPath(completePath.getParent());
-        compileRepository.add(projectPath.getFileName().toString());
+        if (projectPath.endsWith("BizAgi.WebApp") ||
+                projectPath.endsWith("BizAgi-ear") ||
+                projectPath.endsWith("BizAgi-ejb"))
+            return;
+        compileRepository.add(projectPath.toString());
+        System.out.println("EVENT: " + event.kind() + " on " + completePath);
     }
 
     private Path getCompileEventPath(Path root, WatchEvent<?> event) {

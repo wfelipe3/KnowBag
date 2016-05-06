@@ -38,7 +38,7 @@ public class FileCompileRepositoryTest {
     }
 
     private String getProjectLine(String timestamp1, String project) {
-        return String.format("%s:[%s]", timestamp1, project);
+        return String.format("%s:%s", timestamp1, project);
     }
 }
 

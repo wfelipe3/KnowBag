@@ -109,7 +109,7 @@ public class AutoCodeCompileAcceptanceTest {
     }
 
     private Stream<String> getProjects(List<String> lines) {
-        return lines.stream().map(l -> l.split(":")[1].replaceAll("\\[", "").replaceAll("\\]", "")).distinct();
+        return lines.stream().map(l -> l.split(":")[1]).distinct();
     }
 
     private void stopJar(CompletableFuture<JarExecutorFactory.JarExecutor> jar) throws InterruptedException, ExecutionException {

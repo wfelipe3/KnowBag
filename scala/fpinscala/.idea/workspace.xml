@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GettingStarted_2.scala" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
+      <file leaf-file-name="FunctionalDtaStructure_2.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4637385">
-              <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="59" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.42372882">
+              <caret line="162" column="2" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -50,17 +50,25 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/build.sbt" />
-        <option value="$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDataStructure.scala" />
         <option value="$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted.scala" />
         <option value="$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDataStructure.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala" />
       </list>
     </option>
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="11" />
-    <option name="y" value="26" />
-    <option name="width" value="787" />
-    <option name="height" value="1001" />
+    <option name="x" value="-1928" />
+    <option name="y" value="-188" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -73,7 +81,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -86,37 +94,194 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala-2.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chap3" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scala-2.11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fpinscala" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="ScalaTest.GettingStarted.exercise 2.1 should implement fibonacci">
-    <configuration default="false" name="GettingStarted" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+  <component name="RunManager" selected="ScalaTest.FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence">
+    <configuration default="false" name="FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fpinscala" />
-      <setting name="path" value="knowbag.fpinscala.chap2.GettingStarted" />
+      <setting name="path" value="knowbag.fpinscala.chap3.FunctionalDtaStructure_2" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
       <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="" />
-      <setting name="testKind" value="Class" />
+      <setting name="testName" value="List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter" />
+      <setting name="testKind" value="Test name" />
       <setting name="showProgressMessages" value="true" />
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="GettingStarted.exercise 2.1 should implement fibonacci" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+    <configuration default="false" name="FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="fpinscala" />
-      <setting name="path" value="knowbag.fpinscala.chap2.GettingStarted" />
+      <setting name="path" value="knowbag.fpinscala.chap3.FunctionalDtaStructure_2" />
       <setting name="package" value="" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
       <setting name="searchForTest" value="Across module dependencies" />
-      <setting name="testName" value="exercise 2.1 should implement fibonacci" />
+      <setting name="testName" value="List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="fpinscala" />
+      <setting name="path" value="knowbag.fpinscala.chap3.FunctionalDtaStructure_2" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="fpinscala" />
+      <setting name="path" value="knowbag.fpinscala.chap3.FunctionalDtaStructure_2" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="Exercise 3.24 should implement hasSubsequence" />
+      <setting name="testKind" value="Test name" />
+      <setting name="showProgressMessages" value="true" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith&#10;Exercise 3.24 should implement hasSubsequence" type="ScalaTestRunConfiguration" factoryName="ScalaTest" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="fpinscala" />
+      <setting name="path" value="knowbag.fpinscala.chap3.FunctionalDtaStructure_2" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith&#10;Exercise 3.24 should implement hasSubsequence" />
       <setting name="testKind" value="Test name" />
       <setting name="showProgressMessages" value="true" />
       <envs />
@@ -302,18 +467,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -423,19 +576,25 @@
       <envs />
       <method />
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="ScalaTest.GettingStarted" />
-      <item index="1" class="java.lang.String" itemvalue="ScalaTest.GettingStarted.exercise 2.1 should implement fibonacci" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter" />
+      <item index="1" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function" />
+      <item index="2" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith" />
+      <item index="3" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" />
+      <item index="4" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith&#10;Exercise 3.24 should implement hasSubsequence" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="ScalaTest.GettingStarted.exercise 2.1 should implement fibonacci" />
-        <item index="1" class="java.lang.String" itemvalue="ScalaTest.GettingStarted" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" />
+        <item index="1" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith&#10;Exercise 3.24 should implement hasSubsequence" />
+        <item index="2" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function&#10;Exercise 3.23 should implement zipWith" />
+        <item index="3" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter&#10;Exercise 3.22 should implement add list function" />
+        <item index="4" class="java.lang.String" itemvalue="ScalaTest.FunctionalDtaStructure_2.List should create a list of elements and the sum should be the sum of all the elements&#10;List should multiply all elements in the list&#10;Exercise 3.1 should return the result of a given expression&#10;Exercise 3.2 should implement tail in list&#10;Exercise 3.3 should implement setHead to replace the first element of a list&#10;Exercise 3.4 should implement drop&#10;Exercise 3.5 should implement drop while&#10;Exercise 3.6 should implement init without tail&#10;Exercise 3.7 should implement fold right&#10;Exercise 3.8 should test Nil and Cons&#10;Exercise 3.9 should compute the length of a list with foldRight&#10;fold right with to many elements should throw Stack overflow error&#10;Exercise 3.10 should implement fold left tail recursive&#10;Exercise 3.11 should implement sum product and legth with fold left&#10;Exercise 3.12 should implement reverse&#10;Exercise 3.13 should implement foldRight in terms of foldLeft&#10;Exercise 3.14 should implement append in terms of fold left or fold right&#10;Exercise 3.15 should implement concatenate&#10;Exercise 3.16 should implement add1&#10;Exercise 3.17 should implement convert double to String&#10;Exercise 3.18 should implement map&#10;Exercise 3.19 should implement filter&#10;Exercise 3.20 should implement flatmap&#10;Exercise 3.21 should implement flatmap with filter" />
       </list>
     </recent_temporary>
   </component>
   <component name="SbtLocalSettings">
-    <option name="lastUpdateTimestamp" value="1457793827776" />
+    <option name="lastUpdateTimestamp" value="1460120880197" />
     <option name="availableProjects">
       <map>
         <entry>
@@ -462,7 +621,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="1457793816000" />
+        <entry key="$PROJECT_DIR$" value="1459427636200" />
       </map>
     </option>
     <option name="externalProjectsViewState">
@@ -483,40 +642,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 09h 59m 42s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_17_should_implement_convert_double_to_String - 2016.04.21 at 08h 24m 44s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.17 should implement convert double to String" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 09h 59m 44s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_18_should_implement_map - 2016.04.21 at 08h 29m 15s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.18 should implement map" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 00m 09s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_19_should_implement_filter - 2016.04.21 at 08h 33m 29s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.19 should implement filter" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 00m 31s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_20_should_implement_flatmap - 2016.04.21 at 08h 37m 59s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.20 should implement flatmap" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 01m 28s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 08h 47m 13s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 02m 01s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 08h 47m 42s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 02m 40s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 09h 07m 29s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 03m 15s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 09h 07m 42s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 03m 37s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 09h 09m 30s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="GettingStarted_exercise_2_1_should_implement_fibonacci - 2016.03.12 at 10h 03m 39s.xml">
-      <configuration name="GettingStarted.exercise 2.1 should implement fibonacci" configurationId="ScalaTestRunConfiguration" />
+    <history-entry file="FunctionalDtaStructure_2_Exercise_3_24_should_implement_hasSubsequence - 2016.04.27 at 09h 09m 42s.xml">
+      <configuration name="FunctionalDtaStructure_2.Exercise 3.24 should implement hasSubsequence" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="11" y="26" width="787" height="1001" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1928" y="-188" width="1936" height="1066" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -527,21 +686,21 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24777636" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24739583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32868525" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299285" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48904383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938712" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3984064" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -556,7 +715,23 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala</url>
+          <line>161</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="3" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -564,10 +739,58 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+          <caret line="162" column="2" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="278" column="52" selection-start-line="278" selection-start-column="52" selection-end-line="278" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="140" column="61" selection-start-line="140" selection-start-column="61" selection-end-line="140" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="202" column="0" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="69" selection-start-line="22" selection-start-column="69" selection-end-line="22" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -575,8 +798,21 @@
     <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="59" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="23" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -594,13 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDataStructure.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5209397">
-          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.9693565">
@@ -610,8 +839,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap2/GettingStarted_2.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4637385">
-          <caret line="58" column="3" selection-start-line="58" selection-start-column="3" selection-end-line="59" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.23728813">
+          <caret line="46" column="44" selection-start-line="46" selection-start-column="44" selection-end-line="46" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDataStructure.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5084746">
+          <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+          <folding>
+            <marker date="1460747835521" expanded="true" signature="76:122" placeholder="/**...*/" />
+            <marker date="1460747835521" expanded="true" signature="184:6112" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="251:507" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="291:483" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="562:773" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="832:949" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="1004:1256" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="1308:1588" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="1634:1864" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="1919:2247" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="2320:2404" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="2466:2558" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="2622:2857" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="2924:3309" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="3389:3671" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="3721:3859" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="3956:4070" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4113:4278" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4169:4240" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4312:5961" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4356:4420" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="4456:4540" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="4465:4540" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4582:4676" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="4591:4676" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4733:4834" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="4742:4834" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4884:5037" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="4927:5031" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5100:5194" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="5108:5194" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5235:5360" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="5243:5360" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5425:5522" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="5433:5522" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5586:5682" placeholder="..." />
+            <marker date="1460747835521" expanded="true" signature="5594:5682" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5792:5838" placeholder="{...}" />
+            <marker date="1460747835521" expanded="true" signature="5882:5957" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala-2.11/knowbag/fpinscala/chap3/FunctionalDtaStructure_2.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42372882">
+          <caret line="162" column="2" selection-start-line="162" selection-start-column="2" selection-end-line="162" selection-end-column="2" />
           <folding />
         </state>
       </provider>

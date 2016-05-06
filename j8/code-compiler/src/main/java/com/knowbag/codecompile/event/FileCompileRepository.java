@@ -22,7 +22,7 @@ public class FileCompileRepository implements CompileRepository {
     public String add(String projectPath) {
         try {
             long timestamp = System.currentTimeMillis();
-            Files.write(compFile, String.format("%s:[%s]\n", timestamp, projectPath).getBytes(), CREATE, APPEND);
+            Files.write(compFile, String.format("%s:%s\n", timestamp, projectPath).getBytes(), CREATE, APPEND);
             return String.valueOf(timestamp);
         } catch (IOException e) {
             throw new RuntimeException(e);

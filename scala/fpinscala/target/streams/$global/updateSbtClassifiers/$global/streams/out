@@ -10,6 +10,7 @@
 [debug] == resolving dependencies default#fpinscala$sbt_2.11;1.0->org.scala-sbt#sbt;0.13.8 [default->default(compile)]
 [info] Resolving org.scala-sbt#sbt;0.13.8 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#sbt;0.13.8 {default=[default(compile)]}
+[debug] no default cache defined: set to C:\Users\WilliamE\.ivy2\cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#sbt;0.13.8
 [debug] 	found org.scala-sbt#sbt;0.13.8 in sbt-chain
 [debug] == resolving dependencies org.scala-sbt#sbt;0.13.8->org.scala-lang#scala-library;2.10.4 [compile->default(compile)]
@@ -703,9 +704,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-agent;0.13.8!test-agent.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.8!apply-macro.jar
-[debug] :: resolution report :: resolve 875ms :: artifacts dl 30ms
-[debug] 	report for default#fpinscala$sbt_2.11;1.0 default produced in /Users/feliperojas/projects/git/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sbt_2.11-default.xml
-[debug] 	resolve done (875ms resolve - 30ms download)
+[debug] :: resolution report :: resolve 695ms :: artifacts dl 71ms
+[debug] 	report for default#fpinscala$sbt_2.11;1.0 default produced in C:\dev\git\KnowBag\scala\fpinscala\target\resolution-cache\reports\default-fpinscala$sbt_2.11-default.xml
+[debug] 	resolve done (695ms resolve - 71ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: default#fpinscala$sources_2.11;1.0
 [debug] 	confs: [default]
@@ -1069,6 +1070,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_8_2;0.13.8!precompiled-2_8_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_2;0.13.8!precompiled-2_9_2.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#precompiled-2_9_3;0.13.8!precompiled-2_9_3.jar(src)
-[debug] :: resolution report :: resolve 133ms :: artifacts dl 23ms
-[debug] 	report for default#fpinscala$sources_2.11;1.0 default produced in /Users/feliperojas/projects/git/KnowBag/scala/fpinscala/target/resolution-cache/reports/default-fpinscala$sources_2.11-default.xml
-[debug] 	resolve done (133ms resolve - 23ms download)
+[debug] :: resolution report :: resolve 185ms :: artifacts dl 56ms
+[debug] 	report for default#fpinscala$sources_2.11;1.0 default produced in C:\dev\git\KnowBag\scala\fpinscala\target\resolution-cache\reports\default-fpinscala$sources_2.11-default.xml
+[debug] 	resolve done (185ms resolve - 56ms download)

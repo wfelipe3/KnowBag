@@ -31,9 +31,16 @@ public class FileWatcherBuilder {
     }
 
     public void create() {
+        System.out.println("WATCHING " + projectFolder);
         traverser.accept(Paths.get(projectFolder));
         DirectoryStreamUtils.traverse(Paths.get(projectFolder), paths -> {
-            paths.filter(p -> p.toFile().isDirectory()).forEach(this::watch);
+            paths
+                    .filter(p -> p.toFile().isDirectory())
+                    .filter(p -> !p.toString().contains("target"))
+                    .filter(p -> !p.toString().contains(".git"))
+                    .filter(p -> !p.toString().contains(".idea"))
+                    .filter(p -> !p.toString().contains("dist"))
+                    .forEach(this::watch);
         });
     }
 

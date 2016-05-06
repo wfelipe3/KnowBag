@@ -81,7 +81,5 @@ class GettingStarted_2 extends FlatSpec with Matchers {
     compose(f, g)(2) should be(false)
   }
 
-
-
 }
 

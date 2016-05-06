@@ -23,14 +23,12 @@ public class FileWatcher {
     }
 
     private static Consumer<Path> getObservableFolderTraverser(EventProcessor eventProcessor) {
-        return p -> CompletableFuture.runAsync(() -> getFileObserver(eventProcessor, p), Executors.newCachedThreadPool());
+        return p -> CompletableFuture.runAsync(() -> getFileObserver(eventProcessor, p), Executors.newFixedThreadPool(100000000));
     }
 
     private static void getFileObserver(EventProcessor eventProcessor, Path root) {
         FileObservable
                 .from(new File(root.toString()), ENTRY_CREATE, ENTRY_DELETE, ENTRY_MODIFY)
-                .filter(w -> !w.context().toString().contains(".git"))
-                .distinct(w -> w.context().toString())
                 .subscribe(event -> {
                     eventProcessor.processFileEvent(root, event);
                 });
