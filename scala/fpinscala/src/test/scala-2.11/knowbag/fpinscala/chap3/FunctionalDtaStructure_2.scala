@@ -162,6 +162,53 @@ class FunctionalDtaStructure_2 extends FlatSpec with Matchers {
     List.hasSubSequence(List(1, 2, 3, 4, 5), List(3, 4, 5)) should be(true)
   }
 
+  "Exercise 3.25" should "implement tree size" in {
+    Tree.size(Leaf(3)) should be(1)
+    Tree.size(Branch(Leaf(1), Branch(Leaf(2), Leaf(3)))) should be(5)
+  }
+
+  "Exercise 3.26" should "implement max in tree" in {
+    Tree.max(Leaf(1)) should be(1)
+    Tree.max(Branch(Leaf(1), Leaf(2))) should be(2)
+    Tree.max(Branch(Leaf(1), Branch(Leaf(2), Leaf(3)))) should be(3)
+  }
+
+  "Exercise 3.27" should "implement depth in tree" in {
+    Tree.depth(Leaf(1)) should be(1)
+    Tree.depth(Branch(Leaf(1), Leaf(2))) should be(2)
+    Tree.depth(Branch(Leaf(1), Branch(Leaf(2), Leaf(4)))) should be(3)
+    Tree.depth(Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(5)), Leaf(4)))) should be(4)
+  }
+
+  "Exercise 3.28" should "implement map in tree" in {
+    Tree.max(Tree.map(Leaf("1"))(_.toInt)) should be(1)
+    Tree.max(Tree.map(Branch(Leaf("1"), Leaf("2")))(_.toInt)) should be(2)
+  }
+
+  behavior of "Exercise 3.29"
+
+  it should "implement fold in tree" in {
+    Tree.fold(Leaf(1), 0)(_ + _)(_ + _) should be(1)
+  }
+
+  it should "implement max via fold" in {
+    Tree.maxViaFold(Leaf(1)) should be(1)
+    Tree.maxViaFold(Branch(Leaf(1), Leaf(2))) should be(2)
+    Tree.maxViaFold(Branch(Leaf(1), Branch(Leaf(2), Leaf(3)))) should be(3)
+  }
+
+  it should "implement depth via fold" in {
+    Tree.depth(Leaf(1)) should be(1)
+    Tree.depth(Branch(Leaf(1), Leaf(2))) should be(2)
+    Tree.depth(Branch(Leaf(1), Branch(Leaf(2), Leaf(4)))) should be(3)
+    Tree.depth(Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(5)), Leaf(4)))) should be(4)
+  }
+
+  it should "implement size via fold" in {
+    Tree.sizeViaFold(Leaf(3)) should be(1)
+    Tree.sizeViaFold(Branch(Leaf(1), Branch(Leaf(2), Leaf(3)))) should be(5)
+  }
+
   sealed trait List[+A]
 
   class NilListException extends Exception
@@ -326,6 +373,53 @@ class FunctionalDtaStructure_2 extends FlatSpec with Matchers {
     def apply[A](as: A*): List[A] =
       if (as.isEmpty) Nil
       else Cons(as.head, apply(as.tail: _*))
+  }
+
+  sealed trait Tree[+A]
+
+  case class Leaf[A](value: A) extends Tree[A]
+
+  case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
+
+  object Tree {
+    def map[A, B](tree: Tree[A])(f: A => B): Tree[B] =
+      tree match {
+        case Leaf(a) => Leaf(f(a))
+        case Branch(l, r) => Branch(map(l)(f), map(r)(f))
+      }
+
+    def max(tree: Tree[Int]): Int =
+      tree match {
+        case Leaf(a) => a
+        case Branch(l, r) => max(l).max(max(r))
+      }
+
+    def maxViaFold(t: Tree[Int]): Int =
+      fold(t, 0)(_.max(_))(_.max(_))
+
+    def size[A](t: Tree[A]): Int =
+      t match {
+        case Leaf(_) => 1
+        case Branch(l, r) => 1 + size(l) + size(r)
+      }
+
+    def sizeViaFold[A](t: Tree[A]): Int =
+      fold(t, 0)((_, b) => 1 + b)(1 + _ + _)
+
+    def depth[A](t: Tree[A]): Int =
+      t match {
+        case Leaf(_) => 1
+        case Branch(l, r) => 1 + depth(l).max(depth(r))
+      }
+
+    def depthViaFold[A](t: Tree[A]): Int =
+      fold(t, 0)((_, b) => b + 1)((tl, tr) => 1 + tl.max(tr))
+
+    def fold[A, B](t: Tree[A], b: B)(f: (A, B) => B)(g: (B, B) => B): B =
+      t match {
+        case Leaf(a) => f(a, b)
+        case Branch(l, r) => g(fold(l, b)(f)(g), fold(r, b)(f)(g))
+      }
   }
 
 }
