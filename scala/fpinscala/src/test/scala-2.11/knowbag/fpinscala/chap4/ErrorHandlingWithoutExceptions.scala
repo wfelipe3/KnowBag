@@ -13,11 +13,21 @@ class ErrorHandlingWithoutExceptions extends FlatSpec with Matchers {
   }
 
   "Exercise 4.2" should "implement variance function in terms of flatmap" in {
-
-    def variance(xs: Seq[Double]): Option[Double] =
-
+    variance(Seq(1, 2)) should be(Some(0.25))
   }
 
+  "Exercise 4.3" should "implement map 2 for Option" in {
+    val sum: (Int, Int) => Int = (a, b) => a + b
+    val sumOption: Option[Int] = map2(Some(1), Some(2))(sum)
+    sumOption should be(Some(3))
+  }
+
+  def mean(xs: Seq[Double]): Option[Double] =
+    if (xs.isEmpty) None
+    else Some(xs.sum / xs.length)
+
+  def variance(xs: Seq[Double]): Option[Double] =
+    mean(xs) flatMap (m => mean(xs.map(x => Math.pow(x - m, 2))))
 
   sealed trait Option[+A] {
     def map[B](f: A => B): Option[B] =
@@ -50,11 +60,23 @@ class ErrorHandlingWithoutExceptions extends FlatSpec with Matchers {
         case Some(a) if f(a) => this
         case _ => None
       }
+
+    def lift[A, B](f: A => B): Option[A] => Option[B] = _ map f
   }
 
   case class Some[+A](get: A) extends Option[A]
 
   object None extends Option[Nothing]
+
+  def Try[A](a: => A): Option[A] =
+    try
+      Some(a)
+    catch {
+      case e: Exception => None
+    }
+
+  def map2[A, B, C](a: Option[A], b: Option[B])(f: (A, B) => C): Option[C] =
+    a.flatMap(va => b.map(vb => f(va, vb))).orElse(None)
 
 }
 
