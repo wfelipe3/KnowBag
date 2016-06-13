@@ -37,6 +37,15 @@ class ErrorHandlingWithoutExceptions extends FlatSpec with Matchers {
     Right("test").map2(Right(" this is"))(_ + _) should be(Right("test this is"))
   }
 
+  "Exercise 4.7" should "implement sequence and traverse for either" in {
+    val ex = new RuntimeException("this is a test")
+    Either.sequence(List(Right(10), Left(ex), Left(new NumberFormatException))) should be(Left(ex))
+    Either.sequence(List(Right(10), Right(20))) should be(Right(List(10, 20)))
+
+    Either.traverse(List("10", "20", "30", "40", "50"))(a => Either.Try(a.toInt)) should be(Right(List(10, 20, 30, 40, 50)))
+    Either.traverse(List("10", "this is a test", "30", "40", "50"))(a => Either.Try(a.toInt)).orElse(Right("This is an error")) should be(Right("This is an error"))
+  }
+
   def mean(xs: Seq[Double]): Option[Double] =
     if (xs.isEmpty) None
     else Some(xs.sum / xs.length)
@@ -132,6 +141,12 @@ object Either {
     catch {
       case e: Exception => Left(e)
     }
+
+  def sequence[E, A](es: List[Either[E, A]]): Either[E, List[A]] =
+    traverse(es)(x => x)
+
+  def traverse[E, A, B](es: List[A])(f: A => Either[E, B]): Either[E, List[B]] =
+    es.foldRight[Either[E, List[B]]](Right(Nil))((a, b) => f(a).map2(b)(_ :: _))
 }
 
 case class Left[+E](values: E) extends Either[E, Nothing]
