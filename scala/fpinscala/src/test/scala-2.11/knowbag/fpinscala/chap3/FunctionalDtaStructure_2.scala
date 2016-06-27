@@ -96,7 +96,7 @@ class FunctionalDtaStructure_2 extends FlatSpec with Matchers {
 
   "Exercise 3.11" should "implement sum product and legth with fold left" in {
     List.sumFL(List(1, 2, 3, 4, 5)) should be(1 + 2 + 3 + 4 + 5)
-    List.product(List(1, 2, 4, 4, 5)) should be(1 * 2 * 4 * 4 * 5)
+    List.productFL(List(1, 2, 4, 4, 5)) should be(1 * 2 * 4 * 4 * 5)
     List.lengthFL(List("sdfl", "sdfsd", "sldfkj")) should be(3)
     List.lengthFL(List.createList(1000000)) should be(1000000)
   }
@@ -198,10 +198,10 @@ class FunctionalDtaStructure_2 extends FlatSpec with Matchers {
   }
 
   it should "implement depth via fold" in {
-    Tree.depth(Leaf(1)) should be(1)
-    Tree.depth(Branch(Leaf(1), Leaf(2))) should be(2)
-    Tree.depth(Branch(Leaf(1), Branch(Leaf(2), Leaf(4)))) should be(3)
-    Tree.depth(Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(5)), Leaf(4)))) should be(4)
+    Tree.depthViaFold(Leaf(1)) should be(1)
+    Tree.depthViaFold(Branch(Leaf(1), Leaf(2))) should be(2)
+    Tree.depthViaFold(Branch(Leaf(1), Branch(Leaf(2), Leaf(4)))) should be(3)
+    Tree.depthViaFold(Branch(Leaf(1), Branch(Branch(Leaf(2), Leaf(5)), Leaf(4)))) should be(4)
   }
 
   it should "implement size via fold" in {
