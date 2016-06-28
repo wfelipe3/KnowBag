@@ -1,12 +1,17 @@
 package chapter3;
 
+import javaslang.control.Try;
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import rx.Observable;
+import rx.Observer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.IntStream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -49,5 +54,59 @@ public class ConnectingObservablesObserversAndSubjetcs {
         AtomicReference<String> value = new AtomicReference<>();
         Observable.error(new RuntimeException()).subscribe(System.out::println, e -> value.set("error"));
         assertThat(value.get()).isEqualTo("error");
+    }
+
+    private static Void UNIT = null;
+
+    @Test
+    public void createShouldCreateACustomObservable() throws Exception {
+        Observable<Object> observable = Observable.create(s -> {
+            Try.run(() -> {
+                s.onNext("start");
+                s.onCompleted();
+            }).recover(e -> {
+                s.onError(e);
+                return UNIT;
+            });
+        });
+
+        observable.subscribe(e -> Assertions.assertThat(e).isEqualTo("start"),
+                e -> Assertions.fail("should not throw exception"), () -> assertThat(true).isEqualTo(true));
+    }
+
+    @Test
+    public void createWithObserverShouldInvokeObserverMethods() throws Exception {
+        AtomicReference<javaslang.collection.List<String>> values = new AtomicReference<>(javaslang.collection.List.nil());
+        Observer<Integer> observer = new Observer<Integer>() {
+            @Override
+            public void onCompleted() {
+                values.set(values.get().append("onCompleted"));
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                values.set(values.get().append("onError"));
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                values.set(values.get().append(String.valueOf(integer)));
+            }
+        };
+        Observable.just(1, 2, 3, 4, 5).subscribe(observer);
+        assertThat(values.get().toJavaList()).containsExactly("1", "2", "3", "4", "5", "onCompleted");
+    }
+
+    @Test
+    public void observersDoNotBlockCurrentThread() throws Exception {
+        List<Object> values = new ArrayList<>();
+        Observable.create(s -> Try.run(() -> CompletableFuture.runAsync(() -> {
+            IntStream.range(0, 1000000).forEach(s::onNext);
+            s.onCompleted();
+        })).recover(e -> {
+            s.onError(e);
+            return UNIT;
+        })).subscribe(values::add, System.err::println, () -> System.out.println("finished"));
+        assertThat(values.size()).isLessThan(1000000);
     }
 }
