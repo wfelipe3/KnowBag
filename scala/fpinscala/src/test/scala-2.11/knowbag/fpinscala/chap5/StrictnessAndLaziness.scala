@@ -42,7 +42,7 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     values should be(Seq(1))
   }
 
-  "headOption" should "retorn the head of the stream without processing the tail" in {
+  "headOption" should "return the head of the stream without processing the tail" in {
     val head = Stream(1, 2, 3, 4).headOption
     head should be(Some(1))
   }
@@ -71,12 +71,53 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     Stream(1, 2, 3, 4, 5, 6, 7).takeWhile(_ < 4).toList should be(Seq(1, 2, 3))
   }
 
+  "Exercise 5.4" should "implement forAll" in {
+    Stream[Int]().forAll(_ > 0) should be(false)
+    Stream(1, 2, 3).forAll(_ > 4) should be(false)
+    Stream(1, 2, 3).forAll(_ < 4) should be(true)
+  }
+
+  "Exercise 5.5" should "implement takeWhile with fold right" in {
+    Stream[Int]().takeWhileFR(_ > 3) should be(Empty)
+    Stream(1, 2, 3).takeWhileFR(_ > 4) should be(Empty)
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhileFR(_ > 3) should be(Empty)
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhileFR(_ < 4).toList should be(Seq(1, 2, 3))
+  }
+
+  "Exercise 5.6" should "implement headOption with fold right" in {
+    Stream(1, 2, 3, 4).headOptionFR should be(Some(1))
+    Stream(2, 3, 4).headOptionFR should be(Some(2))
+    Stream().headOptionFR should be(None)
+  }
+
+  behavior of "Exercise 5.7"
+  it should "implement map" in {
+    Stream[Int]().map(_.toString()).toList should be(Nil)
+    Stream(1, 2, 3).map(_.toString).toList should be(Seq("1", "2", "3"))
+  }
+
+  ignore should "implement flatMap" in {
+    Stream[Int]().flatMap(a => Stream(a + 1)).toList should be(Nil)
+  }
+
+  it should "implement filter" in {
+    Stream[Int]().filter(_ > 0) should be(Empty)
+    Stream(1, 2, 3, 4, 5).filter(_ % 2 == 0).toList should be(Seq(2, 4))
+  }
+
+  it should "implement append" in {
+    Stream[Int]().append(Stream(1, 2, 4)).toList should be(Seq(1, 2, 4))
+  }
+
   sealed trait Stream[+A] {
 
     def headOption: Option[A] = this match {
       case Empty => None
       case Cons(h, t) => Some(h())
     }
+
+    def headOptionFR: Option[A] =
+      foldRight(None: Option[A]) { (a, b) => Some(a) }
 
     def toList: Seq[A] = this match {
       case Empty => Nil
@@ -96,10 +137,41 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     }
 
     def takeWhile(p: A => Boolean): Stream[A] = this match {
-      case Empty => Empty
       case Cons(h, t) if p(h()) => Cons(h, () => t().takeWhile(p))
       case _ => Empty
     }
+
+    def foldRight[B](z: => B)(f: (A, => B) => B): B = this match {
+      case Cons(h, t) => f(h(), t().foldRight(z)(f))
+      case _ => z
+    }
+
+    def exists(p: A => Boolean): Boolean =
+      foldRight(false)((a, b) => p(a) || b)
+
+    def forAll(p: A => Boolean): Boolean = this match {
+      case Empty => false
+      case _ => !foldRight(false)((a, b) => !p(a) || b)
+    }
+
+    def takeWhileFR(p: A => Boolean): Stream[A] =
+      foldRight(Stream[A]()) { (a, b) =>
+        if (p(a)) Cons(() => a, () => b)
+        else Empty
+      }
+
+    def map[B](f: A => B): Stream[B] =
+      foldRight(Stream[B]())((a, b) => Cons(() => f(a), () => b))
+
+    def flatMap[B](f: A => Stream[B]): Stream[B] = ???
+    //      foldRight(Stream[B]())((a, b) => )
+
+    def filter(p: A => Boolean): Stream[A] =
+      foldRight(Stream[A]())((a, b) => if (p(a)) Cons(() => a, () => b) else b)
+
+    def append[B >: A](s: => Stream[B]): Stream[B] = ???
+
+
   }
 
   case object Empty extends Stream[Nothing]
