@@ -91,13 +91,15 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
   }
 
   behavior of "Exercise 5.7"
+
   it should "implement map" in {
     Stream[Int]().map(_.toString()).toList should be(Nil)
     Stream(1, 2, 3).map(_.toString).toList should be(Seq("1", "2", "3"))
   }
 
-  ignore should "implement flatMap" in {
+  it should "implement flatMap" in {
     Stream[Int]().flatMap(a => Stream(a + 1)).toList should be(Nil)
+    Stream(1, 2, 3).flatMap(a => Stream(a + 1)).toList should be(Seq(2, 3, 4))
   }
 
   it should "implement filter" in {
@@ -107,6 +109,39 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
 
   it should "implement append" in {
     Stream[Int]().append(Stream(1, 2, 4)).toList should be(Seq(1, 2, 4))
+    Stream(1, 2, 3).append(Stream(4, 5, 6)).toList should be(Seq(1, 2, 3, 4, 5, 6))
+    Stream(1, 2, 3).append(Stream[Int]()).toList should be(Seq(1, 2, 3))
+  }
+
+  behavior of "infinite stream"
+
+  it should "evaluate lazily" in {
+    val ones: Stream[Int] = Stream.constant(1)
+    ones.take(5).toList should be(Seq(1, 1, 1, 1, 1))
+    ones.exists(_ % 2 != 0) should be(true)
+    ones.map(_ + 1).exists(_ % 2 == 0) should be(true)
+    ones.take(1).takeWhile(_ == 1).toList should be(Seq(1))
+    ones.take(10).forAll(_ != 1) should be(false)
+  }
+
+  "Exercise 5.8" should "implement constant" in {
+    Stream.constant(10).take(3).toList should be(Seq(10, 10, 10))
+  }
+
+  "Exercise 5.9" should "implement from" in {
+    Stream.from(5).take(5).toList should be(Seq(6, 7, 8, 9, 10))
+  }
+
+  "Exercise 5.10" should "implement fibs" in {
+    Stream.fibs().take(5).toList should be(Seq(0, 1, 1, 2, 3))
+  }
+
+  "Exercise 5.11" should "implement unfold" in {
+    Stream.unfold(1)(s => Some((s, s + 1))).take(5).toList should be(Seq(1, 2, 3, 4, 5))
+    Stream.unfold(1) { s =>
+      if (s < 2) Some((s, s + 1))
+      else None
+    }.take(5).toList should be(Seq(1))
   }
 
   sealed trait Stream[+A] {
@@ -125,7 +160,6 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     }
 
     def take(n: Int): Stream[A] = this match {
-      case Empty => Empty
       case Cons(h, tl) if n > 0 => Cons(h, () => tl().take(n - 1))
       case _ => Empty
     }
@@ -163,14 +197,14 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     def map[B](f: A => B): Stream[B] =
       foldRight(Stream[B]())((a, b) => Cons(() => f(a), () => b))
 
-    def flatMap[B](f: A => Stream[B]): Stream[B] = ???
-    //      foldRight(Stream[B]())((a, b) => )
+    def flatMap[B](f: A => Stream[B]): Stream[B] =
+      foldRight(Stream[B]())((a, b) => f(a).append(b))
 
     def filter(p: A => Boolean): Stream[A] =
       foldRight(Stream[A]())((a, b) => if (p(a)) Cons(() => a, () => b) else b)
 
-    def append[B >: A](s: => Stream[B]): Stream[B] = ???
-
+    def append[B >: A](s: => Stream[B]): Stream[B] =
+      foldRight(s)((a, b) => Cons(() => a, () => b))
 
   }
 
@@ -189,6 +223,20 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
 
     def apply[A](as: A*): Stream[A] =
       if (as.isEmpty) empty else cons(as.head, apply(as.tail: _*))
+
+    def constant[A](a: A): Stream[A] = Stream.cons(a, constant(a))
+
+    def from(i: Int): Stream[Int] = Stream.cons(i + 1, from(i + 1))
+
+    def fibs(): Stream[Int] = {
+      def fib(prev: Int = 0, actual: Int = 1): Stream[Int] =
+        Stream.cons(prev, fib(actual, actual + prev))
+      fib()
+    }
+
+    def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = {
+      f(z).map(t => Stream.cons(t._1, unfold(t._2)(f))).getOrElse(Empty)
+    }
   }
 
 }
