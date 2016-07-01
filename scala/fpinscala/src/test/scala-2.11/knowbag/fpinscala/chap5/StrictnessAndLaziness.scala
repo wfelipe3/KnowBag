@@ -25,7 +25,7 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     values should be(Seq(1, 1))
   }
 
-  "lazy" should "evalute the value only once" in {
+  "lazy" should "evaluate the value only once" in {
     var values = Seq[Int]()
     def maybeTwice(b: Boolean, i: => Int) = {
       lazy val j = i
@@ -52,6 +52,7 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
   }
 
   behavior of "exercise 5.2"
+
   it should "implement take n" in {
     Stream().take(4) should be(Empty)
     Stream(1, 2, 3).take(0) should be(Empty)
@@ -144,6 +145,45 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     }.take(5).toList should be(Seq(1))
   }
 
+  behavior of "Exercise 5.12"
+
+  it should "implement fibs with unfold" in {
+    Stream.unfold((0, 1))(s => Some(s._1, (s._2, s._1 + s._2))).take(5).toList should be(Seq(0, 1, 1, 2, 3))
+  }
+
+  it should "implement from with unfold" in {
+    Stream.unfold(5)(s => Some((s + 1, s + 1))).take(5).toList should be(Stream.from(5).take(5).toList)
+  }
+
+  it should "implement constantt with unfold" in {
+    Stream.unfold(2)(s => Some(s, s)).take(3).toList should be(Seq(2, 2, 2))
+  }
+
+  it should "implement ones with unfold" in {
+    Stream.unfold(1)(s => Some(s, s)).take(3).toList should be(Seq(1, 1, 1))
+  }
+
+  behavior of "Exercise 5.13"
+
+  it should "implement map with unfold" in {
+    Stream[Int]().mapUF(_.toString()).toList should be(Nil)
+    Stream(1, 2, 3).mapUF(_.toString).toList should be(Seq("1", "2", "3"))
+  }
+
+  it should "implement take with unfold" in {
+    Stream().takeUF(4) should be(Empty)
+    Stream(1, 2, 3).takeUF(0) should be(Empty)
+    Stream(1, 2, 3, 4, 5, 6, 7).takeUF(3).toList should be(Seq(1, 2, 3))
+    Stream(1, 2).takeUF(3).toList should be(Seq(1, 2))
+  }
+
+  it should "implement takeWhile with unfold" in {
+    Stream[Int]().takeWhileUF(_ > 3) should be(Empty)
+    Stream(1, 2, 3).takeWhileUF(_ > 4) should be(Empty)
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhileUF(_ > 3) should be(Empty)
+    Stream(1, 2, 3, 4, 5, 6, 7).takeWhileUF(_ < 4).toList should be(Seq(1, 2, 3))
+  }
+
   sealed trait Stream[+A] {
 
     def headOption: Option[A] = this match {
@@ -164,6 +204,11 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
       case _ => Empty
     }
 
+    def takeUF(n: Int): Stream[A] = Stream.unfold(this) {
+      case Cons(h, tl) if n > 0 => Some((h(), tl().takeUF(n - 1)))
+      case _ => None
+    }
+
     def drop(n: Int): Stream[A] = this match {
       case Empty => Empty
       case Cons(h, t) if n > 0 => t().drop(n - 1)
@@ -173,6 +218,11 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
     def takeWhile(p: A => Boolean): Stream[A] = this match {
       case Cons(h, t) if p(h()) => Cons(h, () => t().takeWhile(p))
       case _ => Empty
+    }
+
+    def takeWhileUF(p: A => Boolean): Stream[A] = Stream.unfold(this) {
+      case Cons(h, t) if p(h()) => Some((h(), t().takeWhileUF(p)))
+      case _ => None
     }
 
     def foldRight[B](z: => B)(f: (A, => B) => B): B = this match {
@@ -194,8 +244,14 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
         else Empty
       }
 
+
     def map[B](f: A => B): Stream[B] =
       foldRight(Stream[B]())((a, b) => Cons(() => f(a), () => b))
+
+    def mapUF[B](f: A => B): Stream[B] = Stream.unfold(this) {
+      case Cons(h, t) => Some((f(h()), t()))
+      case _ => None
+    }
 
     def flatMap[B](f: A => Stream[B]): Stream[B] =
       foldRight(Stream[B]())((a, b) => f(a).append(b))
@@ -234,8 +290,9 @@ class StrictnessAndLaziness extends FlatSpec with Matchers {
       fib()
     }
 
-    def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = {
-      f(z).map(t => Stream.cons(t._1, unfold(t._2)(f))).getOrElse(Empty)
+    def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = f(z) match {
+      case Some((a, s)) => Stream.cons(a, unfold(s)(f))
+      case None => empty
     }
   }
 
