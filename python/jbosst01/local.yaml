@@ -1,0 +1,5 @@
+---
+ path: "/Users/dev-williame/bizagi/BizagiJEE/auto/jboss-eap-6.2"
+ user: "admon"
+ password: "admon123@"
+ local: True

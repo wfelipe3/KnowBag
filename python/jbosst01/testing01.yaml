@@ -1,0 +1,9 @@
+---
+ path: "/home/jboss/auto/jboss-eap-6.2"
+ user: "admon"
+ password: "admon123@"
+ local: False
+ remote:
+     host: "172.16.20.131"
+     user: "root"
+     password: "Vision2015"
