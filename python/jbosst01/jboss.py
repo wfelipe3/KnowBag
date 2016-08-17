@@ -21,10 +21,14 @@ Options:
     --min-pool-size MIN_POOL_SIZE       Min pool size
 """
 
+from concurrent.futures import ThreadPoolExecutor
 from pexpect import pxssh
 from docopt import docopt
 import subprocess
+import threading
 import yaml
+
+lock = threading.Condition()
 
 
 class JBoss:
@@ -51,7 +55,9 @@ def execute_remote(connection):
 
 
 def execute_local(command):
-    return subprocess.call(" ".join(command), shell=True)
+    p = subprocess.Popen(" ".join(command), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, err = p.communicate()
+    return str(output)
 
 
 def execute_command(executor, command):
@@ -67,12 +73,23 @@ def jboss_cli(jboss, command):
             '--command="{command}"'.format(command=command)]
 
 
+def check_state(jboss):
+    return jboss_cli(jboss, "read-attribute server-state")
+
+
 def start(jboss):
-    return ["{jboss}/bin/standalone.sh".format(jboss=jboss.path)]
+    return ["{jboss}/bin/standalone.sh >/dev/null 2>&1 &".format(jboss=jboss.path)]
 
 
 def start_with_profiler(jboss):
-    return ["{jboss}/bin/standalone_with_yjp.sh".format(jboss=jboss.path)]
+    return ["{jboss}/bin/standalone_with_yjp.sh >/dev/null 2>&1 &".format(jboss=jboss.path)]
+
+
+def remote_start(start):
+    def fun(jboss):
+        return ["setsid {start}".format(start="".join(start(jboss)))]
+
+    return fun
 
 
 def stop(jboss):
@@ -80,7 +97,7 @@ def stop(jboss):
 
 
 def deploy(jboss, ear):
-    return jboss_cli(jboss, "deploy {ear} --force".format(ear=ear))
+    return jboss_cli(jboss, "deploy {ear}".format(ear=ear))
 
 
 def undeploy(jboss, ear):
@@ -107,6 +124,38 @@ def get_executor(config):
             create_connection(config["remote"]["host"], config["remote"]["user"], config["remote"]["password"]))
 
 
+def get_start(config, profiler):
+    if profiler:
+        start_cmd = start_with_profiler
+    else:
+        start_cmd = start
+
+    if config["local"]:
+        return start_cmd
+    else:
+        return remote_start(start_cmd)
+
+
+def execute_in_parallel(executor_with_command):
+    [print(command) for executor, command in executor_with_command]
+    with ThreadPoolExecutor(max_workers=len(executor_with_command)) as worker:
+        return [worker.submit(execute_command, executor, command) for executor, command in executor_with_command]
+
+
+def execute_until(predicate):
+    def fun(executor):
+        def fun2(command):
+            res = executor(command)
+            if not predicate(res):
+                return fun2(command)
+            else:
+                return res
+
+        return fun2
+
+    return fun
+
+
 if __name__ == "__main__":
     args = docopt(__doc__, version="0.1")
     config = parse_config(args["--config"])
@@ -118,9 +167,10 @@ if __name__ == "__main__":
     elif args["deploy"]:
         execute_command(executor, deploy(jboss, args["--ear"]))
     elif args["start"]:
-        if args["--profiler"]:
-            execute_command(executor, start(jboss))
-        else:
-            execute_command(executor, start_with_profiler(jboss))
+        state = execute_command(executor, check_state(jboss))
+        if "running" not in str(state):
+            lock_until_executor = execute_until(lambda x: "running" in str(x))(get_executor(config))
+            execute_in_parallel([(lock_until_executor, check_state(jboss)),
+                                 (get_executor(config), get_start(config, args["--profiler"])(jboss))])
     elif args["stop"]:
         execute_command(executor, stop(jboss))
