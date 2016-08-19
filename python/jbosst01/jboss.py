@@ -2,10 +2,10 @@
 JBoss Manager
 
 Usage:
-    remote-jboss start --config CONFIG [--profiler]
-    remote-jboss stop --config CONFIG
-    remote-jboss deploy --config CONFIG --ear EAR
-    remote-jboss undeploy --config CONFIG --ear EAR
+    remote-jboss start [--config CONFIG] [--profiler]
+    remote-jboss stop [--config CONFIG]
+    remote-jboss deploy [--config CONFIG] --ear EAR
+    remote-jboss undeploy [--config CONFIG] --ear EAR
     remote-jboss datasource --jboss-path JBOSS_PATH --name NAME --jndi JNDI --driver-name DRIVER_NAME --connection-url CONNECTION_URL --max-pool-size MAX_POOL_SIZE --min-pool-size MIN_POOL_SIZE
 Options:
     --jboss-path JBOSS_PATH             JBoss configuration path
@@ -27,6 +27,7 @@ from docopt import docopt
 import subprocess
 import threading
 import yaml
+import sys
 
 lock = threading.Condition()
 
@@ -39,7 +40,6 @@ class JBoss:
 
 
 def create_connection(host, user, password):
-    print("Connecting to {host} with {user}:{password}".format(host=host, user=user, password=password))
     c = pxssh.pxssh(timeout=999)
     c.login(host, user, password)
     return c
@@ -61,7 +61,6 @@ def execute_local(command):
 
 
 def execute_command(executor, command):
-    print("Executing {command}".format(command=" ".join(command)))
     return executor(command)
 
 
@@ -106,10 +105,14 @@ def undeploy(jboss, ear):
 
 def parse_config(config):
     with open(config, 'r') as stream:
-        try:
-            return yaml.load(stream)
-        except yaml.YAMLError as e:
-            print(e)
+        return load(stream)
+
+
+def load(stream):
+    try:
+        return yaml.load(stream)
+    except yaml.YAMLError as e:
+        sys.stderr.write(e)
 
 
 def jboss_from_config(config):
@@ -137,7 +140,6 @@ def get_start(config, profiler):
 
 
 def execute_in_parallel(executor_with_command):
-    [print(command) for executor, command in executor_with_command]
     with ThreadPoolExecutor(max_workers=len(executor_with_command)) as worker:
         return [worker.submit(execute_command, executor, command) for executor, command in executor_with_command]
 
@@ -158,7 +160,10 @@ def execute_until(predicate):
 
 if __name__ == "__main__":
     args = docopt(__doc__, version="0.1")
-    config = parse_config(args["--config"])
+    if args["--config"] is None:
+        config = load(sys.stdin)
+    else:
+        config = parse_config(args["--config"])
     jboss = jboss_from_config(config)
     executor = get_executor(config)
 
@@ -174,3 +179,5 @@ if __name__ == "__main__":
                                  (get_executor(config), get_start(config, args["--profiler"])(jboss))])
     elif args["stop"]:
         execute_command(executor, stop(jboss))
+
+    print(yaml.dump(config))
