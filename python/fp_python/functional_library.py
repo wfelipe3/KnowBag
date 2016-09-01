@@ -69,3 +69,19 @@ assert groupby(first, ["ABC", "ABA", "BAB", "BAA"]) == {"A": ["ABC", "ABA"], "B"
 assert groupby(len, ["ABC", "ABA", "BAB", "BAA"]) == {3: ["ABC", "ABA", "BAB", "BAA"]}
 assert list(interpose("foo", [1, 2, 3])) == [1, "foo", 2, "foo", 3]
 assert tail(3, [1, 2, 3, 4]) == [2, 3, 4]
+
+from toolz.dicttoolz import merge, assoc, dissoc, get_in
+
+d1 = {'foo': 'bar'}
+d2 = {'baz': 'quux'}
+
+new_d = d1.copy()
+new_d.update(d2)
+
+assert new_d == {'foo': 'bar', 'baz': 'quux'}
+assert merge(d1, d2) == {'foo': 'bar', 'baz': 'quux'}
+assert assoc(d1, 'a', 1) == {'foo': 'bar', 'a': 1}
+assert dissoc(d2, 'baz') == {}
+struct = {'a': [{'c': 'hello'}]}
+assert get_in(['a', 0, 'c'], struct) == struct['a'][0]['c'] == 'hello'
+assert get_in(['b', 0, 'c'], struct, "not found") == "not found"
