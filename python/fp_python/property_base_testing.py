@@ -99,9 +99,9 @@ fuzz_parser()
 def guess_number(num):
     """Returns a message and how far away you are"""
     if num == answer:
-        return ("you got it right", 0)
+        return "you got it right", 0
     else:
-        return ("Sorry", answer - num)
+        return "Sorry", answer - num
 
 
 answer = 35273
