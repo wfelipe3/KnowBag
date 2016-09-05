@@ -18,6 +18,7 @@
 .idea/jsLibraryMappings.xml
 **/*.iml
 **/.idea/*
+**/.idea/*.*
 
 # Sensitive or high-churn files:
 .idea/dataSources.ids
@@ -102,6 +103,9 @@ lib_managed/
 src_managed/
 project/boot/
 project/plugins/project/
+**/target/*
+**/target/**
+*/target/**
 
 # Scala-IDE specific
 .scala_dependencies
