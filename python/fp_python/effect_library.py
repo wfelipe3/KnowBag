@@ -54,8 +54,8 @@ io = TypeDispatcher({
 
 dispatcher = ComposedDispatcher([io, base_dispatcher])
 
-# if __name__ == '__main__':
-#     sync_perform(dispatcher, pure_main())
+if __name__ == '__main__':
+    sync_perform(dispatcher, pure_main())
 
 from effect.testing import SequenceDispatcher
 
