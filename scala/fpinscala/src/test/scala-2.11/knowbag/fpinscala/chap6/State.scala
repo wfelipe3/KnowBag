@@ -58,7 +58,7 @@ class State extends FlatSpec with Matchers {
   }
 
   "Exercise 6.11" should "implement candy dispenser" in {
-
+      simulateMachine(List(Coin, Turn)).run(Machine(locked = true, 10, 10)) should be(((9, 11), Machine(true, 9, 11)))
   }
 
   import State._

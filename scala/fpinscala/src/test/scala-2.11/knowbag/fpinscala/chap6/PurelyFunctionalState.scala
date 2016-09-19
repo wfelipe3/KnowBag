@@ -81,7 +81,7 @@ class PurelyFunctionalState extends FlatSpec with Matchers with GeneratorDrivenP
     }
   }
 
-  it should "implement doubleInt function with matp2" in {
+  it should "implement doubleInt function with map2" in {
     forAll(Gen.posNum[Int]) { (x: Int) =>
       val ((double, int), _) = doubleIntRand(new SimpleRNG(x))
       int should be < Int.MaxValue
