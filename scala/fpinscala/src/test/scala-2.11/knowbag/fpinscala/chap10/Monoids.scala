@@ -1,8 +1,11 @@
 package knowbag.fpinscala.chap10
 
 import org.scalacheck.Gen
+import org.scalacheck.Gen.Choose
 import org.scalatest.prop.GeneratorDrivenPropertyChecks
 import org.scalatest.{FlatSpec, Matchers}
+
+import scala.util.Random
 
 /**
   * Created by dev-williame on 9/22/16.
@@ -12,21 +15,19 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
   behavior of "Monoid"
 
   "Exercise 10.1" should "implement monoid for different operators" in {
-    forAll { (x: String, y: String, z: String) =>
-      testMonoidLaws(stringMonoid, x, y, z)
-    }
-    forAll { (x: Int, y: Int, z: Int) =>
-      testMonoidLaws(intAddMonoid, x, y, z)
-    }
-    forAll { (x: Int, y: Int, z: Int) =>
-      testMonoidLaws(intMultiplicationMonoid, x, y, z)
-    }
-    forAll { (x: Boolean, y: Boolean, z: Boolean) =>
-      testMonoidLaws(booleanOrMonoid, x, y, z)
-    }
-    forAll { (x: Boolean, y: Boolean, z: Boolean) =>
-      testMonoidLaws(booleanAndMonoid, x, y, z)
-    }
+    val intNumGen: Gen[Int] = Gen.chooseNum(Int.MinValue, Int.MaxValue)
+    val booleanNumGen: Gen[Boolean] = Gen.choose(true, false)(new Choose[Boolean] {
+      override def choose(min: Boolean, max: Boolean): Gen[Boolean] = Random.nextInt() % 2 == 0
+    })
+
+    List(
+      MonoidLaws(stringMonoid, Gen.numStr),
+      MonoidLaws(intAddMonoid, intNumGen),
+      MonoidLaws(intMultiplicationMonoid, intNumGen),
+      MonoidLaws(booleanOrMonoid, booleanNumGen),
+      MonoidLaws(booleanAndMonoid, booleanNumGen)
+    ).foreach(m => monoidLaws(m))
+
     forAll { (x: String, y: String) =>
       stringMonoid.op(x, y) should be(x + y)
     }
@@ -41,6 +42,31 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
 
   "Exercise 10.3" should "implement monoid for endofunctors" in {
     endoMonoid[Int].op(endoMonoid.zero, a => a + a)(10) should be(20)
+  }
+
+  "Exercise 10.5" should "implement foldMap" in {
+    foldMap(List(1, 2, 3, 4, 5), stringMonoid)(_.toString) should be("12345")
+  }
+
+  "Exercise 10.6" should "implement foldRight and foldLeft with foldMap" in {
+    foldRight(List(1, 2, 3, 4, 5))(intAddMonoid.zero)(intAddMonoid.op) should be(1 + 2 + 3 + 4 + 5)
+  }
+
+  def foldMap[A, B](as: List[A], m: Monoid[B])(f: A => B): B =
+    as.foldRight(m.zero)((v, a) => m.op(f(v), a))
+
+
+  def foldRight[A, B](as: List[A])(z: B)(f: (A, B) => B): B =
+    foldMap(as, endoMonoid[B])(f.curried)(z)
+
+
+  //Exercise 10.4
+  case class MonoidLaws[A](m: Monoid[A], gen: Gen[A])
+
+  private def monoidLaws[A](m: MonoidLaws[A]) = {
+    forAll(m.gen, m.gen, m.gen) { (x: A, y: A, z: A) =>
+      testMonoidLaws(m.m, x, y, z)
+    }
   }
 
   private def testMonoidLaws[A](m: Monoid[A], a1: A, a2: A, a3: A) = {
