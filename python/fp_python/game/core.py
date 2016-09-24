@@ -19,9 +19,13 @@ street = Location(name="Street", description="The street next to your house.", e
 
 
 class GameState(PClass):
-    location = field(Location)
+    location_name = field(str)
     world = pmap_field(str, Location)
     inventory = pvector_field(Thing)
+
+    @property
+    def location(self):
+        return self.world[self.location_name]
 
 
 world = pmap({x.name: x for x in [home, street]})
@@ -55,23 +59,19 @@ def move(state, exit_name):
     location_name = state.location.exits.get(exit_name)
     if location_name is None:
         return None
-    target_location = state.world.get(location_name)
-    return state.set(location=target_location)
+    return state.set(location_name=location_name)
 
 
 def take(state, item_name):
     item = state.location.items.get(item_name)
     if item is None: return None
-    new_state = state.transform(
-        ["location", "items"], lambda items: items.remove(item_name),
+    return state.transform(
+        ["world", state.location.name, "items"], lambda items: items.remove(item_name),
         ["inventory"], lambda inv: inv.append(item)
     )
-    return new_state.transform(
-        ["world", new_state.location.name], lambda _: new_state.location
-    )
 
 
-initial_state = GameState(location=home, world=world)
+initial_state = GameState(location_name="Home", world=world)
 in_street = move(initial_state, "east")
 after_taken = take(in_street, "rusty key")
 print(render(in_street))
