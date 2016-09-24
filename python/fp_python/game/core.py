@@ -61,16 +61,13 @@ def move(state, exit_name):
 
 def take(state, item_name):
     item = state.location.items.get(item_name)
-    if item is None:
-        return None
-    new_items = state.location.items.remove(item_name)
-    new_location = state.location.set(items=new_items)
-    new_inventory = state.inventory.append(item)
-    new_world = state.world.set(new_location.name, new_location)
-    return state.set(
-        location=new_location,
-        inventory=new_inventory,
-        world=new_world
+    if item is None: return None
+    new_state = state.transform(
+        ["location", "items"], lambda items: items.remove(item_name),
+        ["inventory"], lambda inv: inv.append(item)
+    )
+    return new_state.transform(
+        ["world", new_state.location.name], lambda _: new_state.location
     )
 
 
