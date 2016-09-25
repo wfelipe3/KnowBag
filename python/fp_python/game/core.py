@@ -90,10 +90,10 @@ assert move(initial_state, "down") is None
 
 multimove(take(move(initial_state, "east"), "rusty key"), ['west', 'down'])
 
-print(render(thread_first(
+render(thread_first(
     initial_state,
     (move, "east"),
     (take, "rusty key"),
     (move, "west"),
     (move, "down")
-)))
+))
