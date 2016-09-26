@@ -52,12 +52,28 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     foldRight(List(1, 2, 3, 4, 5))(intAddMonoid.zero)(intAddMonoid.op) should be(1 + 2 + 3 + 4 + 5)
   }
 
+  "Exercise 10.7" should "implement foldMapV" in {
+    foldMapV(IndexedSeq(1, 2, 3, 4, 5), stringMonoid)(_.toString) should be("12345")
+  }
+
   def foldMap[A, B](as: List[A], m: Monoid[B])(f: A => B): B =
     as.foldRight(m.zero)((v, a) => m.op(f(v), a))
 
 
   def foldRight[A, B](as: List[A])(z: B)(f: (A, B) => B): B =
     foldMap(as, endoMonoid[B])(f.curried)(z)
+
+
+  def foldMapV[A, B](v: IndexedSeq[A], m: Monoid[B])(f: A => B): B = {
+    if (v.size == 1)
+      f(v.head)
+    else if (v.isEmpty)
+      m.zero
+    else {
+      val (left, right) = v.splitAt(v.size / 2)
+      m.op(foldMapV(left, m)(f), foldMapV(right, m)(f))
+    }
+  }
 
 
   //Exercise 10.4
