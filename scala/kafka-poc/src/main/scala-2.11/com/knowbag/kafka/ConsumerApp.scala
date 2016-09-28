@@ -42,7 +42,7 @@ object ConsumerApp extends App {
   val conn = new RxConsumer("localhost:2181", "group")
   conn.getRecordStream("TutorialTopic")
     .map(deserializeRecord)
-    .take(42 seconds)
+    .take(10 seconds)
     .foreach(println)
 
 
