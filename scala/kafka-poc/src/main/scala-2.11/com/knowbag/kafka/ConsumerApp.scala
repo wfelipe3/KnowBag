@@ -4,10 +4,13 @@ import java.util
 import java.util.Properties
 
 import com.cj.kafka.rx.{Record, RxConsumer}
-import scala.concurrent.duration._
 
+import scala.concurrent.duration._
 import scala.collection.JavaConverters._
 import org.apache.kafka.clients.consumer.{ConsumerRecord, KafkaConsumer}
+
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
 
 /**
   * Created by dev-williame on 9/28/16.
@@ -29,18 +32,19 @@ object ConsumerApp extends App {
   topics.add("TutorialTopic")
   consumer.subscribe(topics)
 
+  Future {
+    while (true) {
+      val consumerRecord = consumer.poll(100).asScala.toList
+      consumerRecord.foreach(deserialize)
+    }
+  }
+
   val conn = new RxConsumer("localhost:2181", "group")
   conn.getRecordStream("TutorialTopic")
     .map(deserializeRecord)
     .take(42 seconds)
     .foreach(println)
 
-  //  println("before start")
-  //
-  //  while (true) {
-  //    val consumerRecord = consumer.poll(100).asScala.toList
-  //    consumerRecord.foreach(deserialize)
-  //  }
 
   conn.shutdown()
 
