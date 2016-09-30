@@ -56,6 +56,45 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     foldMapV(IndexedSeq(1, 2, 3, 4, 5), stringMonoid)(_.toString) should be("12345")
   }
 
+  "Exercise 10.11" should "implement count words" in {
+    countWords("this is a test") should be(4)
+  }
+
+  sealed trait WC
+
+  case class Stub(chars: String) extends WC
+
+  case class Part(lStub: String, words: Int, rStub: String) extends WC
+
+  //Exercise 10.10
+  val wcMonoid: Monoid[WC] = new Monoid[WC] {
+    override def zero: WC = Stub("")
+
+    override def op(a1: WC, a2: WC): WC = (a1, a2) match {
+      case (Stub(v1), Stub(v2)) =>
+        Stub(v1 + v2)
+      case (Stub(v1), Part(l1, c1, r1)) =>
+        Part(v1 + l1, c1, r1)
+      case (Part(l1, c1, r1), Stub(v1)) =>
+        Part(l1, c1, v1 + r1)
+      case (Part(l1, c1, r1), Part(l2, c2, r2)) =>
+        Part(l1, c1 + (if ((r1 + l2).isEmpty) 0 else 1) + c2, r2)
+    }
+  }
+
+  def countWords(words: String): Int = {
+    def wc(c: Char): WC =
+      if (c.isWhitespace)
+        Part("", 0, "")
+      else
+        Stub(c.toString)
+    def unstub(s: String) = s.length min 1
+    foldMapV(words.toIndexedSeq, wcMonoid)(wc) match {
+      case Stub(c) => unstub(c)
+      case Part(l, w, r) => unstub(l) + w + unstub(r)
+    }
+  }
+
   def foldMap[A, B](as: List[A], m: Monoid[B])(f: A => B): B =
     as.foldRight(m.zero)((v, a) => m.op(f(v), a))
 
@@ -150,6 +189,26 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     override def zero: (A) => A = a => a
 
     override def op(a1: (A) => A, a2: (A) => A): (A) => A = a1.compose(a2)
+  }
+
+  def dual[A](m: Monoid[A]): Monoid[A] = new Monoid[A] {
+    override def zero: A = m.zero
+
+    override def op(a1: A, a2: A): A = m.op(a2, a1)
+  }
+
+  trait Foldable[F[_]] {
+    def foldRight[A, B](as: F[A])(z: B)(f: (A, B) => B): B =
+      foldMap(as)(f.curried)(endoMonoid[B])(z)
+
+    def foldLeft[A, B](as: F[A])(z: B)(f: (B, A) => B): B =
+      foldMap(as)(a => (b: B) => f(b, a))(dual(endoMonoid))(z)
+
+    def foldMap[A, B](as: F[A])(f: A => B)(mb: Monoid[B]): B =
+      foldRight(as)(mb.zero)((v, l) => mb.op(f(v), l))
+
+    def concatenate[A](as: F[A])(m: Monoid[A]): A =
+      foldLeft(as)(m.zero)(m.op)
   }
 
 }
