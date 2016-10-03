@@ -27,7 +27,7 @@ class Athena extends Actor {
 
   def receive = {
     case msg =>
-      println(s"Athena received ${msg}")
+      println(s"Athena received $msg")
       context.stop(self)
   }
 

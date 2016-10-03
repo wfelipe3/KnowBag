@@ -1,6 +1,6 @@
 from pyrsistent import pmap
-from game.core import Thing, Location, GameState, take, move, render
-from toolz.functoolz import thread_first
+
+from game.core import Thing, Location, GameState, take, move
 
 key = Thing(name="rusty key")
 home = Location(name="Home", description="Home is where the heart is!",
