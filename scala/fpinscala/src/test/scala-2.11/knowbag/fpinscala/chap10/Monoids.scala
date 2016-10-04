@@ -197,6 +197,7 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     override def op(a1: A, a2: A): A = m.op(a2, a1)
   }
 
+  //Exercise 10.12
   trait Foldable[F[_]] {
     def foldRight[A, B](as: F[A])(z: B)(f: (A, B) => B): B =
       foldMap(as)(f.curried)(endoMonoid[B])(z)
@@ -209,6 +210,33 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
 
     def concatenate[A](as: F[A])(m: Monoid[A]): A =
       foldLeft(as)(m.zero)(m.op)
+
+    //Exercise 10.15
+    def toList[A](fa: F[A]): List[A] =
+    foldRight(fa)(List.empty[A])(_ :: _)
+  }
+
+  object FoldableList extends Foldable[List] {
+    override def foldRight[A, B](as: List[A])(z: B)(f: (A, B) => B): B =
+      as.foldRight(z)(f)
+
+    override def foldLeft[A, B](as: List[A])(z: B)(f: (B, A) => B): B =
+      as.foldLeft(z)(f)
+
+    override def foldMap[A, B](as: List[A])(f: (A) => B)(mb: Monoid[B]): B =
+      as.foldRight(mb.zero)((a, b) => mb.op(f(a), b))
+  }
+
+  // Exercise 10.14
+  object FoldableOption extends Foldable[Option] {
+    override def foldLeft[A, B](as: Option[A])(z: B)(f: (B, A) => B): B =
+      as.map(v => f(z, v)).getOrElse(z)
+
+    override def foldRight[A, B](as: Option[A])(z: B)(f: (A, B) => B): B =
+      as.map(v => f(v, z)).getOrElse(z)
+
+    override def foldMap[A, B](as: Option[A])(f: (A) => B)(mb: Monoid[B]): B =
+      as.map(f).getOrElse(mb.zero)
   }
 
 }
