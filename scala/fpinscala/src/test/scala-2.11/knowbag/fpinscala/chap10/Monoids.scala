@@ -60,6 +60,35 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     countWords("this is a test") should be(4)
   }
 
+  "Exercise 10.13" should "implement foldable tree" in {
+    FoldableTree.foldLeft(
+      Branch(
+        Leaf(1),
+        Leaf(2)
+      )
+    )(0)(_ + _) should be(3)
+  }
+
+  "Exercise 10.16" should "implement product composed monoid" in {
+    val m = productMonoid(intAddMonoid, booleanAndMonoid)
+    FoldableList.foldMap(List((1, true), (2, false), (3, true)))(a => a)(m) should be((6, false))
+  }
+
+  "mapMergeMonoid" should "compose to bigger monoids" in {
+    val m: Monoid[Map[String, Map[String, Int]]] = mapMergeMonoid(mapMergeMonoid(intAddMonoid))
+    val m1 = Map("o1" -> Map("i1" -> 1, "i2" -> 2))
+    val m2 = Map("o1" -> Map("i2" -> 3))
+    m.op(m1, m2) should be(Map("o1" -> Map("i1" -> 1, "i2" -> 5)))
+  }
+
+  "Exercise 10.17" should "implement function monoid" in {
+    val toInt = (a: String) => a.toInt
+    val toIntPlusTen = (a: String) => a.toInt + 10
+    val fSumM = functionMonoid[String, Int](intAddMonoid)
+    val other = fSumM.op(toInt, toIntPlusTen)
+    other("10") should be(10 + 10 + 10)
+  }
+
   sealed trait WC
 
   case class Stub(chars: String) extends WC
@@ -197,6 +226,29 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     override def op(a1: A, a2: A): A = m.op(a2, a1)
   }
 
+  def productMonoid[A, B](a: Monoid[A], b: Monoid[B]): Monoid[(A, B)] = new Monoid[(A, B)] {
+    override def zero: (A, B) = (a.zero, b.zero)
+
+    override def op(a1: (A, B), a2: (A, B)): (A, B) = (a1, a2) match {
+      case ((a1, b1), (a2, b2)) => (a.op(a1, a2), b.op(b1, b2))
+    }
+  }
+
+  def mapMergeMonoid[K, V](V: Monoid[V]): Monoid[Map[K, V]] = new Monoid[Map[K, V]] {
+    override def zero: Map[K, V] = Map.empty
+
+    override def op(a1: Map[K, V], a2: Map[K, V]): Map[K, V] = (a1.keySet ++ a2.keySet).foldLeft(zero) { (acc, k) =>
+      acc.updated(k, V.op(a1.getOrElse(k, V.zero), a2.getOrElse(k, V.zero)))
+    }
+  }
+
+  def functionMonoid[A, B](B: Monoid[B]): Monoid[A => B] = new Monoid[A => B] {
+    override def zero: (A) => B = a => B.zero
+
+    override def op(a1: (A) => B, a2: (A) => B): (A) => B = a => B.op(a1(a), a2(a))
+  }
+
+
   //Exercise 10.12
   trait Foldable[F[_]] {
     def foldRight[A, B](as: F[A])(z: B)(f: (A, B) => B): B =
@@ -238,5 +290,29 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     override def foldMap[A, B](as: Option[A])(f: (A) => B)(mb: Monoid[B]): B =
       as.map(f).getOrElse(mb.zero)
   }
+
+  // Exercise 10.13
+  object FoldableTree extends Foldable[Tree] {
+    override def foldLeft[A, B](as: Tree[A])(z: B)(f: (B, A) => B): B = as match {
+      case Leaf(v) => f(z, v)
+      case Branch(l, r) => foldLeft(r)(foldLeft(l)(z)(f))(f)
+    }
+
+    override def foldRight[A, B](as: Tree[A])(z: B)(f: (A, B) => B): B = as match {
+      case Leaf(v) => f(v, z)
+      case Branch(l, r) => foldRight(l)(foldRight(r)(z)(f))(f)
+    }
+
+    override def foldMap[A, B](as: Tree[A])(f: (A) => B)(mb: Monoid[B]): B = as match {
+      case Leaf(v) => f(v)
+      case Branch(l, r) => mb.op(foldMap(l)(f)(mb), foldMap(r)(f)(mb))
+    }
+  }
+
+  sealed trait Tree[+A]
+
+  case class Leaf[A](value: A) extends Tree[A]
+
+  case class Branch[A](left: Tree[A], right: Tree[A]) extends Tree[A]
 
 }
