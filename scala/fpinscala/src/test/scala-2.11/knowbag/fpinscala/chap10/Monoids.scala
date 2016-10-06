@@ -89,6 +89,19 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
     other("10") should be(10 + 10 + 10)
   }
 
+  "Exercise 10.8" should "implement bag" in {
+    bagV(Vector("a", "rose", "a", "is", "rose")) should be(Map("a" -> 2, "rose" -> 2, "is" -> 1))
+  }
+
+  def bag[A](as: IndexedSeq[A]): Map[A, Int] = {
+    val mergeMonoid: Monoid[Map[A, Int]] = mapMergeMonoid(intAddMonoid)
+    FoldableList.foldLeft(as.toList)(mergeMonoid.zero)((acc, v) => mergeMonoid.op(acc, Map(v -> 1)))
+  }
+
+  def bagV[A](as: IndexedSeq[A]): Map[A, Int] = {
+    foldMapV(as, mapMergeMonoid[A, Int](intAddMonoid))(a => Map(a -> 1))
+  }
+
   sealed trait WC
 
   case class Stub(chars: String) extends WC
