@@ -90,7 +90,16 @@ class Monoids extends FlatSpec with Matchers with GeneratorDrivenPropertyChecks 
   }
 
   "Exercise 10.8" should "implement bag" in {
+    bag(Vector("a", "rose", "a", "is", "rose")) should be(Map("a" -> 2, "rose" -> 2, "is" -> 1))
     bagV(Vector("a", "rose", "a", "is", "rose")) should be(Map("a" -> 2, "rose" -> 2, "is" -> 1))
+  }
+
+  "mean" should "be calculated with monoids" in {
+    val m = productMonoid(intAddMonoid, intAddMonoid)
+    val mean = FoldableList.foldMap(List(1, 2, 3, 4))(a => (1, a))(m) match {
+      case (length, sum) => sum / length.toDouble
+    }
+    mean should be(2.5)
   }
 
   def bag[A](as: IndexedSeq[A]): Map[A, Int] = {
