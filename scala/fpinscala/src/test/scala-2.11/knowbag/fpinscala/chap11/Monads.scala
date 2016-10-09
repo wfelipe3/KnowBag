@@ -14,6 +14,15 @@ class Monads extends FlatSpec with Matchers {
     Monad.optionMonad.traverse[Int, String](List(1, 2, 3))(i => if (i > 2) None else Option(i.toString)) should be(None)
   }
 
+  "Exercise 11.5" should "implement replicateM" in {
+    Monad.optionMonad.replicateM(2, Some(10)) should be(Some(List(10, 10)))
+    Monad.listMonad.replicateM(2, List(1, 2)) should be(List(List(1, 1), List(1, 2), List(2, 1), List(2, 2)))
+  }
+
+  "Exercise 11.6" should "implement filterM" in {
+    Monad.optionMonad.filterM(List(1, 2, 3, 4, 5))(i => Some(true)) should be(Some(List(1, 2, 3, 4, 5)))
+  }
+
   trait Functor[F[_]] {
     def map[A, B](fa: F[A])(f: A => B): F[B]
 
@@ -41,13 +50,40 @@ class Monads extends FlatSpec with Matchers {
 
     def sequence[A](lma: List[F[A]]): F[List[A]] =
       lma.foldRight(unit(List[A]())) { (v, acc) =>
-        flatMap(v)(a => map(acc)(l => a :: l))
+        map2(v, acc)(_ :: _)
       }
 
     def traverse[A, B](la: List[A])(f: A => F[B]): F[List[B]] =
       la.foldRight(unit(List[B]())) { (v, acc) =>
-        flatMap(f(v))(a => map(acc)(l => a :: l))
+        map2(f(v), acc)(_ :: _)
       }
+
+    //Exercise 11.4
+    def replicateM[A](n: Int, ma: F[A]): F[List[A]] =
+      sequence(List.fill(n)(ma))
+
+
+    // Exercise 11.7
+    def compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C] =
+      a => flatMap(f(a))(g)
+
+    def filterM[A](ms: List[A])(f: A => F[Boolean]): F[List[A]] =
+      ms.foldRight(unit(List[A]())) { (v, acc) =>
+        compose(f, (b: Boolean) => if (b) map2(unit(v), acc)(_ :: _) else acc)(v)
+      }
+
+    // Exercise 11.8
+    def _flatMap[A, B](fa: F[A])(f: A => F[B]): F[B] =
+      compose((_: Unit) => fa, f)(())
+
+    // Exercise 11.12
+    def join[A](mma: F[F[A]]): F[A] =
+      flatMap(mma)(ma => ma)
+
+    // Exercise 11.13
+    def _compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C] =
+      a => join(map(f(a))(g))
+
   }
 
   // Exercise 11.1
@@ -65,7 +101,17 @@ class Monads extends FlatSpec with Matchers {
       override def flatMap[A, B](fa: Option[A])(f: (A) => Option[B]): Option[B] =
         fa.flatMap(f)
     }
+
+    // Exercise 11.17
+    val idMonad = new Monad[Id] {
+      override def unit[A](a: A): Id[A] = Id(a)
+
+      override def flatMap[A, B](fa: Id[A])(f: (A) => Id[B]): Id[B] = _flatMap(fa)(f)
+    }
+
   }
+
+  case class Id[A](value: A)
 
   val listFunctor = new Functor[List] {
     override def map[A, B](fa: List[A])(f: (A) => B): List[B] =
