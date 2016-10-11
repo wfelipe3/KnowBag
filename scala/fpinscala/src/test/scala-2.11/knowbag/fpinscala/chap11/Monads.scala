@@ -23,6 +23,16 @@ class Monads extends FlatSpec with Matchers {
     Monad.optionMonad.filterM(List(1, 2, 3, 4, 5))(i => Some(true)) should be(Some(List(1, 2, 3, 4, 5)))
   }
 
+  "Exercise 11.18" should "see monad combinators in state" in {
+    println(Monad.stateMonad.replicateM(3, State((s: Map[String, Int]) => (1, s + ("1" -> 1)))).run(Map("0" -> 0)))
+  }
+
+  "Exercise 11.20" should "implement reader monad" in {
+    val r = Reader.readerMonad[Int]
+    r.map2(Reader((r: Int) => r + 1), Reader((r: Int) => r + 2))(_ + _).run(10) should be(23)
+    println(r.replicateM(3, Reader((r: Int) => r + 1)).run(10))
+  }
+
   trait Functor[F[_]] {
     def map[A, B](fa: F[A])(f: A => B): F[B]
 
@@ -60,12 +70,12 @@ class Monads extends FlatSpec with Matchers {
 
     //Exercise 11.4
     def replicateM[A](n: Int, ma: F[A]): F[List[A]] =
-      sequence(List.fill(n)(ma))
+    sequence(List.fill(n)(ma))
 
 
     // Exercise 11.7
     def compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C] =
-      a => flatMap(f(a))(g)
+    a => flatMap(f(a))(g)
 
     def filterM[A](ms: List[A])(f: A => F[Boolean]): F[List[A]] =
       ms.foldRight(unit(List[A]())) { (v, acc) =>
@@ -74,15 +84,15 @@ class Monads extends FlatSpec with Matchers {
 
     // Exercise 11.8
     def _flatMap[A, B](fa: F[A])(f: A => F[B]): F[B] =
-      compose((_: Unit) => fa, f)(())
+    compose((_: Unit) => fa, f)(())
 
     // Exercise 11.12
     def join[A](mma: F[F[A]]): F[A] =
-      flatMap(mma)(ma => ma)
+    flatMap(mma)(ma => ma)
 
     // Exercise 11.13
     def _compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C] =
-      a => join(map(f(a))(g))
+    a => join(map(f(a))(g))
 
   }
 
@@ -106,16 +116,75 @@ class Monads extends FlatSpec with Matchers {
     val idMonad = new Monad[Id] {
       override def unit[A](a: A): Id[A] = Id(a)
 
-      override def flatMap[A, B](fa: Id[A])(f: (A) => Id[B]): Id[B] = _flatMap(fa)(f)
+      override def flatMap[A, B](fa: Id[A])(f: (A) => Id[B]): Id[B] = fa.flatMap(f)
+    }
+
+    def stateMonad[S] = new Monad[({type f[x] = State[S, x]})#f] {
+      override def unit[A](a: A): State[S, A] = State(s => (a, s))
+
+      override def flatMap[A, B](fa: State[S, A])(f: (A) => State[S, B]): State[S, B] = fa.flatMap(f)
     }
 
   }
 
-  case class Id[A](value: A)
+  case class Id[A](value: A) {
+    def flatMap[B](f: A => Id[B]) = f(value)
+  }
+
+  // Exercise 11.20
+  case class Reader[R, A](run: R => A)
+
+  object Reader {
+    def readerMonad[R] = new Monad[({type f[x] = Reader[R, x]})#f] {
+      override def unit[A](a: A): Reader[R, A] = Reader(_ => a)
+
+      override def flatMap[A, B](fa: Reader[R, A])(f: (A) => Reader[R, B]): Reader[R, B] = Reader(r => f(fa.run(r)).run(r))
+    }
+  }
 
   val listFunctor = new Functor[List] {
     override def map[A, B](fa: List[A])(f: (A) => B): List[B] =
       fa.map(f)
+  }
+
+  case class State[S, +A](run: S => (A, S)) {
+
+    import State._
+
+    def map[B](f: A => B): State[S, B] = {
+      flatMap(a => unit(f(a)))
+    }
+
+    def map2[B, C](sb: State[S, B])(f: (A, B) => C): State[S, C] = {
+      flatMap(a => sb.map(b => f(a, b)))
+    }
+
+    def flatMap[B](f: A => State[S, B]): State[S, B] = {
+      State(s => {
+        val (a, newS) = run(s)
+        f(a).run(newS)
+      })
+    }
+
+  }
+
+  object State {
+    def unit[S, A](a: A): State[S, A] =
+      State(s => (a, s))
+
+    def sequence[S, A](l: List[State[S, A]]): State[S, List[A]] =
+      l.foldRight(unit[S, List[A]](List.empty)) { (as, is) =>
+        as.map2(is)(_ :: _)
+      }
+
+    def get[S]: State[S, S] = State(s => (s, s))
+
+    def set[S](s: S): State[S, Unit] = State(_ => ((), s))
+
+    def modify[S](f: S => S): State[S, Unit] = for {
+      s <- get
+      _ <- set(f(s))
+    } yield ()
   }
 
 }
