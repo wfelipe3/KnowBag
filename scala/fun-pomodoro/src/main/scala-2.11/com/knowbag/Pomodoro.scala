@@ -3,6 +3,7 @@ package com.knowbag
 import java.time.LocalDateTime
 
 import scala.concurrent.duration.Duration
+import scalaz.Lens
 
 /**
   * Created by feliperojas on 10/9/16.
@@ -22,12 +23,14 @@ object Pomodoro {
       pomodoro
   }
 
+  val pomodoroLens = Lens.lensu[Pomodoro, State](set = (p, s) => p.copy(state = s), get = _.state)
+
   private def nextState(meta: PomoMeta, pomodoro: Pomodoro, actualTime: LocalDateTime): Pomodoro = {
     pomodoro match {
       case Pomodoro(_, Work(_, _)) =>
-        pomodoro.copy(state = Rest(actualTime, actualTime.plusSeconds(meta.restTime.toSeconds)))
+        pomodoroLens.set(pomodoro, Rest(actualTime, actualTime.plusSeconds(meta.restTime.toSeconds)))
       case Pomodoro(_, Rest(_, _)) =>
-        pomodoro.copy(state = Work(actualTime, actualTime.plusSeconds(meta.workTime.toSeconds)))
+        pomodoroLens.set(pomodoro, Work(actualTime, actualTime.plusSeconds(meta.workTime.toSeconds)))
     }
   }
 
