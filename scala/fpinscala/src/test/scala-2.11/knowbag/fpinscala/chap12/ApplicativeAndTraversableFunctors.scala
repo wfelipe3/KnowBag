@@ -1,6 +1,10 @@
 package knowbag.fpinscala.chap12
 
+import java.util.Date
+
 import org.scalatest.{FlatSpec, Matchers}
+
+import scala.util.Try
 
 /**
   * Created by dev-williame on 10/18/16.
@@ -17,6 +21,14 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
     eitherMonad[String].flatMap[Int, Int](Left("error"))(a => Right(a + 1)) should be(Left("error"))
   }
 
+  "Exercise 12.6" should "implement Validation applicative" in {
+    validationApplicative[String].map2[String, String, String](Failure("test"), Failure("other test"))(_ + _) should be(Failure("test", Vector("other test")))
+  }
+
+  "validate web form" should "Return all errors in one failure" in {
+    validateWebForm("", "lksdjfkjs", "slkdfjslkdjf") should be(Failure("Name cannot be empty", Vector("Phone number must be 10 digits", "Birthdate must be in the form yyyy-MM-dd")))
+  }
+
   trait Functor[F[_]] {
     def map[A, B](fa: F[A])(f: A => B): F[B]
 
@@ -31,7 +43,8 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
   }
 
   trait Applicative[F[_]] extends Functor[F] {
-    def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C]
+    def map2[A, B, C](fa: F[A], fb: F[B])(f: (A, B) => C): F[C] =
+      apply[B, C](map(fa)(f.curried))(fb)
 
     def unit[A](a: => A): F[A]
 
@@ -127,7 +140,9 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
     def _compose[A, B, C](f: A => F[B], g: B => F[C]): A => F[C] =
     a => join(map(f(a))(g))
 
+
   }
+
 
   def eitherMonad[E] = new Monad[({type f[x] = Either[E, x]})#f] {
     override def unit[A](a: A): Either[E, A] = Right(a)
@@ -149,5 +164,42 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
 
   }
 
+  sealed trait Validation[+E, +A]
+
+  case class Failure[E](head: E, tail: Vector[E] = Vector()) extends Validation[E, Nothing]
+
+  case class Success[A](a: A) extends Validation[Nothing, A]
+
+
+  def validationApplicative[E] = new Applicative[({type f[x] = Validation[E, x]})#f] {
+    override def map2[A, B, C](fa: Validation[E, A], fb: Validation[E, B])(f: (A, B) => C): Validation[E, C] = (fa, fb) match {
+      case (Success(a), Success(b)) => Success(f(a, b))
+      case (Failure(h1, t1), Failure(h2, t2)) => Failure(h1, h2 +: (t1 ++ t2))
+      case (Failure(h, t), _) => Failure(h, t)
+      case (_, Failure(h, t)) => Failure(h, t)
+    }
+
+
+    override def unit[A](a: => A): Validation[E, A] = Success(a)
+  }
+
+  case class WebForm(name: String, birthdate: Date, phoneNumber: String)
+
+  def validName(name: String): Validation[String, String] =
+    if (name != "") Success(name)
+    else Failure("Name cannot be empty")
+
+  def validBirthdate(birthdate: String): Validation[String, Date] =
+    Try {
+      import java.text._
+      new SimpleDateFormat("yyyy-MM-dd").parse(birthdate)
+    } map (Success(_)) getOrElse Failure("Birthdate must be in the form yyyy-MM-dd")
+
+  def validatePhone(phoneNumber: String): Validation[String, String] =
+    if (phoneNumber.matches("[0-9]{10}")) Success(phoneNumber)
+    else Failure("Phone number must be 10 digits")
+
+  def validateWebForm(name: String, birthdate: String, phone: String): Validation[String, WebForm] =
+    validationApplicative.map3(validName(name), validBirthdate(birthdate), validatePhone(phone))(WebForm)
 
 }
