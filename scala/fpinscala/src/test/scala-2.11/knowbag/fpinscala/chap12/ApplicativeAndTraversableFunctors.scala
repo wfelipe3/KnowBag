@@ -29,6 +29,9 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
     validateWebForm("", "lksdjfkjs", "slkdfjslkdjf") should be(Failure("Name cannot be empty", Vector("Phone number must be 10 digits", "Birthdate must be in the form yyyy-MM-dd")))
   }
 
+  "Exercise 12.8" should "implement applicative product" in {
+  }
+
   trait Functor[F[_]] {
     def map[A, B](fa: F[A])(f: A => B): F[B]
 
@@ -48,15 +51,14 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
 
     def unit[A](a: => A): F[A]
 
-    def map[A, B](fa: F[A])(f: A => B): F[B] =
+    override def map[A, B](fa: F[A])(f: A => B): F[B] =
       map2(fa, unit(()))((a, _) => f(a))
 
     def traverse[A, B](as: List[A])(f: A => F[B]): F[List[B]] =
       as.foldRight(unit(List.empty[B]))((a, b) => map2(f(a), b)(_ :: _))
 
-    //Exercise 12.1
     def sequence[A](fas: List[F[A]]): F[List[A]] =
-    fas.foldRight(unit(List.empty[A]))((a, b) => map2(a, b)(_ :: _))
+      fas.foldRight(unit(List.empty[A]))((a, b) => map2(a, b)(_ :: _))
 
     def replicateM[A](n: Int, fa: F[A]): F[List[A]] =
       sequence(List.fill(n)(fa))
@@ -64,9 +66,8 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
     def product[A, B](fa: F[A], fb: F[B]): F[(A, B)] =
       map2(fa, fb)((_, _))
 
-    //Exercise 12.2
     def apply[A, B](fab: F[A => B])(fa: F[A]): F[B] =
-    map2(fab, fa)((f, a) => f(a))
+      map2(fab, fa)((f, a) => f(a))
 
     def _map[A, B](fa: F[A])(f: A => B): F[B] =
       apply[A, B](unit(f))(fa)
@@ -76,7 +77,6 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
       apply(value)(fb)
     }
 
-    //Exercise 12.3
     def map3[A, B, C, D](fa: F[A], fb: F[B], fc: F[C])(f: (A, B, C) => D): F[D] = {
       val fbcd: F[B => C => D] = apply[A, B => C => D](unit(f.curried))(fa)
       val fcd = apply(fbcd)(fb)
@@ -88,6 +88,18 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
       val fcde = apply(fbcde)(fb)
       val fde = apply(fcde)(fc)
       apply(fde)(fd)
+    }
+
+    def product[G[_]](G: Applicative[G]): Applicative[({type f[x] = (F[x], G[x])})#f] = {
+      val self = this
+      new Applicative[({type f[x] = (F[x], G[x])})#f] {
+        override def unit[A](a: => A): (F[A], G[A]) = (self.unit(a), G.unit(a))
+
+        def apply[A, B](fs: (F[A => B], G[A => B]))(p: (F[A], G[A])) =
+          (self.apply(fs._1)(p._1), G.apply(fs._2)(p._2))
+
+        override def map[A, B](fa: (F[A], G[A]))(f: (A) => B): (F[B], G[B]) = _map(fa)(f)
+      }
     }
 
   }
