@@ -30,6 +30,14 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
   }
 
   "Exercise 12.8" should "implement applicative product" in {
+    val value = streamApplicative.product(streamApplicative).map2[Int, String, String]((Stream.continually(1), Stream.continually(2)), (Stream.continually("1"), Stream.continually("2")))((a, b) => a + b)
+    value._1.take(10).foreach(println)
+    value._2.take(10).foreach(println)
+  }
+
+  "Exercise 12.9" should "implement compose for applicative" in {
+    val value = streamApplicative.compose(streamApplicative).map2[Int, Int, Int](Stream.continually(Stream.continually(1)), Stream.continually(Stream.continually(2)))((a, b) => a + b)
+    value.take(10).foreach(_.take(10).foreach(println))
   }
 
   trait Functor[F[_]] {
@@ -95,10 +103,20 @@ class ApplicativeAndTraversableFunctors extends FlatSpec with Matchers {
       new Applicative[({type f[x] = (F[x], G[x])})#f] {
         override def unit[A](a: => A): (F[A], G[A]) = (self.unit(a), G.unit(a))
 
-        def apply[A, B](fs: (F[A => B], G[A => B]))(p: (F[A], G[A])) =
+        override def apply[A, B](fs: (F[A => B], G[A => B]))(p: (F[A], G[A])) =
           (self.apply(fs._1)(p._1), G.apply(fs._2)(p._2))
 
         override def map[A, B](fa: (F[A], G[A]))(f: (A) => B): (F[B], G[B]) = _map(fa)(f)
+      }
+    }
+
+    def compose[G[_]](G: Applicative[G]): Applicative[({type f[x] = F[G[x]]})#f] = {
+      val self = this
+      new Applicative[({type f[x] = F[G[x]]})#f] {
+        def unit[A](a: => A) = self.unit(G.unit(a))
+
+        override def map2[A, B, C](fga: F[G[A]], fgb: F[G[B]])(f: (A, B) => C) =
+          self.map2(fga, fgb)(G.map2(_, _)(f))
       }
     }
 
