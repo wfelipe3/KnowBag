@@ -12,10 +12,10 @@ object Day0 {
   }
 
   private def calculateStatistics(n: Int, values: Seq[Int]) = {
-    val mean = mean(values)
-    val median = median(n, values)
-    val mode = mode(values)
-    (mean, median, mode)
+    val me = mean(values)
+    val md = median(n, values)
+    val mo = mode(values)
+    (me, md, mo)
   }
 
   private def mean(values: Seq[Int]): Double = {
