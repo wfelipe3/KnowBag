@@ -1,0 +1,769 @@
+{
+    "Movies": [
+        {
+            "Title": "The Shawshank Redemption",
+            "Year": "1994",
+            "imdbID": "tt0111161",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+            "Rating": 4.6,
+            "Genre": "Drama"
+        },
+        {
+            "Title": "The Godfather",
+            "Year": "1972",
+            "imdbID": "tt0068646",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX300.jpg",
+            "Rating": 4.76,
+            "Genre": "Crime"
+        },
+        {
+            "Title": "The Godfather: Part II",
+            "Year": "1974",
+            "imdbID": "tt0071562",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX300.jpg",
+            "Rating": 4.6,
+            "Genre": "Crime"
+        },
+        {
+            "Title": "The Godfather: Part III",
+            "Year": "1990",
+            "imdbID": "tt0099674",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTczMDcxNDA4MV5BMl5BanBnXkFtZTgwNjY1NTk4NjE@._V1_SX300.jpg",
+            "Rating": 4.12,
+            "Genre": "Crime"
+        },
+        {
+            "Title": "The Dark Knight",
+            "Year": "2008",
+            "imdbID": "tt0468569",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg",
+            "Rating": 4.53,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Dark Knight Rises",
+            "Year": "2012",
+            "imdbID": "tt1345836",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg",
+            "Rating": 3.93,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Schindler's List",
+            "Year": "1993",
+            "imdbID": "tt0108052",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMzMwMTM4MDU2N15BMl5BanBnXkFtZTgwMzQ0MjMxMDE@._V1_SX300.jpg",
+            "Rating": 4.2,
+            "Genre": "Drama"
+        },
+        {
+            "Title": "Pulp Fiction",
+            "Year": "1994",
+            "imdbID": "tt0110912",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX300.jpg",
+            "Rating": 3.9,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Lord of the Rings: The Fellowship of the Ring",
+            "Year": "2001",
+            "imdbID": "tt0120737",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg",
+            "Rating": 4.43,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "The Lord of the Rings: The Return of the King",
+            "Year": "2003",
+            "imdbID": "tt0167260",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4MjA1NTAyMV5BMl5BanBnXkFtZTcwNzM1NDQyMQ@@._V1_SX300.jpg",
+            "Rating": 4.1,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "The Lord of the Rings: The Two Towers",
+            "Year": "2002",
+            "imdbID": "tt0167261",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTAyNDU0NjY4NTheQTJeQWpwZ15BbWU2MDk4MTY2Nw@@._V1_SX300.jpg",
+            "Rating": 3.8,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Fight Club",
+            "Year": "1999",
+            "imdbID": "tt0137523",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMzc1YmU2ZjEtYWIwMC00ZjM3LWI0NTctMDVlNGQ3YmYwMzE5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 4.8,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Star Wars: Episode IV - A New Hope",
+            "Year": "1977",
+            "imdbID": "tt0076759",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTIyMDY2NGQtOGJjNi00OTk4LWFhMDgtYmE3M2NiYzM0YTVmXkEyXkFqcGdeQXVyNTU1NTcwOTk@._V1_SX300.jpg",
+            "Rating": 3.4,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Star Wars: Episode V - The Empire Strikes Back",
+            "Year": "1980",
+            "imdbID": "tt0080684",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BYmViY2M2MTYtY2MzOS00YjQ1LWIzYmEtOTBiNjhlMGM0NjZjXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+            "Rating": 3.7,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Star Wars: Episode VI - Return of the Jedi",
+            "Year": "1983",
+            "imdbID": "tt0086190",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BODllZjg2YjUtNWEzNy00ZGY2LTgyZmQtYTkxNDYyOWM3OTUyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 4.8,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Star Wars: The Force Awakens",
+            "Year": "2015",
+            "imdbID": "tt2488496",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg",
+            "Rating": 3.56,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Forrest Gump",
+            "Year": "1994",
+            "imdbID": "tt0109830",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BYThjM2MwZGMtMzg3Ny00NGRkLWE4M2EtYTBiNWMzOTY0YTI4XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+            "Rating": 3.99,
+            "Genre": "Drama"
+        },
+        {
+            "Title": "Inception",
+            "Year": "2010",
+            "imdbID": "tt1375666",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+            "Rating": 3.7,
+            "Genre": "Action"
+        },
+        {
+            "Title": "TheMatrix",
+            "Year": "1999",
+            "imdbID": "tt0133093",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BMDMyMmQ5YzgtYWMxOC00OTU0LWIwZjEtZWUwYTY5MjVkZjhhXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+            "Rating": 4,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Braveheart",
+            "Year": "1995",
+            "imdbID": "tt0112573",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BNTMyNGE1ODQtYTNiNS00ZTUyLThhZjktMTgyOGZkZThlYTc3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.7,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Amélie",
+            "Year": "2001",
+            "imdbID": "tt0211915",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BMTA3MjVkMWMtYTQ4ZC00ODczLWFjYmQtMDFkZDQ2Y2M0NDVmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.8,
+            "Genre": "Drama"
+        },
+        {
+            "Title": "AClockworkOrange",
+            "Year": "1971",
+            "imdbID": "tt0066921",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BMTY3MjM1Mzc4N15BMl5BanBnXkFtZTgwODM0NzAxMDE@._V1_SX300.jpg",
+            "Rating": 3.6,
+            "Genre": "Drama"
+        },
+        {
+            "Title": "ToyStory3",
+            "Year": "2010",
+            "imdbID": "tt0435761",
+            "Type": "movie",
+            "Poster": "http: //ia.media-imdb.com/images/M/MV5BMTgxOTY4Mjc0MF5BMl5BanBnXkFtZTcwNTA4MDQyMw@@._V1_SX300.jpg",
+            "Rating": 3.6,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "VforVendetta",
+            "Year": "2005",
+            "imdbID": "tt0434409",
+            "Type": "movie",
+            "Poster": "https: //images-na.ssl-images-amazon.com/images/M/MV5BOTI5ODc3NzExNV5BMl5BanBnXkFtZTcwNzYxNzQzMw@@._V1_SX300.jpg",
+            "Rating": 4.2,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "The Matrix",
+            "Year": "1999",
+            "imdbID": "tt0133093",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMDMyMmQ5YzgtYWMxOC00OTU0LWIwZjEtZWUwYTY5MjVkZjhhXkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
+            "Rating": 3.56,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Matrix Reloaded",
+            "Year": "2003",
+            "imdbID": "tt0234215",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA0NDM5MDY2OF5BMl5BanBnXkFtZTcwNzg5OTEzMw@@._V1_SX300.jpg",
+            "Rating": 4.4,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Matrix Revolutions",
+            "Year": "2003",
+            "imdbID": "tt0242653",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkyNjc4NTQzOV5BMl5BanBnXkFtZTcwNDYzMTQyMQ@@._V1_SX300.jpg",
+            "Rating": 4.21,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rambo",
+            "Year": "2008",
+            "imdbID": "tt0462499",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI5Mjg1MzM4NF5BMl5BanBnXkFtZTcwNTAyNzUzMw@@._V1_SX300.jpg",
+            "Rating": 4.1,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rambo: First Blood Part II",
+            "Year": "1985",
+            "imdbID": "tt0089880",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BZWFkY2I1ZDAtNmZhNS00NjVlLWJiMGQtMGQ1ZmM0ZDA5ODg5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 2.3,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rocky",
+            "Year": "1976",
+            "imdbID": "tt0075148",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY5MDMzODUyOF5BMl5BanBnXkFtZTcwMTQ3NTMyNA@@._V1_SX300.jpg",
+            "Rating": 2.4,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rocky Balboa",
+            "Year": "2006",
+            "imdbID": "tt0479143",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTM2OTUzNDE3NV5BMl5BanBnXkFtZTcwODczMzkzMQ@@._V1_SX300.jpg",
+            "Rating": 4.1,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rocky II",
+            "Year": "1979",
+            "imdbID": "tt0079817",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BZGQyZmFlZDgtNTE4MS00NWZlLWE5MjctZWQxYmM3Yjk2OTIwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.5,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Rocky IV",
+            "Year": "1985",
+            "imdbID": "tt0089927",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg3ODk5ODE0NV5BMl5BanBnXkFtZTcwNDkzODM1NA@@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": ""
+        },
+        {
+            "Title": "Rocky III",
+            "Year": "1982",
+            "imdbID": "tt0084602",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMyOTYzMDMzMF5BMl5BanBnXkFtZTcwMTkzODM1NA@@._V1_SX300.jpg",
+            "Rating": 3.4,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Karate Kid",
+            "Year": "1984",
+            "imdbID": "tt0087538",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkyNjE3MjM2MV5BMl5BanBnXkFtZTYwMzY5ODk4._V1_SX300.jpg",
+            "Rating": 3.7,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Karate Kid",
+            "Year": "2010",
+            "imdbID": "tt1155076",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0ODg3ODEyMF5BMl5BanBnXkFtZTcwNjI1MTgxMw@@._V1_SX300.jpg",
+            "Rating": 3.89,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Karate Kid Part II",
+            "Year": "1986",
+            "imdbID": "tt0091326",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg3ODc2Nzc3M15BMl5BanBnXkFtZTYwMDMzNzc5._V1_SX300.jpg",
+            "Rating": 3.54,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Karate Kid Part III",
+            "Year": "1989",
+            "imdbID": "tt0097647",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTIzNTMyNDgyNV5BMl5BanBnXkFtZTYwODQ0Mjk4._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Planet Terror",
+            "Year": "2007",
+            "imdbID": "tt1077258",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMWFiMTlmODUtNGQwNS00NGY2LThjY2QtOWM5NmM5MTg3ZmUzXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Birdemic: Shock and Terror",
+            "Year": "2010",
+            "imdbID": "tt1316037",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BOTcxODAwMDYwNV5BMl5BanBnXkFtZTcwNzQ3MjQzMg@@._V1_SX300.jpg",
+            "Rating": 3.65,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Toy Story of Terror",
+            "Year": "2013",
+            "imdbID": "tt2446040",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY5NTA4NDAxNV5BMl5BanBnXkFtZTgwMzk1MTA1MjE@._V1_SX300.jpg",
+            "Rating": 3.98,
+            "Genre": ""
+        },
+        {
+            "Title": "Terror Train",
+            "Year": "1980",
+            "imdbID": "tt0081617",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BZjNkZmUwOGQtZGZjNC00MTIzLWFmYzItNmQ4ZTA0ZjJlYzM2XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.11,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "The Terror",
+            "Year": "1963",
+            "imdbID": "tt0057569",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTY1NzU5MDA4N15BMl5BanBnXkFtZTcwNTQzMzU1MQ@@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Tales of Terror",
+            "Year": "1962",
+            "imdbID": "tt0056552",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMDU5NDg3M15BMl5BanBnXkFtZTcwNjIzMTM3NA@@._V1_SX300.jpg",
+            "Rating": 2.77,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Galaxy of Terror",
+            "Year": "1981",
+            "imdbID": "tt0082431",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0Mzg2NTQ3NF5BMl5BanBnXkFtZTcwMjkzMzU0Mw@@._V1_SX300.jpg",
+            "Rating": 2.5,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Terror Firmer",
+            "Year": "1999",
+            "imdbID": "tt0169299",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BODRkMzM3MTYtMDY0YS00OGRkLWJlZDItYTA2ZDc3MmQ0NGU4XkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "Terror by Night",
+            "Year": "1946",
+            "imdbID": "tt0039017",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMjA4MDk0MjEyNV5BMl5BanBnXkFtZTcwOTA1ODEzMQ@@._V1_SX300.jpg",
+            "Rating": 2.9,
+            "Genre": "Horror"
+        },
+        {
+            "Title": "The King of Comedy",
+            "Year": "1982",
+            "imdbID": "tt0085794",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BNTAyNDM0OGMtMmQ5OS00OGJiLTljMDUtY2Y1OTFlYmM2ZTk2XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "A Midsummer Night's Sex Comedy",
+            "Year": "1982",
+            "imdbID": "tt0084329",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BOTMxMTM0MTk3Nl5BMl5BanBnXkFtZTcwOTEyODI1NA@@._V1_SX300.jpg",
+            "Rating": 3.14,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "The Bugs Bunny/Looney Tunes Comedy Hour",
+            "Year": "1985",
+            "imdbID": "tt0088491",
+            "Type": "series",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTI1NDQ0NzUyMV5BMl5BanBnXkFtZTYwMzczODk4._V1._CR14,96,240,314_SY132_CR6,0,89,132_AL_.jpg_V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "The Broken Hearts Club: A Romantic Comedy",
+            "Year": "2000",
+            "imdbID": "tt0222850",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmZlODkzNmItZmIwZi00OGYxLTkwMjQtMzlhYmYwNjMwNzlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "The Original Kings of Comedy",
+            "Year": "2000",
+            "imdbID": "tt0236388",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTI5NDY1NDU1M15BMl5BanBnXkFtZTcwODcyNTMyMQ@@._V1_SX300.jpg",
+            "Rating": 3,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "Comedy Central Roast of Charlie Sheen",
+            "Year": "2011",
+            "imdbID": "tt1985970",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIyODU5NDg3NV5BMl5BanBnXkFtZTcwNTYxMDE2Ng@@._V1_SX300.jpg",
+            "Rating": 3.77,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "King of Comedy",
+            "Year": "1999",
+            "imdbID": "tt0188766",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTM0MzU0OTYxM15BMl5BanBnXkFtZTcwOTQ2MDgxMQ@@._V1_SX300.jpg",
+            "Rating": 3.9,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "Blue Collar Comedy Tour: The Movie",
+            "Year": "2003",
+            "imdbID": "tt0330069",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTQyNzY0ODA4Ml5BMl5BanBnXkFtZTYwOTc3MTg5._V1_SX300.jpg",
+            "Rating": 3.65,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "The Comedy",
+            "Year": "2012",
+            "imdbID": "tt2112293",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA0OTA3ODU4M15BMl5BanBnXkFtZTcwNDY3NTM1OA@@._V1_SX300.jpg",
+            "Rating": 3.21,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "InAPPropriate Comedy",
+            "Year": "2013",
+            "imdbID": "tt1754811",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ3NzAyMDUyOF5BMl5BanBnXkFtZTcwMDMzMDM5OA@@._V1_SX300.jpg",
+            "Rating": 3.9,
+            "Genre": "Comedy"
+        },
+        {
+            "Title": "Fight Club",
+            "Year": "1999",
+            "imdbID": "tt0137523",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMzc1YmU2ZjEtYWIwMC00ZjM3LWI0NTctMDVlNGQ3YmYwMzE5XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.65,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Why We Fight",
+            "Year": "2005",
+            "imdbID": "tt0436971",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxNzk3MzA4NV5BMl5BanBnXkFtZTcwNzM3ODEzMQ@@._V1_SX300.jpg",
+            "Rating": 3.23,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Ip Man: The Final Fight",
+            "Year": "2013",
+            "imdbID": "tt2495118",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQwMTY0NDQxMV5BMl5BanBnXkFtZTgwMjEwMTEwMDE@._V1_SX300.jpg",
+            "Rating": 3.11,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Winter on Fire: Ukraine's Fight for Freedom",
+            "Year": "2015",
+            "imdbID": "tt4908644",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BNTY4MDgwOTI3M15BMl5BanBnXkFtZTgwNjYxMjU3NjE@._V1_SX300.jpg",
+            "Rating": 3.12,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Bring It On: Fight to the Finish",
+            "Year": "2009",
+            "imdbID": "tt1349482",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTg3NjMzOTExNl5BMl5BanBnXkFtZTcwNTY4ODc3Mg@@._V1_SX300.jpg",
+            "Rating": 3.45,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Asterix and the Big Fight",
+            "Year": "1989",
+            "imdbID": "tt0096842",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2NzQ4NjA2Ml5BMl5BanBnXkFtZTYwMTg3Mjg5._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Fight for Your Right Revisited",
+            "Year": "2011",
+            "imdbID": "tt1791504",
+            "Type": "movie",
+            "Poster": "N/A",
+            "Rating": 3.54,
+            "Genre": "Thriller"
+        },
+        {
+            "Title": "Love at First Fight",
+            "Year": "2014",
+            "imdbID": "tt3204144",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTY1ODMxODE3Ml5BMl5BanBnXkFtZTgwNzY3MzExNTE@._V1_SX300.jpg",
+            "Rating": 3.78,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Day of the Fight",
+            "Year": "1951",
+            "imdbID": "tt0042384",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ0NTUyMDI0Nl5BMl5BanBnXkFtZTgwNzA0OTgwMzE@._V1_SX300.jpg",
+            "Rating": 3.21,
+            "Genre": "Action"
+        },
+        {
+            "Title": "Born to Fight",
+            "Year": "2004",
+            "imdbID": "tt0428725",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMjEyOTI2NzAzNl5BMl5BanBnXkFtZTcwODM0MTM0MQ@@._V1_SX300.jpg",
+            "Rating": 3.21,
+            "Genre": "Action"
+        },
+        {
+            "Title": "The Broken Hearts Club: A Romantic Comedy",
+            "Year": "2000",
+            "imdbID": "tt0222850",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMmZlODkzNmItZmIwZi00OGYxLTkwMjQtMzlhYmYwNjMwNzlmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "Rating": 3.25,
+            "Genre": ""
+        },
+        {
+            "Title": "Born Romantic",
+            "Year": "2000",
+            "imdbID": "tt0236034",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk5ODUxMjIzNV5BMl5BanBnXkFtZTcwMDI1MTMyMQ@@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "My Teen Romantic Comedy SNAFU",
+            "Year": "2013–",
+            "imdbID": "tt2703720",
+            "Type": "series",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMWYxN2I2OWItNGE2YS00YjI1LThkMzYtYzQ4YWI2Y2I1YWQ2XkEyXkFqcGdeQXVyNjA5MjAzNzM@._V1_SX300.jpg",
+            "Rating": 3.78,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "The Romantic Englishwoman",
+            "Year": "1975",
+            "imdbID": "tt0073634",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTIzNzk0OTUzMF5BMl5BanBnXkFtZTcwNDA3MTQyMQ@@._V1_SX300.jpg",
+            "Rating": 3.22,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Romantic Comedy",
+            "Year": "1983",
+            "imdbID": "tt0086205",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BOTE5ODIyMTM4OV5BMl5BanBnXkFtZTcwMDM0NzI5NA@@._V1_SX300.jpg",
+            "Rating": 3.89,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Just Another Romantic Wrestling Comedy",
+            "Year": "2006",
+            "imdbID": "tt0427415",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTMxNTc0NTEzMF5BMl5BanBnXkFtZTcwNDUxODgyMQ@@._V1_SX300.jpg",
+            "Rating": 3.67,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "One Romantic Night",
+            "Year": "1930",
+            "imdbID": "tt0021217",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMzc0OWZjMzktZWNlZS00NmMxLWI2ODgtZWJhZTgwYWY2MjE0XkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
+            "Rating": 3.45,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Romantic Comedy 101",
+            "Year": "2002",
+            "imdbID": "tt0249923",
+            "Type": "movie",
+            "Poster": "N/A",
+            "Rating": 3.22,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Romantic Schemer",
+            "Year": "2015",
+            "imdbID": "tt4607906",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMzg0ODE5NDk1Nl5BMl5BanBnXkFtZTgwNjQ5MTczNTE@._V1_SX300.jpg",
+            "Rating": 3.34,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Romantic Island",
+            "Year": "2008",
+            "imdbID": "tt1887853",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTc3OTk3Mjc4OV5BMl5BanBnXkFtZTgwNTc3NTA2MDE@._V1_SX300.jpg",
+            "Rating": 3.5,
+            "Genre": "Romance"
+        },
+        {
+            "Title": "Escape from Planet Earth",
+            "Year": "2013",
+            "imdbID": "tt0765446",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTQyMTk4NjkyMl5BMl5BanBnXkFtZTcwMzA2OTY4OA@@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Fantasy"
+        },
+        {
+            "Title": "Earth: The Power of the Planet",
+            "Year": "2007",
+            "imdbID": "tt1145500",
+            "Type": "series",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNTM0MzkwOTMwOF5BMl5BanBnXkFtZTcwNTM2MDc5MQ@@._V1_SX300.jpg",
+            "Rating": 3.2,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "Final Days of Planet Earth",
+            "Year": "2006",
+            "imdbID": "tt0478073",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNTM2Mzc0NDk0N15BMl5BanBnXkFtZTcwNjgzNTA2Mw@@._V1_SX300.jpg",
+            "Rating": 2.3,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "The Last Man on Planet Earth",
+            "Year": "1999",
+            "imdbID": "tt0193283",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BNzc0MDIwNjYyNF5BMl5BanBnXkFtZTcwODE4NTIyMQ@@._V1_SX300.jpg",
+            "Rating": 3.54,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "Planet Earth",
+            "Year": "1998",
+            "imdbID": "tt0072000",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTg3MDcxODYyNF5BMl5BanBnXkFtZTgwNzU1NDkwMDE@._V1_SX300.jpg",
+            "Rating": 4.7,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "Earth: Making of a Planet",
+            "Year": "2011",
+            "imdbID": "tt1856691",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTNjMjJmZTUtZDY1MS00MGVhLWJlNTktMzU2ZDAzMGZjMDhkXkEyXkFqcGdeQXVyMjMxMDM2NjY@._V1_SX300.jpg",
+            "Rating": 3.1,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "The Late Great Planet Earth",
+            "Year": "1979",
+            "imdbID": "tt0079445",
+            "Type": "movie",
+            "Poster": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkwNzIzNjc2MF5BMl5BanBnXkFtZTcwMTU0NDYyMQ@@._V1_SX300.jpg",
+            "Rating": 3.3,
+            "Genre": "Documentary"
+        },
+        {
+            "Title": "Inside Planet Earth",
+            "Year": "2009",
+            "imdbID": "tt1454110",
+            "Type": "movie",
+            "Poster": "http://ia.media-imdb.com/images/M/MV5BMTkyMDE0MTc2MF5BMl5BanBnXkFtZTcwNzUwNDY3Mg@@._V1_SX300.jpg",
+            "Rating": 3.64,
+            "Genre": "Documentary"
+        }
+    ]
+}
