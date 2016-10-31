@@ -39,6 +39,7 @@ dockerfile in docker := {
   new Dockerfile {
     from("jdk8")
     add(artifact, artifactTargetPath)
+    add(getClass.getClassLoader.getResource("movies.json").getFile, "/app/movies.json")
     entryPoint("java", "-jar", artifactTargetPath)
   }
 }
