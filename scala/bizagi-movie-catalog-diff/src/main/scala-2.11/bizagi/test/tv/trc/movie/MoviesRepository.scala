@@ -1,11 +1,10 @@
-package tv.rtc.movie
+package bizagi.test.tv.trc.movie
 
-import java.io.{File, FileWriter}
+import java.io.File
 import java.nio.file.{Files, Paths}
 
-import net.liftweb.json.{DefaultFormats, _}
 import net.liftweb.json.Extraction._
-
+import net.liftweb.json.{DefaultFormats, _}
 
 /**
   * Created by dev-williame on 10/26/16.

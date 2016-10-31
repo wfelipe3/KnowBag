@@ -1,19 +1,18 @@
-package tv.rtc.movie
+package bizagi.test.tv.rtc.movie
 
-import java.util.concurrent.Executors
-
+import bizagi.test.tv.trc.movie._
+import bizagi.test.tv.trc.movie.MoviesCatalog._
 import org.scalatest.{FlatSpec, Matchers}
-import tv.rtc.movie.MoviesCatalog.{searchBy, sortWith}
 
 /**
-  * Created by dev-williame on 10/26/16.
+  * Created by dev-williame on 10/31/16.
   */
-class MoviesCatalogTest extends FlatSpec with Matchers {
+class MovieCatalogTest extends FlatSpec with Matchers {
 
   object Movies {
     val matrix: Movie = Movie("matrix", "2000", "xysndf", "Action", "", 4.0, "Action")
     val martialArts = Movie("martial arts", "2000", "xysndf", "Action", "", 5.0, "Action")
-    val kunfuPanda = Movie("kunfu panda", "2012", "iii89", "Comedy", "", 4.5, "Comedy")
+    val kungfuPanda = Movie("kungfu panda", "2012", "iii89", "Comedy", "", 4.5, "Comedy")
   }
 
   val catalog = Catalog(Seq(
@@ -23,8 +22,12 @@ class MoviesCatalogTest extends FlatSpec with Matchers {
 
   behavior of "MoviesCatalog"
 
+  it should "return all movies when term list is empty" in {
+    searchBy(Seq())(catalog) should be(catalog)
+  }
+
   it should "return at least one movie when the movie is in the catalog and the search is by title" in {
-    searchBy(Title, "kunfu panda")(catalog) should be(Catalog(Seq()))
+    searchBy(Title, "kungfu panda")(catalog) should be(Catalog(Seq()))
     searchBy(Title, "matrix")(catalog) should be(Catalog(Seq(Movies.matrix)))
   }
 
@@ -43,8 +46,8 @@ class MoviesCatalogTest extends FlatSpec with Matchers {
   }
 
   it should "return values that matches all terms" in {
-    MoviesCatalog.searchBy(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix)))
-    MoviesCatalog.searchBy(Seq((Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
+    searchBy(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix)))
+    searchBy(Seq((Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
   }
 
   it should "return values sorted by rating" in {
@@ -54,6 +57,6 @@ class MoviesCatalogTest extends FlatSpec with Matchers {
   }
 
   it should "allow to add a new Movie" in {
-    MoviesCatalog.add(Movies.kunfuPanda)(catalog) should be(Catalog(catalog.movies :+ Movies.kunfuPanda))
+    add(Movies.kungfuPanda)(catalog) should be(Catalog(catalog.movies :+ Movies.kungfuPanda))
   }
 }

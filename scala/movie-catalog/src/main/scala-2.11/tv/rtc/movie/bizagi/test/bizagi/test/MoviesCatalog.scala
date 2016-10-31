@@ -1,4 +1,4 @@
-package tv.rtc.movie
+package tv.rtc.movie.bizagi.test.bizagi.test
 
 /**
   * Created by dev-williame on 10/26/16.
