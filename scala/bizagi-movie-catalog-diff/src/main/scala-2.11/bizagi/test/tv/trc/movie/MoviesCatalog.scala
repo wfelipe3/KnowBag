@@ -48,7 +48,7 @@ object Genre extends Term {
     m => m.genre.equals(value)
 }
 
-case class Catalog(movies: Seq[Movie]) {
+case class Catalog(movies: Stream[Movie]) {
   def size = movies.size
 }
 

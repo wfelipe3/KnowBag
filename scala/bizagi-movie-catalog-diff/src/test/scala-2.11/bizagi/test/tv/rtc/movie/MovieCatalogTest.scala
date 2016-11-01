@@ -15,7 +15,7 @@ class MovieCatalogTest extends FlatSpec with Matchers {
     val kungfuPanda = Movie("kungfu panda", "2012", "iii89", "Comedy", "", 4.5, "Comedy")
   }
 
-  val catalog = Catalog(Seq(
+  val catalog = Catalog(Stream(
     Movies.matrix,
     Movies.martialArts
   ))
@@ -27,33 +27,33 @@ class MovieCatalogTest extends FlatSpec with Matchers {
   }
 
   it should "return at least one movie when the movie is in the catalog and the search is by title" in {
-    searchBy(Title, "kungfu panda")(catalog) should be(Catalog(Seq()))
-    searchBy(Title, "matrix")(catalog) should be(Catalog(Seq(Movies.matrix)))
+    searchBy(Title, "kungfu panda")(catalog) should be(Catalog(Stream()))
+    searchBy(Title, "matrix")(catalog) should be(Catalog(Stream(Movies.matrix)))
   }
 
   it should "return values that match the term by title" in {
-    searchBy(Title, "ma")(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
+    searchBy(Title, "ma")(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
   }
 
   it should "return values that match the term by year" in {
-    searchBy(Year, "1999")(catalog) should be(Catalog(Seq()))
-    searchBy(Year, "2000")(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
+    searchBy(Year, "1999")(catalog) should be(Catalog(Stream()))
+    searchBy(Year, "2000")(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
   }
 
   it should "return values that match the term by genre" in {
-    searchBy(Genre, "Drama")(catalog) should be(Catalog(Seq()))
-    searchBy(Genre, "Action")(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
+    searchBy(Genre, "Drama")(catalog) should be(Catalog(Stream()))
+    searchBy(Genre, "Action")(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
   }
 
   it should "return values that matches all terms" in {
-    searchBy(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix)))
-    searchBy(Seq((Year, "2000")))(catalog) should be(Catalog(Seq(Movies.matrix, Movies.martialArts)))
+    searchBy(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix)))
+    searchBy(Seq((Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
   }
 
   it should "return values sorted by rating" in {
-    sortWith(MovieSort.rating)(catalog) should be(Catalog(Seq(Movies.martialArts, Movies.matrix)))
+    sortWith(MovieSort.rating)(catalog) should be(Catalog(Stream(Movies.martialArts, Movies.matrix)))
     val searchAndSort = (searchBy(Year, "2000") _).andThen(sortWith(MovieSort.rating))
-    searchAndSort(catalog) should be(Catalog(Seq(Movies.martialArts, Movies.matrix)))
+    searchAndSort(catalog) should be(Catalog(Stream(Movies.martialArts, Movies.matrix)))
   }
 
   it should "allow to add a new Movie" in {
