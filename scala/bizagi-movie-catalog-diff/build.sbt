@@ -39,7 +39,7 @@ dockerfile in docker := {
   new Dockerfile {
     from("jdk8")
     add(artifact, artifactTargetPath)
-    add(new File("/Users/feliperojas/git/KnowBag/scala/bizagi-movie-catalog-diff/src/main/resources/movies.json"), "/app/movies.json")
+//    add(new File("/Users/feliperojas/git/KnowBag/scala/bizagi-movie-catalog-diff/src/main/resources/movies.json"), "/app/movies.json")
     entryPoint("java", "-jar", artifactTargetPath)
   }
 }

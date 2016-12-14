@@ -52,4 +52,4 @@ case class Catalog(movies: Stream[Movie]) {
   def size = movies.size
 }
 
-case class Movie(title: String, year: String, imdbId: String, movieType: String, poster: String, rating: Double, genre: String)
+case class Movie(title: String, year: String, imdbId: String, movieType: String, poster: String, rating: Double, genre: String, token: String = "")

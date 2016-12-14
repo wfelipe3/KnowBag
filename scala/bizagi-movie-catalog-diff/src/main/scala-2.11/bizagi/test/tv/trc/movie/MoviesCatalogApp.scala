@@ -10,6 +10,8 @@ import net.liftweb.json.Extraction._
 import net.liftweb.json.{DefaultFormats, _}
 import spray.can.Http
 import spray.routing.{HttpService, StandardRoute}
+import spray.http.HttpHeaders._
+import spray.http.ContentTypes._
 
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 
@@ -35,7 +37,11 @@ class MoviesDiffActor extends Actor with HttpService {
   def actorRefFactory: ActorRefFactory = context
   override def receive: Receive = runRoute(route)
 
-  lazy val catalog = load("/app/movies.json")
+  //  lazy val catalog = load("/home/ubuntu/movies.json")
+  lazy val catalog = Catalog(Stream(
+    Movie("matrix", "2000", "sd2la,", "Action", "", 5, "Action"),
+    Movie("Kung fu panda", "2015", "sdf908sdf,", "Comedy", "", 4, "Action")
+  ))
 
   val route =
     path("diff") {
@@ -49,10 +55,14 @@ class MoviesDiffActor extends Actor with HttpService {
     } ~ path("movies") {
       get {
         parameters("title" ?, "year" ?, "genre" ?, "sort" ?) { (title, year, genre, sort) =>
-          completeAsync { () =>
-            val filterMovies = (searchBy(mapTerms((Title, title), (Year, year), (Genre, genre))) _).andThen(sortWith(sorterFrom(sort)))
-            prettyRender(decompose(filterMovies(catalog)))
-          }(blockingExecutionContext)
+          respondWithHeader(`Content-Type`(`application/json`)) {
+            optionalHeaderValueByName("jwt") { header =>
+              completeAsync { () =>
+                val filterMovies = (searchBy(mapTerms((Title, title), (Year, year), (Genre, genre))) _).andThen(sortWith(sorterFrom(sort)))
+                prettyRender(decompose(Catalog(filterMovies(catalog).movies.map(m => m.copy(token = header.getOrElse("not found"))))))
+              }(blockingExecutionContext)
+            }
+          }
         }
       }
     }
