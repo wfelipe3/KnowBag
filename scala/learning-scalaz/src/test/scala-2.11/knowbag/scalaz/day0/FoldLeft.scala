@@ -24,7 +24,7 @@ class FoldLeft extends FlatSpec with Matchers {
     }
   }
 
-  it should "be possible to create a foldleft objtect type class" in {
+  it should "be possible to create a foldleft object type class" in {
     object FoldLeftList {
       def foldLeft[A, B](xs: List[A], b: B, f: (B, A) => B): B = xs.foldLeft(b)(f)
     }
