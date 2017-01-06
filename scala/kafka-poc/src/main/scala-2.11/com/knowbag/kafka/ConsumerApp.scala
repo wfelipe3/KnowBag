@@ -47,7 +47,7 @@ object ConsumerApp extends App {
   conn.getRecordStream("pomodoro")
     .map(deserializeRecord)
     .take(100 seconds)
-//    .foreach(println)
+    .foreach(println)
 
 
   conn.shutdown()
