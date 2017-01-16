@@ -9,7 +9,7 @@ import scalaz._
   */
 object OptionMockInterpreter extends (Request ~> Option) {
 
-  override def apply[A](in: Request[A]): Option[A] = in match {
+  override def apply[A](in: Request[A]): Some[String] = in match {
     case Request(service) =>
       service match {
         case GetTweets(userId) =>
@@ -25,9 +25,9 @@ object OptionMockInterpreter extends (Request ~> Option) {
         case GetUserId(userName) =>
           println(s"Getting user name for user $userName")
           userName match {
-            case 1 => Some(1)
-            case 2 => Some(2)
-            case _ => Some(-1)
+            case 1 => Some("")
+            case 2 => Some("")
+            case _ => Some("")
           }
         case GetUserPhoto(userId) =>
           println(s"Getting user photo for user $userId")
