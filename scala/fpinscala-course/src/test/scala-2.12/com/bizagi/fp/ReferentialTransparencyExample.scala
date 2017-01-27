@@ -11,9 +11,9 @@ class ReferentialTransparencyExample extends FreeSpec with Matchers {
     val sum = (a: Int, b: Int) => a + b
     val five = sum(2, 3)
     val six = 1 + five
-    val onePlusFunctionApplication = 1 + sum(2, 3)
+    val sixRT = 1 + sum(2, 3)
 
-    six should be(onePlusFunctionApplication)
+    six should be(sixRT)
   }
 
   "When we use functions with side effects referential transparency can not be achieved" - {
