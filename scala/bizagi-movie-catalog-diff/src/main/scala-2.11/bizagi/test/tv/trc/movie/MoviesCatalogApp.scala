@@ -4,14 +4,13 @@ import java.util.concurrent.Executors
 
 import akka.actor.{Actor, ActorRefFactory, ActorSystem, Props}
 import akka.io.IO
-import bizagi.test.tv.trc.movie.MoviesCatalog.{searchBy, sortWith}
-import bizagi.test.tv.trc.movie.MoviesRepository.load
+import bizagi.test.tv.trc.movie.MoviesCatalog.{searchByAnd, sortWith}
 import net.liftweb.json.Extraction._
 import net.liftweb.json.{DefaultFormats, _}
 import spray.can.Http
-import spray.routing.{HttpService, StandardRoute}
-import spray.http.HttpHeaders._
 import spray.http.ContentTypes._
+import spray.http.HttpHeaders._
+import spray.routing.{HttpService, StandardRoute}
 
 import scala.concurrent.{ExecutionContext, ExecutionContextExecutor, Future}
 
@@ -58,7 +57,7 @@ class MoviesDiffActor extends Actor with HttpService {
           respondWithHeader(`Content-Type`(`application/json`)) {
             optionalHeaderValueByName("jwt") { header =>
               completeAsync { () =>
-                val filterMovies = (searchBy(mapTerms((Title, title), (Year, year), (Genre, genre))) _).andThen(sortWith(sorterFrom(sort)))
+                val filterMovies = (searchByAnd(mapTerms((Title, title), (Year, year), (Genre, genre))) _).andThen(sortWith(sorterFrom(sort)))
                 prettyRender(decompose(Catalog(filterMovies(catalog).movies.map(m => m.copy(token = header.getOrElse("not found"))))))
               }(blockingExecutionContext)
             }

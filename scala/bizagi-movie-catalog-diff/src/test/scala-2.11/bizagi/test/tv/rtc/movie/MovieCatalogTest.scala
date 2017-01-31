@@ -23,7 +23,7 @@ class MovieCatalogTest extends FlatSpec with Matchers {
   behavior of "MoviesCatalog"
 
   it should "return all movies when term list is empty" in {
-    searchBy(Seq())(catalog) should be(catalog)
+    searchByAnd(Seq())(catalog) should be(catalog)
   }
 
   it should "return at least one movie when the movie is in the catalog and the search is by title" in {
@@ -46,8 +46,18 @@ class MovieCatalogTest extends FlatSpec with Matchers {
   }
 
   it should "return values that matches all terms" in {
-    searchBy(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix)))
-    searchBy(Seq((Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
+    searchByAnd(Seq((Title, "matrix"), (Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix)))
+    searchByAnd(Seq((Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
+  }
+
+  it should "return values that matches all or terms" in {
+    searchByOr(Seq((Title, "matrix"), (Year, "2012")))(Catalog(Stream(Movies.matrix, Movies.martialArts, Movies.kungfuPanda))) should be(Catalog(Stream(Movies.matrix, Movies.kungfuPanda)))
+    searchByOr(Seq((Year, "2000")))(catalog) should be(Catalog(Stream(Movies.matrix, Movies.martialArts)))
+  }
+
+  it should "return values that matches and and or terms" in {
+    val search = searchByOr(Seq((Title, "matrix"), (Year, "2012"))) _ andThen searchByAnd(Seq((Year, "2000")))
+    search(Catalog(Stream(Movies.martialArts, Movies.matrix, Movies.kungfuPanda))) should be(Catalog(Stream(Movies.matrix)))
   }
 
   it should "return values sorted by rating" in {
