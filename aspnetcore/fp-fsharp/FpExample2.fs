@@ -25,9 +25,6 @@ module FpExample2 =
         pur cc cup
         cup
 
-    let sum x = x + x
-    let multiply x = x * x
-
     let testBuyCoffe2 () =
         let cc = {number = "123-123-34"; expDate = "10/22"; csv = 123}
         let purcc = purchase cc

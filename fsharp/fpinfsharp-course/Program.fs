@@ -2,7 +2,13 @@
 
 open System
 
+let plus1 x = x + 1
+
+let plus2 x = x + 2
+
 [<EntryPoint>]
 let main argv = 
-    printfn "Hello World!"
-    0 // return an integer exit code
+    let plus3 = plus1 >> plus2
+            //printfn "Hello World!"
+    printfn "the value is %i" (plus3 4)
+    0
