@@ -3,6 +3,7 @@ package com.knowbag.kafka
 import java.util
 import java.util.Properties
 import java.util.concurrent.CountDownLatch
+import java.util.concurrent.atomic.AtomicInteger
 
 import com.cj.kafka.rx.{Record, RxConsumer}
 
@@ -26,6 +27,7 @@ object ConsumerApp extends App {
   props.put("enable.auto.commit", "true")
   props.put("auto.commit.interval.ms", "1000")
   props.put("session.timeout.ms", "30000")
+  props.put("auto.offset.reset", "earliest")
   props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
   props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer")
 
@@ -34,12 +36,23 @@ object ConsumerApp extends App {
   val topics = new util.ArrayList[String]()
   topics.add("TutorialTopic")
   topics.add("pomodoro")
+  topics.add("test")
+  topics.add("gatlingTest")
+
   consumer.subscribe(topics)
 
+  val int = new AtomicInteger()
   Future {
     while (true) {
-      val consumerRecord = consumer.poll(100).asScala.toList
+      val consumerRecord = consumer.poll(1000).asScala.toList
       consumerRecord.foreach(deserialize)
+      val ko = consumerRecord
+        .flatMap(c => c.value().split("\n"))
+        .filter(_.contains("ko"))
+        .map(_.replace(""""ko":""", ""))
+        .map(_.trim.toInt)
+        .sum
+      if (ko > 0) println(ko + " =============================")
     }
   }
 
@@ -49,15 +62,15 @@ object ConsumerApp extends App {
     .take(100 seconds)
     .foreach(println)
 
-
   conn.shutdown()
 
   def deserialize: (ConsumerRecord[String, String]) => Unit =
-    r => println(s"offset=${r.offset()} key=${r.key()} value=${r.value()}")
+    r => {
+      println(s"offset=${r.offset()} key=${r.key()} value=${r.value()}")
+    }
 
   def deserializeRecord: (Record[Array[Byte], Array[Byte]]) => Unit =
     r => println(s"offset=${r.offset} key=${r.key} value=${new String(r.value)}")
-
 
   countDown.await()
 }
