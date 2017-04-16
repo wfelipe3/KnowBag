@@ -47,9 +47,12 @@ class MonoidExample extends FreeSpec with Matchers {
     println(foldMonoid(List(1,2,3,4,5,6,7,78)))
   }
 
-  trait Monoid[A] {
-    def zero: A
+  trait Semigroup[A] {
     def op(a1: A, a2: A): A
+  }
+
+  trait Monoid[A] extends Semigroup[A]{
+    def zero: A
   }
 
 }
