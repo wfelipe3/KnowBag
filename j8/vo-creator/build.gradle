@@ -1,0 +1,13 @@
+group 'poc'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.javaslang:javaslang:2.1.0-alpha'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
