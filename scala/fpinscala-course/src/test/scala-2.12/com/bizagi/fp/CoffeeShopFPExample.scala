@@ -8,7 +8,7 @@ import org.scalatest.{FreeSpec, Matchers}
 class CoffeeShopFPExample extends FreeSpec with Matchers {
 
   "Coffee shop version 1.0 with side effect functions" - {
-    case class CreditCard(number: String, expDate: String, csv: Int) {
+    case class CreditCard(number: String, expDate: String, cvc: Int) {
       def charge(amount: Int): Unit = println(s"charging $amount to credit card $number")
     }
 
