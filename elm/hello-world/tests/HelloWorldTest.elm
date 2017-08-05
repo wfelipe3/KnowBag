@@ -98,10 +98,74 @@ suite =
                   in
                     Expect.equal record2 {x = 3, y = 5}
             ]
+            , describe "pattern matching"
+              [ test "fist pattern" <|
+                  \() ->
+                    let
+                      toString x =
+                        case x of
+                          1 -> "one"
+                          2 -> "two"
+                          3 -> "three"
+                          _ -> "many"
+                    in
+                      Expect.equal (toString 1) "one"
+                , test "pattern match record" <|
+                  \() ->
+                    let
+                      toString x =
+                        case x of
+                        {x} -> "is " ++ x
+                    in
+                      Expect.equal (toString {x = "two"}) "is two"
+              ]
+          , describe "types"
+            [ test "sum type" <|
+                \() ->
+                  let
+                    toBool : Answer -> Bool
+                    toBool a = case a of
+                      Yes -> True
+                      No -> False
+                  in
+                    Expect.equal (toBool Yes) True
+              , test "sum type like functions" <|
+                \() ->
+                  let
+                    value = Message 1 "hello"
+                  in
+                    Expect.equal value (Message 1 "hello")
+              , test "sum type with function" <|
+                \() -> Expect.equal ("test" |> Message 1 |> showError) "Error code: 1\"test\""
+              ,test "alias types" <|
+                \() -> Expect.equal ({id = 1, name = "felipe"} |> showPlayer) "player name: felipe 1"
+              ,test "alias types constructors" <|
+                \() -> Expect.equal (Player 1 "felipe" |> showPlayer) "player name: felipe 1"
+            ]
         ]
     ]
 
+type alias PlayerId = Int
+type alias PlayerName = String
+type alias Player =
+  { id: PlayerId
+  , name: PlayerName
+  }
+
+type Error a = Message Int a
+type Answer = Yes | No
+
+showPlayer : Player -> String
+showPlayer p =
+  "player name: " ++ (.name p) ++ " " ++ toString (.id p)
+
+showError : Error a -> String
+showError e =
+  case e of
+    Message i a -> "Error code: " ++ toString i ++ toString a
+
 isNegative n = n < 0
+
 over9000 powerLevel =
   if powerLevel > 9000 then
     "It's over 9000"
