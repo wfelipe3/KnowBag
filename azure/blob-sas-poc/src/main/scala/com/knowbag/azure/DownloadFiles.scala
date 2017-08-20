@@ -12,6 +12,7 @@ import com.microsoft.azure.storage.SharedAccessAccountPermissions._
 import com.microsoft.azure.storage.SharedAccessAccountResourceType.{CONTAINER, OBJECT}
 import com.microsoft.azure.storage.SharedAccessAccountService.{BLOB, TABLE}
 import com.microsoft.azure.storage.SharedAccessProtocols.HTTPS_HTTP
+import com.microsoft.azure.storage.blob.{SharedAccessBlobPermissions, SharedAccessBlobPolicy}
 
 import scala.collection.JavaConverters._
 
@@ -55,7 +56,7 @@ object DownloadFiles extends App {
   }
 
   private def getSASToken(permissions: util.EnumSet[SharedAccessAccountPermissions])(connection: String)(date: () => Date) = Try {
-    val sas = new SharedAccessAccountPolicy()
+    val sas = new SharedAccessAccountPolicy
     sas.setPermissions(permissions)
     sas.setProtocols(HTTPS_HTTP)
     sas.setResourceTypes(util.EnumSet.of(CONTAINER, OBJECT))
@@ -64,6 +65,15 @@ object DownloadFiles extends App {
     val storageAccount = CloudStorageAccount.parse(connection)
     val sasToken = storageAccount.generateSharedAccessSignature(sas)
     sasToken
+  }
+
+  private def getBlobSASToken(permissions: util.EnumSet[SharedAccessBlobPermissions])(connection: String)(date: () => Date) = Try {
+    val sas = new SharedAccessBlobPolicy
+    sas.setPermissions(permissions)
+    sas.setSharedAccessStartTime(date())
+    getContainer(connection)
+      .map(c => c.getBlockBlobReference("test"))
+      .map(b => b.generateSharedAccessSignature(sas, "test"))
   }
 
   private def getDatePlusOneHour(): Date = {
