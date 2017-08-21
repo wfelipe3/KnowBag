@@ -13,9 +13,9 @@ object BinaryGap {
     else gaps.max
   }
 
-  def toBinary(n: Int): Binary = {
-    if (n < 0) Seq()
-    else if (n == 0 || n == 1) Seq(n)
+  def toBinary(n: Int, b: Seq[Int] = Seq()): Binary = {
+    if (n < 0) b
+    else if (n == 0 || n == 1)
     else toBinary(n / 2) ++ toBinary(n % 2)
   }
 
