@@ -14,7 +14,7 @@ suite =
       , describe "starting with elm"
         [ describe "String"
           [ test "simple string" <|
-              \() -> Expect.equal "hello world" "hello world"
+              \() -> Expect.equal
             , test "string concat" <|
               \() -> Expect.equal ("hello " ++ "world") "hello world"
           ]
